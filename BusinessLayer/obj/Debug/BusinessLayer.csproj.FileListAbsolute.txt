@@ -1,0 +1,9 @@
+C:\Users\Braden\Desktop\SEN381\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Braden\Desktop\SEN381\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Braden\Desktop\SEN381\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\Braden\Desktop\SEN381\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Braden\Desktop\SEN381\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Braden\Desktop\SEN381\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\Braden\Desktop\SEN381\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Braden\Desktop\SEN381\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Braden\Desktop\SEN381\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
