@@ -30,7 +30,8 @@
         {
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dgView = new System.Windows.Forms.DataGridView();
+            this.lsBox_products = new System.Windows.Forms.ListBox();
+            this.dgView_Actors = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gpAddProducts = new System.Windows.Forms.GroupBox();
             this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -57,15 +58,22 @@
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.lsBox_products = new System.Windows.Forms.ListBox();
+            this.dgView_Controllers = new System.Windows.Forms.DataGridView();
+            this.dgView_Sensors = new System.Windows.Forms.DataGridView();
+            this.lblActors = new MaterialSkin.Controls.MaterialLabel();
+            this.lblControllers = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSensors = new MaterialSkin.Controls.MaterialLabel();
+            this.lblProducts = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Actors)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.gpAddProducts.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Controllers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Sensors)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -84,23 +92,42 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage1.Controls.Add(this.lblProducts);
+            this.tabPage1.Controls.Add(this.lblSensors);
+            this.tabPage1.Controls.Add(this.lblControllers);
+            this.tabPage1.Controls.Add(this.lblActors);
+            this.tabPage1.Controls.Add(this.dgView_Sensors);
+            this.tabPage1.Controls.Add(this.dgView_Controllers);
             this.tabPage1.Controls.Add(this.lsBox_products);
-            this.tabPage1.Controls.Add(this.dgView);
+            this.tabPage1.Controls.Add(this.dgView_Actors);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(986, 804);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View Products";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dgView
+            // lsBox_products
             // 
-            this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView.Location = new System.Drawing.Point(144, 6);
-            this.dgView.Name = "dgView";
-            this.dgView.Size = new System.Drawing.Size(836, 355);
-            this.dgView.TabIndex = 0;
+            this.lsBox_products.BackColor = System.Drawing.Color.Silver;
+            this.lsBox_products.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lsBox_products.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsBox_products.FormattingEnabled = true;
+            this.lsBox_products.ItemHeight = 16;
+            this.lsBox_products.Location = new System.Drawing.Point(6, 45);
+            this.lsBox_products.Name = "lsBox_products";
+            this.lsBox_products.Size = new System.Drawing.Size(241, 434);
+            this.lsBox_products.TabIndex = 1;
+            this.lsBox_products.SelectedIndexChanged += new System.EventHandler(this.lsBox_products_SelectedIndexChanged);
+            // 
+            // dgView_Actors
+            // 
+            this.dgView_Actors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_Actors.Location = new System.Drawing.Point(257, 47);
+            this.dgView_Actors.Name = "dgView_Actors";
+            this.dgView_Actors.Size = new System.Drawing.Size(723, 117);
+            this.dgView_Actors.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -449,27 +476,88 @@
             this.materialTabSelector1.TabIndex = 0;
             this.materialTabSelector1.Text = "tabSelector";
             // 
-            // lsBox_products
+            // dgView_Controllers
             // 
-            this.lsBox_products.BackColor = System.Drawing.Color.Silver;
-            this.lsBox_products.FormattingEnabled = true;
-            this.lsBox_products.Location = new System.Drawing.Point(6, 6);
-            this.lsBox_products.Name = "lsBox_products";
-            this.lsBox_products.Size = new System.Drawing.Size(132, 355);
-            this.lsBox_products.TabIndex = 1;
+            this.dgView_Controllers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_Controllers.Location = new System.Drawing.Point(257, 209);
+            this.dgView_Controllers.Name = "dgView_Controllers";
+            this.dgView_Controllers.Size = new System.Drawing.Size(723, 113);
+            this.dgView_Controllers.TabIndex = 2;
+            // 
+            // dgView_Sensors
+            // 
+            this.dgView_Sensors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_Sensors.Location = new System.Drawing.Point(257, 365);
+            this.dgView_Sensors.Name = "dgView_Sensors";
+            this.dgView_Sensors.Size = new System.Drawing.Size(723, 113);
+            this.dgView_Sensors.TabIndex = 3;
+            // 
+            // lblActors
+            // 
+            this.lblActors.AutoSize = true;
+            this.lblActors.Depth = 0;
+            this.lblActors.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblActors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblActors.Location = new System.Drawing.Point(253, 15);
+            this.lblActors.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblActors.Name = "lblActors";
+            this.lblActors.Size = new System.Drawing.Size(54, 19);
+            this.lblActors.TabIndex = 4;
+            this.lblActors.Text = "Actors";
+            // 
+            // lblControllers
+            // 
+            this.lblControllers.AutoSize = true;
+            this.lblControllers.Depth = 0;
+            this.lblControllers.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblControllers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblControllers.Location = new System.Drawing.Point(253, 176);
+            this.lblControllers.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblControllers.Name = "lblControllers";
+            this.lblControllers.Size = new System.Drawing.Size(84, 19);
+            this.lblControllers.TabIndex = 5;
+            this.lblControllers.Text = "Controllers";
+            // 
+            // lblSensors
+            // 
+            this.lblSensors.AutoSize = true;
+            this.lblSensors.Depth = 0;
+            this.lblSensors.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblSensors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblSensors.Location = new System.Drawing.Point(253, 334);
+            this.lblSensors.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSensors.Name = "lblSensors";
+            this.lblSensors.Size = new System.Drawing.Size(64, 19);
+            this.lblSensors.TabIndex = 6;
+            this.lblSensors.Text = "Sensors";
+            // 
+            // lblProducts
+            // 
+            this.lblProducts.AutoSize = true;
+            this.lblProducts.Depth = 0;
+            this.lblProducts.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblProducts.Location = new System.Drawing.Point(6, 15);
+            this.lblProducts.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblProducts.Name = "lblProducts";
+            this.lblProducts.Size = new System.Drawing.Size(69, 19);
+            this.lblProducts.TabIndex = 7;
+            this.lblProducts.Text = "Products";
             // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
             this.Name = "Products";
-            this.Size = new System.Drawing.Size(1000, 900);
+            this.Size = new System.Drawing.Size(998, 898);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgView)).EndInit();
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Actors)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.gpAddProducts.ResumeLayout(false);
             this.gpAddProducts.PerformLayout();
@@ -479,6 +567,8 @@
             this.groupBox1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Controllers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Sensors)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,7 +581,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dgView;
+        private System.Windows.Forms.DataGridView dgView_Actors;
         private MaterialSkin.Controls.MaterialLabel lblName;
         private System.Windows.Forms.ComboBox cb_ProductGroup;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
@@ -515,5 +605,11 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
         private System.Windows.Forms.ListBox lsBox_products;
+        private System.Windows.Forms.DataGridView dgView_Sensors;
+        private System.Windows.Forms.DataGridView dgView_Controllers;
+        private MaterialSkin.Controls.MaterialLabel lblSensors;
+        private MaterialSkin.Controls.MaterialLabel lblControllers;
+        private MaterialSkin.Controls.MaterialLabel lblActors;
+        private MaterialSkin.Controls.MaterialLabel lblProducts;
     }
 }

@@ -28,7 +28,7 @@ namespace DataAccessLayer
         /// </summary>
         //Universal Methods
        public DataSet ReadProc(string procedure)
-        {
+       {
             SqlConnection conn = new SqlConnection(connection.ToString());
             DataSet rawData = new DataSet();
             try
@@ -53,6 +53,39 @@ namespace DataAccessLayer
                 {
                     conn.Close();
                     
+                }
+            }
+            return rawData;
+       }
+
+        //BAD method
+        public DataSet ReadComponent(string procedure, int productID, int componentType)
+        {
+            SqlConnection conn = new SqlConnection(connection.ToString());
+            DataSet rawData = new DataSet();
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(procedure, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ProductID", productID);
+                command.Parameters.AddWithValue("@ComponentType", componentType);
+                command.ExecuteNonQuery();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(rawData);//gets actual data from query result
+
+            }
+            catch (SqlException se)
+            {
+                //TODO exception back to presentation layer
+
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+
                 }
             }
             return rawData;
