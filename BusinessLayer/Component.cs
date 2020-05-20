@@ -13,7 +13,7 @@ namespace BusinessLayer
         private int id;
         private string name;
         private double cost;
-        //private int type;
+        private string type;
 
         public Component() { }
 
@@ -24,9 +24,18 @@ namespace BusinessLayer
             Cost = cost;
         }
 
+        public Component(int id, string name, double cost, string type)
+        {
+            ID = id;
+            Name = name;
+            Cost = cost;
+            Type = type;
+        }
+
         public int ID { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public double Cost { get => cost; set => cost = value; }
+        public string Type { get => type; set => type = value; }
 
         public List<Component> GetComponents()
         {

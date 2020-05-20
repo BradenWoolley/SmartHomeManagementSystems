@@ -30,50 +30,54 @@
         {
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblProducts = new MaterialSkin.Controls.MaterialLabel();
+            this.lblSensors = new MaterialSkin.Controls.MaterialLabel();
+            this.lblControllers = new MaterialSkin.Controls.MaterialLabel();
+            this.lblActors = new MaterialSkin.Controls.MaterialLabel();
+            this.dgView_Sensors = new System.Windows.Forms.DataGridView();
+            this.dgView_Controllers = new System.Windows.Forms.DataGridView();
             this.lsBox_products = new System.Windows.Forms.ListBox();
             this.dgView_Actors = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gpAddProducts = new System.Windows.Forms.GroupBox();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtCost_Insert = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtComponentName_Insert = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnSubmitNewProduct = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.lblType = new MaterialSkin.Controls.MaterialLabel();
-            this.cb_ProductGroup = new System.Windows.Forms.ComboBox();
-            this.cb_Type = new System.Windows.Forms.ComboBox();
+            this.cb_ProductGroup_Insert = new System.Windows.Forms.ComboBox();
+            this.cb_ComponentType_Insert = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtSearchProd_Update = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cbProductName_Update = new System.Windows.Forms.ComboBox();
+            this.btnSearchProduct = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblSearchName_Update = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtProdName_Update = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtCost_Update = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtComponentName_Update = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbProductGroup_Update = new System.Windows.Forms.ComboBox();
+            this.cb_ComponentType_Update = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.cbProductName_Delete = new System.Windows.Forms.ComboBox();
+            this.btnDeleteProduct = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.dgView_Controllers = new System.Windows.Forms.DataGridView();
-            this.dgView_Sensors = new System.Windows.Forms.DataGridView();
-            this.lblActors = new MaterialSkin.Controls.MaterialLabel();
-            this.lblControllers = new MaterialSkin.Controls.MaterialLabel();
-            this.lblSensors = new MaterialSkin.Controls.MaterialLabel();
-            this.lblProducts = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Sensors)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Controllers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Actors)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.gpAddProducts.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_Controllers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_Sensors)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -108,6 +112,80 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View Products";
             // 
+            // lblProducts
+            // 
+            this.lblProducts.AutoSize = true;
+            this.lblProducts.Depth = 0;
+            this.lblProducts.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblProducts.Location = new System.Drawing.Point(6, 15);
+            this.lblProducts.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblProducts.Name = "lblProducts";
+            this.lblProducts.Size = new System.Drawing.Size(69, 19);
+            this.lblProducts.TabIndex = 7;
+            this.lblProducts.Text = "Products";
+            // 
+            // lblSensors
+            // 
+            this.lblSensors.AutoSize = true;
+            this.lblSensors.Depth = 0;
+            this.lblSensors.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblSensors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblSensors.Location = new System.Drawing.Point(253, 334);
+            this.lblSensors.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblSensors.Name = "lblSensors";
+            this.lblSensors.Size = new System.Drawing.Size(64, 19);
+            this.lblSensors.TabIndex = 6;
+            this.lblSensors.Text = "Sensors";
+            // 
+            // lblControllers
+            // 
+            this.lblControllers.AutoSize = true;
+            this.lblControllers.Depth = 0;
+            this.lblControllers.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblControllers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblControllers.Location = new System.Drawing.Point(253, 176);
+            this.lblControllers.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblControllers.Name = "lblControllers";
+            this.lblControllers.Size = new System.Drawing.Size(84, 19);
+            this.lblControllers.TabIndex = 5;
+            this.lblControllers.Text = "Controllers";
+            // 
+            // lblActors
+            // 
+            this.lblActors.AutoSize = true;
+            this.lblActors.Depth = 0;
+            this.lblActors.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblActors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblActors.Location = new System.Drawing.Point(253, 15);
+            this.lblActors.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblActors.Name = "lblActors";
+            this.lblActors.Size = new System.Drawing.Size(54, 19);
+            this.lblActors.TabIndex = 4;
+            this.lblActors.Text = "Actors";
+            // 
+            // dgView_Sensors
+            // 
+            this.dgView_Sensors.AllowUserToAddRows = false;
+            this.dgView_Sensors.AllowUserToDeleteRows = false;
+            this.dgView_Sensors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_Sensors.Location = new System.Drawing.Point(257, 365);
+            this.dgView_Sensors.Name = "dgView_Sensors";
+            this.dgView_Sensors.ReadOnly = true;
+            this.dgView_Sensors.Size = new System.Drawing.Size(723, 113);
+            this.dgView_Sensors.TabIndex = 3;
+            // 
+            // dgView_Controllers
+            // 
+            this.dgView_Controllers.AllowUserToAddRows = false;
+            this.dgView_Controllers.AllowUserToDeleteRows = false;
+            this.dgView_Controllers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgView_Controllers.Location = new System.Drawing.Point(257, 209);
+            this.dgView_Controllers.Name = "dgView_Controllers";
+            this.dgView_Controllers.ReadOnly = true;
+            this.dgView_Controllers.Size = new System.Drawing.Size(723, 113);
+            this.dgView_Controllers.TabIndex = 2;
+            // 
             // lsBox_products
             // 
             this.lsBox_products.BackColor = System.Drawing.Color.Silver;
@@ -123,9 +201,12 @@
             // 
             // dgView_Actors
             // 
+            this.dgView_Actors.AllowUserToAddRows = false;
+            this.dgView_Actors.AllowUserToDeleteRows = false;
             this.dgView_Actors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgView_Actors.Location = new System.Drawing.Point(257, 47);
             this.dgView_Actors.Name = "dgView_Actors";
+            this.dgView_Actors.ReadOnly = true;
             this.dgView_Actors.Size = new System.Drawing.Size(723, 117);
             this.dgView_Actors.TabIndex = 0;
             // 
@@ -143,33 +224,66 @@
             // 
             // gpAddProducts
             // 
-            this.gpAddProducts.Controls.Add(this.materialSingleLineTextField2);
+            this.gpAddProducts.Controls.Add(this.txtCost_Insert);
+            this.gpAddProducts.Controls.Add(this.materialLabel6);
+            this.gpAddProducts.Controls.Add(this.txtComponentName_Insert);
             this.gpAddProducts.Controls.Add(this.materialLabel1);
             this.gpAddProducts.Controls.Add(this.btnSubmitNewProduct);
             this.gpAddProducts.Controls.Add(this.lblName);
             this.gpAddProducts.Controls.Add(this.lblType);
-            this.gpAddProducts.Controls.Add(this.cb_ProductGroup);
-            this.gpAddProducts.Controls.Add(this.cb_Type);
-            this.gpAddProducts.Location = new System.Drawing.Point(6, 6);
+            this.gpAddProducts.Controls.Add(this.cb_ProductGroup_Insert);
+            this.gpAddProducts.Controls.Add(this.cb_ComponentType_Insert);
+            this.gpAddProducts.Location = new System.Drawing.Point(25, 6);
             this.gpAddProducts.Name = "gpAddProducts";
-            this.gpAddProducts.Size = new System.Drawing.Size(337, 244);
+            this.gpAddProducts.Size = new System.Drawing.Size(337, 286);
             this.gpAddProducts.TabIndex = 8;
             this.gpAddProducts.TabStop = false;
             // 
-            // materialSingleLineTextField2
+            // txtCost_Insert
             // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(117, 93);
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(200, 23);
-            this.materialSingleLineTextField2.TabIndex = 12;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
+            this.txtCost_Insert.Depth = 0;
+            this.txtCost_Insert.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCost_Insert.Hint = "Enter Component Cost";
+            this.txtCost_Insert.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtCost_Insert.Location = new System.Drawing.Point(117, 179);
+            this.txtCost_Insert.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtCost_Insert.Name = "txtCost_Insert";
+            this.txtCost_Insert.PasswordChar = '\0';
+            this.txtCost_Insert.SelectedText = "";
+            this.txtCost_Insert.SelectionLength = 0;
+            this.txtCost_Insert.SelectionStart = 0;
+            this.txtCost_Insert.Size = new System.Drawing.Size(200, 23);
+            this.txtCost_Insert.TabIndex = 14;
+            this.txtCost_Insert.UseSystemPasswordChar = false;
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel6.Location = new System.Drawing.Point(6, 179);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(41, 19);
+            this.materialLabel6.TabIndex = 13;
+            this.materialLabel6.Text = "Cost";
+            // 
+            // txtComponentName_Insert
+            // 
+            this.txtComponentName_Insert.Depth = 0;
+            this.txtComponentName_Insert.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComponentName_Insert.Hint = "Enter Component Name";
+            this.txtComponentName_Insert.Location = new System.Drawing.Point(117, 88);
+            this.txtComponentName_Insert.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtComponentName_Insert.Name = "txtComponentName_Insert";
+            this.txtComponentName_Insert.PasswordChar = '\0';
+            this.txtComponentName_Insert.SelectedText = "";
+            this.txtComponentName_Insert.SelectionLength = 0;
+            this.txtComponentName_Insert.SelectionStart = 0;
+            this.txtComponentName_Insert.Size = new System.Drawing.Size(200, 23);
+            this.txtComponentName_Insert.TabIndex = 12;
+            this.txtComponentName_Insert.UseSystemPasswordChar = false;
             // 
             // materialLabel1
             // 
@@ -187,7 +301,7 @@
             // btnSubmitNewProduct
             // 
             this.btnSubmitNewProduct.Depth = 0;
-            this.btnSubmitNewProduct.Location = new System.Drawing.Point(117, 185);
+            this.btnSubmitNewProduct.Location = new System.Drawing.Point(117, 225);
             this.btnSubmitNewProduct.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSubmitNewProduct.Name = "btnSubmitNewProduct";
             this.btnSubmitNewProduct.Primary = true;
@@ -195,6 +309,7 @@
             this.btnSubmitNewProduct.TabIndex = 7;
             this.btnSubmitNewProduct.Text = "Submit";
             this.btnSubmitNewProduct.UseVisualStyleBackColor = true;
+            this.btnSubmitNewProduct.Click += new System.EventHandler(this.btnSubmitNewProduct_Click);
             // 
             // lblName
             // 
@@ -202,7 +317,7 @@
             this.lblName.Depth = 0;
             this.lblName.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblName.Location = new System.Drawing.Point(6, 93);
+            this.lblName.Location = new System.Drawing.Point(6, 88);
             this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(49, 19);
@@ -222,38 +337,40 @@
             this.lblType.TabIndex = 2;
             this.lblType.Text = "Type";
             // 
-            // cb_ProductGroup
+            // cb_ProductGroup_Insert
             // 
-            this.cb_ProductGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cb_ProductGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_ProductGroup.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_ProductGroup.FormattingEnabled = true;
-            this.cb_ProductGroup.Location = new System.Drawing.Point(117, 44);
-            this.cb_ProductGroup.Name = "cb_ProductGroup";
-            this.cb_ProductGroup.Size = new System.Drawing.Size(200, 24);
-            this.cb_ProductGroup.TabIndex = 5;
+            this.cb_ProductGroup_Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cb_ProductGroup_Insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_ProductGroup_Insert.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_ProductGroup_Insert.ForeColor = System.Drawing.Color.White;
+            this.cb_ProductGroup_Insert.FormattingEnabled = true;
+            this.cb_ProductGroup_Insert.Location = new System.Drawing.Point(117, 44);
+            this.cb_ProductGroup_Insert.Name = "cb_ProductGroup_Insert";
+            this.cb_ProductGroup_Insert.Size = new System.Drawing.Size(200, 24);
+            this.cb_ProductGroup_Insert.TabIndex = 5;
+            this.cb_ProductGroup_Insert.SelectedIndexChanged += new System.EventHandler(this.cb_ProductGroup_SelectedIndexChanged);
             // 
-            // cb_Type
+            // cb_ComponentType_Insert
             // 
-            this.cb_Type.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cb_Type.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_Type.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_Type.ForeColor = System.Drawing.Color.White;
-            this.cb_Type.FormattingEnabled = true;
-            this.cb_Type.Items.AddRange(new object[] {
+            this.cb_ComponentType_Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cb_ComponentType_Insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_ComponentType_Insert.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_ComponentType_Insert.ForeColor = System.Drawing.Color.White;
+            this.cb_ComponentType_Insert.FormattingEnabled = true;
+            this.cb_ComponentType_Insert.Items.AddRange(new object[] {
             "Actor",
             "Controller",
             "Sensor"});
-            this.cb_Type.Location = new System.Drawing.Point(117, 134);
-            this.cb_Type.Name = "cb_Type";
-            this.cb_Type.Size = new System.Drawing.Size(200, 24);
-            this.cb_Type.TabIndex = 3;
+            this.cb_ComponentType_Insert.Location = new System.Drawing.Point(117, 134);
+            this.cb_ComponentType_Insert.Name = "cb_ComponentType_Insert";
+            this.cb_ComponentType_Insert.Size = new System.Drawing.Size(200, 24);
+            this.cb_ComponentType_Insert.TabIndex = 3;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tabPage3.Controls.Add(this.materialRaisedButton3);
-            this.tabPage3.Controls.Add(this.txtSearchProd_Update);
+            this.tabPage3.Controls.Add(this.cbProductName_Update);
+            this.tabPage3.Controls.Add(this.btnSearchProduct);
             this.tabPage3.Controls.Add(this.lblSearchName_Update);
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -263,32 +380,29 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Update Products";
             // 
-            // materialRaisedButton3
+            // cbProductName_Update
             // 
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(142, 72);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(200, 36);
-            this.materialRaisedButton3.TabIndex = 12;
-            this.materialRaisedButton3.Text = "Search";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.cbProductName_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbProductName_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbProductName_Update.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProductName_Update.ForeColor = System.Drawing.Color.White;
+            this.cbProductName_Update.FormattingEnabled = true;
+            this.cbProductName_Update.Location = new System.Drawing.Point(142, 37);
+            this.cbProductName_Update.Name = "cbProductName_Update";
+            this.cbProductName_Update.Size = new System.Drawing.Size(200, 24);
+            this.cbProductName_Update.TabIndex = 13;
             // 
-            // txtSearchProd_Update
+            // btnSearchProduct
             // 
-            this.txtSearchProd_Update.Depth = 0;
-            this.txtSearchProd_Update.Hint = "";
-            this.txtSearchProd_Update.Location = new System.Drawing.Point(142, 37);
-            this.txtSearchProd_Update.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtSearchProd_Update.Name = "txtSearchProd_Update";
-            this.txtSearchProd_Update.PasswordChar = '\0';
-            this.txtSearchProd_Update.SelectedText = "";
-            this.txtSearchProd_Update.SelectionLength = 0;
-            this.txtSearchProd_Update.SelectionStart = 0;
-            this.txtSearchProd_Update.Size = new System.Drawing.Size(200, 23);
-            this.txtSearchProd_Update.TabIndex = 11;
-            this.txtSearchProd_Update.UseSystemPasswordChar = false;
+            this.btnSearchProduct.Depth = 0;
+            this.btnSearchProduct.Location = new System.Drawing.Point(142, 72);
+            this.btnSearchProduct.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSearchProduct.Name = "btnSearchProduct";
+            this.btnSearchProduct.Primary = true;
+            this.btnSearchProduct.Size = new System.Drawing.Size(200, 36);
+            this.btnSearchProduct.TabIndex = 12;
+            this.btnSearchProduct.Text = "Search";
+            this.btnSearchProduct.UseVisualStyleBackColor = true;
             // 
             // lblSearchName_Update
             // 
@@ -305,33 +419,63 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtProdName_Update);
+            this.groupBox1.Controls.Add(this.txtCost_Update);
+            this.groupBox1.Controls.Add(this.txtComponentName_Update);
+            this.groupBox1.Controls.Add(this.materialLabel7);
             this.groupBox1.Controls.Add(this.materialLabel2);
-            this.groupBox1.Controls.Add(this.materialRaisedButton1);
+            this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.materialLabel3);
             this.groupBox1.Controls.Add(this.materialLabel4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cbProductGroup_Update);
+            this.groupBox1.Controls.Add(this.cb_ComponentType_Update);
             this.groupBox1.Location = new System.Drawing.Point(25, 114);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(337, 244);
+            this.groupBox1.Size = new System.Drawing.Size(337, 283);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // txtProdName_Update
+            // txtCost_Update
             // 
-            this.txtProdName_Update.Depth = 0;
-            this.txtProdName_Update.Hint = "";
-            this.txtProdName_Update.Location = new System.Drawing.Point(117, 93);
-            this.txtProdName_Update.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtProdName_Update.Name = "txtProdName_Update";
-            this.txtProdName_Update.PasswordChar = '\0';
-            this.txtProdName_Update.SelectedText = "";
-            this.txtProdName_Update.SelectionLength = 0;
-            this.txtProdName_Update.SelectionStart = 0;
-            this.txtProdName_Update.Size = new System.Drawing.Size(200, 23);
-            this.txtProdName_Update.TabIndex = 12;
-            this.txtProdName_Update.UseSystemPasswordChar = false;
+            this.txtCost_Update.Depth = 0;
+            this.txtCost_Update.Hint = "Edit Cost";
+            this.txtCost_Update.Location = new System.Drawing.Point(117, 178);
+            this.txtCost_Update.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtCost_Update.Name = "txtCost_Update";
+            this.txtCost_Update.PasswordChar = '\0';
+            this.txtCost_Update.SelectedText = "";
+            this.txtCost_Update.SelectionLength = 0;
+            this.txtCost_Update.SelectionStart = 0;
+            this.txtCost_Update.Size = new System.Drawing.Size(200, 23);
+            this.txtCost_Update.TabIndex = 15;
+            this.txtCost_Update.UseSystemPasswordChar = false;
+            // 
+            // txtComponentName_Update
+            // 
+            this.txtComponentName_Update.Depth = 0;
+            this.txtComponentName_Update.Hint = "Edit Component Name";
+            this.txtComponentName_Update.Location = new System.Drawing.Point(117, 93);
+            this.txtComponentName_Update.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtComponentName_Update.Name = "txtComponentName_Update";
+            this.txtComponentName_Update.PasswordChar = '\0';
+            this.txtComponentName_Update.SelectedText = "";
+            this.txtComponentName_Update.SelectionLength = 0;
+            this.txtComponentName_Update.SelectionStart = 0;
+            this.txtComponentName_Update.Size = new System.Drawing.Size(200, 23);
+            this.txtComponentName_Update.TabIndex = 12;
+            this.txtComponentName_Update.UseSystemPasswordChar = false;
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel7.Location = new System.Drawing.Point(6, 178);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(41, 19);
+            this.materialLabel7.TabIndex = 14;
+            this.materialLabel7.Text = "Cost";
             // 
             // materialLabel2
             // 
@@ -346,17 +490,18 @@
             this.materialLabel2.TabIndex = 4;
             this.materialLabel2.Text = "Product Group";
             // 
-            // materialRaisedButton1
+            // btnUpdate
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(117, 185);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(200, 36);
-            this.materialRaisedButton1.TabIndex = 7;
-            this.materialRaisedButton1.Text = "Update";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.btnUpdate.Depth = 0;
+            this.btnUpdate.Location = new System.Drawing.Point(117, 223);
+            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Primary = true;
+            this.btnUpdate.Size = new System.Drawing.Size(200, 36);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // materialLabel3
             // 
@@ -384,38 +529,39 @@
             this.materialLabel4.TabIndex = 2;
             this.materialLabel4.Text = "Type";
             // 
-            // comboBox1
+            // cbProductGroup_Update
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 5;
+            this.cbProductGroup_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbProductGroup_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbProductGroup_Update.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProductGroup_Update.ForeColor = System.Drawing.Color.White;
+            this.cbProductGroup_Update.FormattingEnabled = true;
+            this.cbProductGroup_Update.Location = new System.Drawing.Point(117, 44);
+            this.cbProductGroup_Update.Name = "cbProductGroup_Update";
+            this.cbProductGroup_Update.Size = new System.Drawing.Size(200, 24);
+            this.cbProductGroup_Update.TabIndex = 5;
             // 
-            // comboBox2
+            // cb_ComponentType_Update
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cb_ComponentType_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cb_ComponentType_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cb_ComponentType_Update.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_ComponentType_Update.ForeColor = System.Drawing.Color.White;
+            this.cb_ComponentType_Update.FormattingEnabled = true;
+            this.cb_ComponentType_Update.Items.AddRange(new object[] {
             "Actor",
             "Controller",
             "Sensor"});
-            this.comboBox2.Location = new System.Drawing.Point(117, 134);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 24);
-            this.comboBox2.TabIndex = 3;
+            this.cb_ComponentType_Update.Location = new System.Drawing.Point(117, 134);
+            this.cb_ComponentType_Update.Name = "cb_ComponentType_Update";
+            this.cb_ComponentType_Update.Size = new System.Drawing.Size(200, 24);
+            this.cb_ComponentType_Update.TabIndex = 3;
             // 
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tabPage4.Controls.Add(this.materialRaisedButton2);
-            this.tabPage4.Controls.Add(this.materialSingleLineTextField1);
+            this.tabPage4.Controls.Add(this.cbProductName_Delete);
+            this.tabPage4.Controls.Add(this.btnDeleteProduct);
             this.tabPage4.Controls.Add(this.materialLabel5);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -424,32 +570,30 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Delete Products";
             // 
-            // materialRaisedButton2
+            // cbProductName_Delete
             // 
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(170, 77);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(200, 36);
-            this.materialRaisedButton2.TabIndex = 16;
-            this.materialRaisedButton2.Text = "Delete";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.cbProductName_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbProductName_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbProductName_Delete.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProductName_Delete.ForeColor = System.Drawing.Color.White;
+            this.cbProductName_Delete.FormattingEnabled = true;
+            this.cbProductName_Delete.Location = new System.Drawing.Point(142, 37);
+            this.cbProductName_Delete.Name = "cbProductName_Delete";
+            this.cbProductName_Delete.Size = new System.Drawing.Size(200, 24);
+            this.cbProductName_Delete.TabIndex = 17;
             // 
-            // materialSingleLineTextField1
+            // btnDeleteProduct
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(170, 42);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(200, 23);
-            this.materialSingleLineTextField1.TabIndex = 15;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.btnDeleteProduct.Depth = 0;
+            this.btnDeleteProduct.Location = new System.Drawing.Point(142, 72);
+            this.btnDeleteProduct.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Primary = true;
+            this.btnDeleteProduct.Size = new System.Drawing.Size(200, 36);
+            this.btnDeleteProduct.TabIndex = 16;
+            this.btnDeleteProduct.Text = "Delete";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // materialLabel5
             // 
@@ -457,7 +601,7 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(49, 42);
+            this.materialLabel5.Location = new System.Drawing.Point(21, 37);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(105, 19);
@@ -476,74 +620,6 @@
             this.materialTabSelector1.TabIndex = 0;
             this.materialTabSelector1.Text = "tabSelector";
             // 
-            // dgView_Controllers
-            // 
-            this.dgView_Controllers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView_Controllers.Location = new System.Drawing.Point(257, 209);
-            this.dgView_Controllers.Name = "dgView_Controllers";
-            this.dgView_Controllers.Size = new System.Drawing.Size(723, 113);
-            this.dgView_Controllers.TabIndex = 2;
-            // 
-            // dgView_Sensors
-            // 
-            this.dgView_Sensors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView_Sensors.Location = new System.Drawing.Point(257, 365);
-            this.dgView_Sensors.Name = "dgView_Sensors";
-            this.dgView_Sensors.Size = new System.Drawing.Size(723, 113);
-            this.dgView_Sensors.TabIndex = 3;
-            // 
-            // lblActors
-            // 
-            this.lblActors.AutoSize = true;
-            this.lblActors.Depth = 0;
-            this.lblActors.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblActors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblActors.Location = new System.Drawing.Point(253, 15);
-            this.lblActors.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblActors.Name = "lblActors";
-            this.lblActors.Size = new System.Drawing.Size(54, 19);
-            this.lblActors.TabIndex = 4;
-            this.lblActors.Text = "Actors";
-            // 
-            // lblControllers
-            // 
-            this.lblControllers.AutoSize = true;
-            this.lblControllers.Depth = 0;
-            this.lblControllers.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblControllers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblControllers.Location = new System.Drawing.Point(253, 176);
-            this.lblControllers.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblControllers.Name = "lblControllers";
-            this.lblControllers.Size = new System.Drawing.Size(84, 19);
-            this.lblControllers.TabIndex = 5;
-            this.lblControllers.Text = "Controllers";
-            // 
-            // lblSensors
-            // 
-            this.lblSensors.AutoSize = true;
-            this.lblSensors.Depth = 0;
-            this.lblSensors.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblSensors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblSensors.Location = new System.Drawing.Point(253, 334);
-            this.lblSensors.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblSensors.Name = "lblSensors";
-            this.lblSensors.Size = new System.Drawing.Size(64, 19);
-            this.lblSensors.TabIndex = 6;
-            this.lblSensors.Text = "Sensors";
-            // 
-            // lblProducts
-            // 
-            this.lblProducts.AutoSize = true;
-            this.lblProducts.Depth = 0;
-            this.lblProducts.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblProducts.Location = new System.Drawing.Point(6, 15);
-            this.lblProducts.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblProducts.Name = "lblProducts";
-            this.lblProducts.Size = new System.Drawing.Size(69, 19);
-            this.lblProducts.TabIndex = 7;
-            this.lblProducts.Text = "Products";
-            // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,6 +633,8 @@
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Sensors)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgView_Controllers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Actors)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.gpAddProducts.ResumeLayout(false);
@@ -567,8 +645,6 @@
             this.groupBox1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_Controllers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView_Sensors)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -583,27 +659,25 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dgView_Actors;
         private MaterialSkin.Controls.MaterialLabel lblName;
-        private System.Windows.Forms.ComboBox cb_ProductGroup;
+        private System.Windows.Forms.ComboBox cb_ProductGroup_Insert;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.ComboBox cb_Type;
+        private System.Windows.Forms.ComboBox cb_ComponentType_Insert;
         private MaterialSkin.Controls.MaterialLabel lblType;
         private System.Windows.Forms.GroupBox gpAddProducts;
         private MaterialSkin.Controls.MaterialRaisedButton btnSubmitNewProduct;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearchProd_Update;
         private MaterialSkin.Controls.MaterialLabel lblSearchName_Update;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtProdName_Update;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private System.Windows.Forms.ComboBox cbProductGroup_Update;
+        private System.Windows.Forms.ComboBox cb_ComponentType_Update;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtComponentName_Update;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSearchProduct;
+        private MaterialSkin.Controls.MaterialRaisedButton btnDeleteProduct;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtComponentName_Insert;
         private System.Windows.Forms.ListBox lsBox_products;
         private System.Windows.Forms.DataGridView dgView_Sensors;
         private System.Windows.Forms.DataGridView dgView_Controllers;
@@ -611,5 +685,11 @@
         private MaterialSkin.Controls.MaterialLabel lblControllers;
         private MaterialSkin.Controls.MaterialLabel lblActors;
         private MaterialSkin.Controls.MaterialLabel lblProducts;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCost_Insert;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private System.Windows.Forms.ComboBox cbProductName_Update;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtCost_Update;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private System.Windows.Forms.ComboBox cbProductName_Delete;
     }
 }
