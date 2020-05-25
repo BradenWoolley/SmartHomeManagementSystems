@@ -17,16 +17,14 @@ namespace SEN381
 {
     public partial class Products : UserControl
     {
-        //TODO - Simplify later with Product Management class
-        //Add list box for display later
-        BindingSource bs = new BindingSource();
 
+        BindingSource bs = new BindingSource();
         BindingSource bsActors = new BindingSource();
         BindingSource bsControllers = new BindingSource();
         BindingSource bsSensors = new BindingSource();
         BindingSource bsComponents = new BindingSource();
 
-        List<Product> catalogue = new List<Product>();
+        List<Product> catalogue;// = new List<Product>();
 
         Product product;
 
@@ -38,6 +36,19 @@ namespace SEN381
         public Products()
         {
             InitializeComponent();
+            RefreshAll();
+        }
+
+        private void lsBox_products_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshActors();
+            RefreshControllers();
+            RefreshSensors();
+        }
+
+        void RefreshAll()
+        {
+            bs.Clear();
             catalogue = new Product().GetProducts();
             bs.DataSource = catalogue;
 
@@ -50,8 +61,6 @@ namespace SEN381
             cbProductGroup_Update.DataSource = bs;
             cbProductGroup_Update.DisplayMember = "ProductSuite";
 
-           
-
             RefreshActors();
             RefreshControllers();
             RefreshSensors();
@@ -59,16 +68,10 @@ namespace SEN381
             AllComponents();
         }
 
-        private void lsBox_products_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RefreshActors();
-            RefreshControllers();
-            RefreshSensors();
-        }
-
         void RefreshActors()
         {
             bsActors.Clear();
+            actors.Clear();
 
             product = (Product)bs.Current;
 
@@ -83,6 +86,7 @@ namespace SEN381
         void RefreshControllers()
         {
             bsControllers.Clear();
+            controllers.Clear();
 
             if (product != null)
             {
@@ -95,6 +99,7 @@ namespace SEN381
         void RefreshSensors()
         {
             bsSensors.Clear();
+            sensors.Clear();
 
             if (product != null)
             {
@@ -110,33 +115,25 @@ namespace SEN381
             cb_ProductGroup_Insert.DisplayMember = "ProductSuite";
         }
 
-        //TODO ~ Redo this method and create Stored Procedure to handle its request
         void AllComponents()
         {
             bsComponents.Clear();
+            
 
-            if(product != null)
+            if (product != null)
             {
                 List<BusinessLayer.Component> components = new List<BusinessLayer.Component>();
+                components.Clear();
 
-                foreach (var item in actors)
-                {
-                    components.Add(new BusinessLayer.Component(item.ID, item.Name, item.Cost, "Actor"));
-                }
-
-                foreach (var item in controllers)
-                {
-                    components.Add(new BusinessLayer.Component(item.ID, item.Name, item.Cost, "Controller"));
-                }
-
-                foreach (var item in sensors)
-                {
-                    components.Add(new BusinessLayer.Component(item.ID, item.Name, item.Cost, "Sensor"));
-                }
+                components = new BusinessLayer.Component().GetComponents();
 
                 bsComponents.DataSource = components;
+
                 cbProductName_Update.DataSource = bsComponents;
                 cbProductName_Update.DisplayMember = "Name";
+
+                cbProductName_Delete.DataSource = bsComponents;
+                cbProductName_Delete.DisplayMember = "Name";
             }
         }
 
@@ -176,10 +173,21 @@ namespace SEN381
             if(!string.IsNullOrWhiteSpace(txtComponentName_Insert.Text) && txtComponentName_Insert.Text.Length > 0 
                 && !string.IsNullOrWhiteSpace(txtCost_Insert.Text) && double.TryParse(txtCost_Insert.Text, out costDouble) && double.Parse(txtCost_Insert.Text.ToString()) >= 0.0 && cb_ComponentType_Insert.SelectedIndex >= 0)
             {
-                MessageBox.Show("ALL FIELDS VALID");
+
+                
+                ProductManagement manager = new ProductManagement();
+                manager.Insert(txtComponentName_Insert.Text, cb_ComponentType_Insert.SelectedIndex + 1, double.Parse(txtCost_Insert.Text), product.ProductId);
+
+                RefreshAll();
+
+                MessageBox.Show($"{txtComponentName_Insert.Text} successfully added");
+                txtComponentName_Insert.Clear();
+                txtCost_Insert.Clear();
+
             }
         }
 
+        //TODO Implement Update Functionality
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //Prevent invalid component
@@ -228,19 +236,22 @@ namespace SEN381
             }
 
         }
-
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            //Prevent invalid component
-            if (cbProductName_Update.SelectedIndex < 0)
-            {
-                MessageBox.Show("Cannot delete non-existent product");
-            }
+            ProductManagement management = new ProductManagement();
+            BusinessLayer.Component comp = (BusinessLayer.Component)cbProductName_Delete.SelectedItem;
+            //WATCH STORED PROCEDURE RELATIONSHIP ORDER!!!
+            management.Delete(comp.ID);
 
-            else
-            {
-                MessageBox.Show("Cannot delete non-existent product");
-            }
+            RefreshAll();
+
+            MessageBox.Show($"{comp.Name} successfully deleted", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+        }
+
+        private void cbProductName_Update_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BusinessLayer.Component comp = (BusinessLayer.Component)cbProductName_Update.SelectedItem;
+            txtComponentName_Update.Text = comp.Name;
         }
     }
 }

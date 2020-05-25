@@ -41,7 +41,19 @@ namespace BusinessLayer
         //Default Constructor
         public Customer() { }
 
-
+        public Customer(int customerID, string name, string surname, string email, string address, int phoneNumber
+            , string bankingDetails, double amountDue)
+        {
+            CustomerID = customerID;
+            Name = name;
+            Surname = surname;
+            Email = email;
+            Address = address;
+            PhoneNumber = phoneNumber;
+            BillingDate = billingDate;
+            BankingDetails = bankingDetails;
+            AmountDue = amountDue;
+        }
 
         public Customer(int customerID, string name, string surname, string email, string address, int phoneNumber
             , string bankingDetails, double amountDue, int productCount, List<Actor> ownedActors, List<Sensor> ownedSensors, List<Controller> ownedControllers)
@@ -59,6 +71,26 @@ namespace BusinessLayer
             OwnedActors = ownedActors;
             OwnedSensors = ownedSensors;
             OwnedControllers = ownedControllers;
+        }
+
+        public List<Customer> GetCustomers()
+        {
+            List<Customer> customers = new List<Customer>();
+
+            DataSet rawData = new DataAccess().ReadProc("GetCustomers");
+            foreach (DataRow item in rawData.Tables["Table"].Rows)
+            {
+                customers.Add(new Customer(int.Parse(item["ID"].ToString()),
+                    item["Name"].ToString(),
+                    item["Surname"].ToString(),
+                    item["Email"].ToString(),
+                    item["Address"].ToString(),
+                    int.Parse(item["Telephone"].ToString()),
+                    item["BankingDetails"].ToString(),
+                    double.Parse(item["AmountDue"].ToString())
+                    ));
+            }
+            return customers;
         }
     }
 }

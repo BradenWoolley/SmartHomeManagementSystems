@@ -13,15 +13,16 @@ namespace SEN381
 {
     public partial class Customers : UserControl
     {
-        BindingSource bs;
+        BindingSource bs = new BindingSource();
 
         List<Customer> customers;
+        Customer customer;
         public Customers()
         {
             InitializeComponent();
-            //customers = new ClientManagement().ViewAllCustomers();
-            //bs.DataSource = customers;
-            dgView_Customer.DataSource = bs;
+            customers = new Customer().GetCustomers();
+            bs.DataSource = customers;
+            dgView_Customers.DataSource = bs;
         }
     }
 }

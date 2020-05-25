@@ -358,9 +358,9 @@
             this.cb_ComponentType_Insert.ForeColor = System.Drawing.Color.White;
             this.cb_ComponentType_Insert.FormattingEnabled = true;
             this.cb_ComponentType_Insert.Items.AddRange(new object[] {
-            "Actor",
             "Controller",
-            "Sensor"});
+            "Sensor",
+            "Actor"});
             this.cb_ComponentType_Insert.Location = new System.Drawing.Point(117, 134);
             this.cb_ComponentType_Insert.Name = "cb_ComponentType_Insert";
             this.cb_ComponentType_Insert.Size = new System.Drawing.Size(200, 24);
@@ -391,6 +391,7 @@
             this.cbProductName_Update.Name = "cbProductName_Update";
             this.cbProductName_Update.Size = new System.Drawing.Size(200, 24);
             this.cbProductName_Update.TabIndex = 13;
+            this.cbProductName_Update.SelectedIndexChanged += new System.EventHandler(this.cbProductName_Update_SelectedIndexChanged);
             // 
             // btnSearchProduct
             // 
@@ -549,9 +550,9 @@
             this.cb_ComponentType_Update.ForeColor = System.Drawing.Color.White;
             this.cb_ComponentType_Update.FormattingEnabled = true;
             this.cb_ComponentType_Update.Items.AddRange(new object[] {
-            "Actor",
             "Controller",
-            "Sensor"});
+            "Sensor",
+            "Actor"});
             this.cb_ComponentType_Update.Location = new System.Drawing.Point(117, 134);
             this.cb_ComponentType_Update.Name = "cb_ComponentType_Update";
             this.cb_ComponentType_Update.Size = new System.Drawing.Size(200, 24);

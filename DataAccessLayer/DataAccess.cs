@@ -10,9 +10,6 @@ namespace DataAccessLayer
 {
     public class DataAccess
     {
-        //TODO ~ Research whether it's best for all DataAccess() Methods to be static or non-static
-
-        //Data Source=REACTOR-5\SQLEXPRESS;Initial Catalog=SMSManagementSystem;Integrated Security=True
 
         SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
 
@@ -26,7 +23,6 @@ namespace DataAccessLayer
         /// <summary>
         /// Reading Data
         /// </summary>
-        //Universal Methods
        public DataSet ReadProc(string procedure)
        {
             SqlConnection conn = new SqlConnection(connection.ToString());
@@ -120,67 +116,6 @@ namespace DataAccessLayer
             return rawData;
         } //Reads all from Components
 
-        public DataSet ReadProductData(string tableName, string ID)
-        {
-            DataSet rawData = new DataSet();
-            using (SqlConnection conn = new SqlConnection(connection.ToString()))
-            {
-                string qry = string.Format("SELECT * FROM {0} WHERE ID = {1}", tableName, ID);
-                conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(qry, conn);
-                adapter.FillSchema(rawData, SchemaType.Source, tableName);//sets structure
-                adapter.Fill(rawData, tableName);//gets actual data from query result
-            }
-            return rawData;
-        }
-
-        //Currently unused, but being performed within ProductCatalogue.cs
-        public DataSet ReadAllProducts()
-        {
-            //TODO switch to stored procedure
-            string tableName = "AllProducts;";
-            DataSet rawData = new DataSet();
-            using (SqlConnection conn = new SqlConnection(connection.ToString()))
-            {
-                string qry = string.Format("SELECT tblProductCatalogue.ProductID, tblProductCatalogue.ProductSuite, tblComponent.ComponentID tblComponent.Name, tblComponent.ComponentType "
-                    + "FROM((tblProductCatalogue INNER JOIN tblProductComponents ON tblProductCatalogue.ProductID = tblProductComponents.ProductID)"
-                    + "INNER JOIN tblComponent ON tblProductComponents.ComponentID = tblComponent.ComponentID);");
-
-                conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(qry, conn);
-
-                adapter.FillSchema(rawData, SchemaType.Source, tableName);//sets structure
-                adapter.Fill(rawData, tableName);//gets actual data from query result
-            }
-            return rawData;
-        }
-
-        public DataSet ReadAllCustomers()
-        {
-            //TODO switch to stored procedure and fix db naming changes
-            string tableName = "tblCustomer";
-            DataSet rawData = new DataSet();
-            using (SqlConnection conn = new SqlConnection(connection.ToString()))
-            {
-                string qry = string.Format("SELECT tblCustomer.ID, tblCustomer.Name, tblCustomer.Surname, " +
-                    "tblCustomerDetails.Email, tblCustomerDetails.Email, tblCustomerDetails.Address, tblCustomerDetails.Telephone, tblCustomerPayment.BankingDetails, tblCustomerPayment.AmountDue," +
-                    " tblProductCatalogue.ID, tblProductCatalogue.ProductSuite, tblComponent.ID tblComponent.Name, tblComponent.ComponentType "
-                    + "FROM((((tblCustomer INNER JOIN tblCustomerDetails ON tblCustomer.ID = tblCustomerDetails.CustomerID)"
-                    + "INNER JOIN tblCustomerProduct ON tblCustomer.ID = tblCustomerProduct.CustomerID)"
-                    + "INNER JOIN tblProductComponents ON tblProductCatalogue.ID = tblProductComponents.ProductID)"
-                    + "INNER JOIN tblCustomerProduct ON tblProductCatalogue.ID = tblCustomerProduct.ProductID)"
-                    + "INNER JOIN tblComponent ON tblProductComponents.ComponentID = tblComponent.ID) "
-                    + "ORDER BY tblCustomer.ID;");
-
-
-                conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(qry, conn);
-                adapter.FillSchema(rawData, SchemaType.Source, tableName);//sets structure
-                adapter.Fill(rawData, tableName);//gets actual data from query result
-            }
-            return rawData;
-        }
-
         public DataSet ReadAllTechSupport()
         {
             //TODO change SQL
@@ -203,72 +138,20 @@ namespace DataAccessLayer
         /// <summary>
         /// Inserts
         /// </summary>
-
-        public void NewProduct(string productSuite)
+        /// 
+        public void Insert(string name, int componentType, double cost, int productGroup)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
 
             try
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand("InsertNewProductSuite", conn);
+                SqlCommand command = new SqlCommand("NewComponent", conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@ProductSuite", productSuite);
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//Inserts a new product type
-
-        public void NewComponent(string componentName, int componentType)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-
-            try
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand("InsertNewComponent", conn);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Name", componentName);
-                command.Parameters.AddWithValue("@Type", componentType);
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//Inserts a new component with predetermined type
-
-        public void NewComponent(string componentName, int componentType, double cost)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-
-            try
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand("InsertNewComponentWithCost", conn);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Name", componentName);
+                command.Parameters.AddWithValue("@Name", name);
                 command.Parameters.AddWithValue("@Type", componentType);
                 command.Parameters.AddWithValue("@Cost", cost);
+                command.Parameters.AddWithValue("@ProductID", productGroup);
                 command.ExecuteNonQuery();
             }
             catch (SqlException se)
@@ -283,25 +166,7 @@ namespace DataAccessLayer
                     conn.Close();
                 }
             }
-        }//inserts a new component with a custom price
-
-        /*public DataSet SearchProduct(string name)
-        {
-            string tableName = "tblProductCatalogue";
-            DataSet rawData = new DataSet();
-            using (SqlConnection conn = new SqlConnection(connection.ToString()))
-            {
-                string qry = string.Format("SELECT tblProductCatalogue.ProductID, tblProductCatalogue.ProductSuite, tblComponent.ComponentID tblComponent.Name, tblComponent.ComponentType "
-                    + "FROM((tblProductCatalogueINNER JOIN tblProductComponents ON tblProductCatalogue.ProductID = tblProductComponents.ProductID)"
-                    + "INNER JOIN tblComponent ON tblProductComponents.ComponentID = tblComponent.ComponentID);");
-
-                conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(qry, conn);
-                adapter.FillSchema(rawData, SchemaType.Source, tableName);//sets structure
-                adapter.Fill(rawData, tableName);//gets actual data from query result
-            }
-            return rawData;
-        }*/
+        }
 
         public void NewCustomer(string fName, string sName)
         {
@@ -732,5 +597,30 @@ namespace DataAccessLayer
             }
             return rawData;
         }//Default Delete
+
+        public void Delete(string procedure, int id)
+        {
+            SqlConnection conn = new SqlConnection(connection.ToString());
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(procedure, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ID", id);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException se)
+            {
+                //TODO exception back to presentation layer
+
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }
