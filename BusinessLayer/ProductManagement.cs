@@ -11,21 +11,23 @@ namespace BusinessLayer
     {
         DataAccess access;
 
+        public ProductManagement()
+        {
+            access = new DataAccess();
+        }
 
         public void Insert(string name, int componentType, double cost, int productGroup)
         {
-            access = new DataAccess();
             access.Insert(name, componentType, cost, productGroup);
         }
 
-        public void Update(int id, string name)
+        public void Update(int id, string name, int componentType, double cost, int productGroup)
         {
-            
+            access.Update("UpdateComponent", id, name, componentType, cost, productGroup);
         }
 
         public void Delete(int id)
         {
-            access = new DataAccess();
             access.Delete("DeleteComponent", id);
         }
 

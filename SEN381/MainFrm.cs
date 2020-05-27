@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using MaterialSkin;
-using BusinessLayer;
 
 
 namespace SEN381
@@ -20,9 +19,9 @@ namespace SEN381
         public MainFrm()
         {
             InitializeComponent();
-            MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
+            MaterialSkinManager skinManager = MaterialSkinManager.Instance;
             skinManager.Theme = MaterialSkinManager.Themes.DARK;
-            skinManager.ColorScheme = new ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, MaterialSkin.Primary.Blue500, Accent.Teal100, TextShade.WHITE);
+            skinManager.ColorScheme = new ColorScheme(Primary.DeepPurple400, Primary.DeepPurple600, Primary.Blue500, Accent.Teal100, TextShade.WHITE);
         }
     }
 }

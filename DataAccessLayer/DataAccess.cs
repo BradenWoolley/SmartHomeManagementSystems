@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -321,19 +318,20 @@ namespace DataAccessLayer
         /// Updates
         /// </summary>
 
-        //TODO - edit method
-        public void EditCustomer(int id, string fName, string sName)
+        public void Update(string procedure, int id, string name, int componentType, double cost, int productGroup)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
 
             try
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand("UpdateCustomerName", conn);
+                SqlCommand command = new SqlCommand(procedure, conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@CustomerID", id);
-                command.Parameters.AddWithValue("@Name", fName);
-                command.Parameters.AddWithValue("@Surname", sName);
+                command.Parameters.AddWithValue("@ID", id);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Type", componentType);
+                command.Parameters.AddWithValue("@Cost", cost);
+                command.Parameters.AddWithValue("@ProductID", productGroup);
                 command.ExecuteNonQuery();
             }
             catch (SqlException se)
@@ -348,235 +346,7 @@ namespace DataAccessLayer
                     conn.Close();
                 }
             }
-        }//Updates customer name and surname only ~ basic information
-
-        public void EditCustomer(int id, string email)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-
-            try
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand("UpdateCustomerName", conn);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@CustomerID", id);
-                command.Parameters.AddWithValue("@Email", email);
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//Updates email of customer only
-
-        public void EditCustomer(string address, int id)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-
-            try
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand("UpdateCustomerName", conn);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@CustomerID", id);
-                command.Parameters.AddWithValue("@Email", address);
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//updates customer address only
-
-        public void EditCustomer(int id, string email, string address, string tableName)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            tableName = "tblCustomerDetails";
-            try
-            {
-                string qry = string.Format("UPDATE {0} SET Email = {1}, Address = {2} WHERE CustomerID = {3}", tableName, email, address, id);
-                SqlCommand cmd = new SqlCommand(qry, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//update both email and address of customer
-
-        public void EditProduct(int id, string name)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            try
-            {
-                string qry = string.Format("UPDATE tblProductSuite SET ProductSuite = {0}, WHERE ID = {1}", name, id);
-                SqlCommand cmd = new SqlCommand(qry, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//update product name
-
-        public void EditComponent(int id, string name)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            try
-            {
-                string qry = string.Format("UPDATE tblComponent SET Name = {0}, WHERE ID = {1}", name, id);
-                SqlCommand cmd = new SqlCommand(qry, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//update component name
-
-        public void EditComponent(int id, int type)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            try
-            {
-                string qry = string.Format("UPDATE tblComponent SET ComponentType = {0}, WHERE ID = {1}", type, id);
-                SqlCommand cmd = new SqlCommand(qry, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//update component type
-
-        public void EditComponent(int id, double cost)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            try
-            {
-                string qry = string.Format("UPDATE tblComponent SET Cost = {0} WHERE ID = {1}", cost, id);
-                SqlCommand cmd = new SqlCommand(qry, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//update component cost
-
-        public void EditComponent(int id, string name, int type)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            try
-            {
-                string qry = string.Format("UPDATE tblComponent SET Name = {0}, ComponentType = {1} WHERE ID = {2}, ", name, type, id);
-                SqlCommand cmd = new SqlCommand(qry, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//update component name and type
-
-        public void EditComponent(int id, string name, int type, double cost)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-            try
-            {
-                string qry = string.Format("UPDATE tblComponent SET Name = {0}, ComponentType = {1}, Cost = {2} WHERE ID = {3}, ", name, type, cost, id);
-                SqlCommand cmd = new SqlCommand(qry, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//update all component attributes
+        }
 
         /// <summary>
         /// DELETE DATA No deleting entire tables will be implemented

@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
-using MaterialSkin.Animations;
-using MaterialSkin;
 using BusinessLayer;
-using Syncfusion.Windows.Forms.Interop;
 
 namespace SEN381
 {
@@ -25,13 +16,13 @@ namespace SEN381
         BindingSource bsComponents = new BindingSource();
 
         List<Product> catalogue;// = new List<Product>();
-
-        Product product;
-
         List<Actor> actors = new List<Actor>();
         List<Controller> controllers = new List<Controller>();
         List<Sensor> sensors = new List<Sensor>();
-        
+
+        ProductManagement management = new ProductManagement();
+        Product product;
+
 
         public Products()
         {
@@ -46,6 +37,7 @@ namespace SEN381
             RefreshSensors();
         }
 
+        //Clears and resets all bindingsources
         void RefreshAll()
         {
             bs.Clear();
@@ -67,7 +59,7 @@ namespace SEN381
 
             AllComponents();
         }
-
+        //Clears and resets Actos bindingsources
         void RefreshActors()
         {
             bsActors.Clear();
@@ -82,7 +74,7 @@ namespace SEN381
                 dgView_Actors.DataSource = bsActors;
             }
         }
-
+        //Clears and resets Controller bindingsources
         void RefreshControllers()
         {
             bsControllers.Clear();
@@ -95,7 +87,7 @@ namespace SEN381
                 dgView_Controllers.DataSource = bsControllers;
             }
         }
-
+        //Clears and resets Sensor bindingsources
         void RefreshSensors()
         {
             bsSensors.Clear();
@@ -114,7 +106,7 @@ namespace SEN381
             cb_ProductGroup_Insert.DataSource = bs;
             cb_ProductGroup_Insert.DisplayMember = "ProductSuite";
         }
-
+        //Refreshes comboboxes datasource
         void AllComponents()
         {
             bsComponents.Clear();
@@ -136,7 +128,7 @@ namespace SEN381
                 cbProductName_Delete.DisplayMember = "Name";
             }
         }
-
+        //Insert new component after checking fields ~ TODO move index increment to business layer
         private void btnSubmitNewProduct_Click(object sender, EventArgs e)
         {
             //Checks if component is null
@@ -173,10 +165,7 @@ namespace SEN381
             if(!string.IsNullOrWhiteSpace(txtComponentName_Insert.Text) && txtComponentName_Insert.Text.Length > 0 
                 && !string.IsNullOrWhiteSpace(txtCost_Insert.Text) && double.TryParse(txtCost_Insert.Text, out costDouble) && double.Parse(txtCost_Insert.Text.ToString()) >= 0.0 && cb_ComponentType_Insert.SelectedIndex >= 0)
             {
-
-                
-                ProductManagement manager = new ProductManagement();
-                manager.Insert(txtComponentName_Insert.Text, cb_ComponentType_Insert.SelectedIndex + 1, double.Parse(txtCost_Insert.Text), product.ProductId);
+                management.Insert(txtComponentName_Insert.Text, cb_ComponentType_Insert.SelectedIndex + 1, double.Parse(txtCost_Insert.Text), product.ProductId);
 
                 RefreshAll();
 
@@ -187,7 +176,7 @@ namespace SEN381
             }
         }
 
-        //TODO Implement Update Functionality
+        //TODO Correct ComboBox name refresh and move index increment to business layer
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //Prevent invalid component
@@ -232,13 +221,20 @@ namespace SEN381
                 && double.Parse(txtCost_Update.Text.ToString()) >= 0.0 && cb_ComponentType_Update.SelectedIndex >= 0
                 && cbProductName_Update.SelectedIndex >= 0)
             {
-                MessageBox.Show("ALL FIELDS VALID");
+                BusinessLayer.Component comp = (BusinessLayer.Component)cbProductName_Update.SelectedItem;
+                if (comp != null)
+                {
+                    management.Update(comp.ID, txtComponentName_Update.Text, (cb_ComponentType_Update.SelectedIndex+1), double.Parse(txtCost_Update.Text), (cbProductGroup_Update.SelectedIndex+1));
+                    MessageBox.Show($"Updated {comp.Name} To {txtComponentName_Update.Text} {txtCost_Update.Text} {cb_ComponentType_Update.SelectedItem.ToString()}");
+                }
+                    
             }
 
         }
+        //Deletes component from database
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            ProductManagement management = new ProductManagement();
+            
             BusinessLayer.Component comp = (BusinessLayer.Component)cbProductName_Delete.SelectedItem;
             //WATCH STORED PROCEDURE RELATIONSHIP ORDER!!!
             management.Delete(comp.ID);
@@ -251,7 +247,11 @@ namespace SEN381
         private void cbProductName_Update_SelectedIndexChanged(object sender, EventArgs e)
         {
             BusinessLayer.Component comp = (BusinessLayer.Component)cbProductName_Update.SelectedItem;
-            txtComponentName_Update.Text = comp.Name;
+            if(comp != null)
+            {
+                txtComponentName_Update.Text = comp.Name;
+            }
+               
         }
     }
 }
