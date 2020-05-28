@@ -106,6 +106,7 @@ namespace SEN381
             cb_ProductGroup_Insert.DataSource = bs;
             cb_ProductGroup_Insert.DisplayMember = "ProductSuite";
         }
+
         //Refreshes comboboxes datasource
         void AllComponents()
         {
@@ -176,7 +177,7 @@ namespace SEN381
             }
         }
 
-        //TODO Correct ComboBox name refresh and move index increment to business layer
+        //TODO Correct multi-product group updates and move index increment to business layer
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //Prevent invalid component
@@ -225,6 +226,7 @@ namespace SEN381
                 if (comp != null)
                 {
                     management.Update(comp.ID, txtComponentName_Update.Text, (cb_ComponentType_Update.SelectedIndex+1), double.Parse(txtCost_Update.Text), (cbProductGroup_Update.SelectedIndex+1));
+                    RefreshAll();
                     MessageBox.Show($"Updated {comp.Name} To {txtComponentName_Update.Text} {txtCost_Update.Text} {cb_ComponentType_Update.SelectedItem.ToString()}");
                 }
                     

@@ -318,6 +318,7 @@ namespace DataAccessLayer
         /// Updates
         /// </summary>
 
+        //UpdateCompoonents
         public void Update(string procedure, int id, string name, int componentType, double cost, int productGroup)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
