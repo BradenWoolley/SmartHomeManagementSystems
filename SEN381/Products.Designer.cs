@@ -96,7 +96,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.tabPage1.Controls.Add(this.lblProducts);
             this.tabPage1.Controls.Add(this.lblSensors);
             this.tabPage1.Controls.Add(this.lblControllers);
@@ -212,7 +212,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.tabPage2.Controls.Add(this.gpAddProducts);
             this.tabPage2.ForeColor = System.Drawing.Color.White;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -339,7 +339,7 @@
             // 
             // cb_ProductGroup_Insert
             // 
-            this.cb_ProductGroup_Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cb_ProductGroup_Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cb_ProductGroup_Insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_ProductGroup_Insert.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_ProductGroup_Insert.ForeColor = System.Drawing.Color.White;
@@ -352,7 +352,7 @@
             // 
             // cb_ComponentType_Insert
             // 
-            this.cb_ComponentType_Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cb_ComponentType_Insert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cb_ComponentType_Insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_ComponentType_Insert.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_ComponentType_Insert.ForeColor = System.Drawing.Color.White;
@@ -368,7 +368,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.tabPage3.Controls.Add(this.cbProductName_Update);
             this.tabPage3.Controls.Add(this.btnSearchProduct);
             this.tabPage3.Controls.Add(this.lblSearchName_Update);
@@ -382,7 +382,7 @@
             // 
             // cbProductName_Update
             // 
-            this.cbProductName_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbProductName_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbProductName_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProductName_Update.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProductName_Update.ForeColor = System.Drawing.Color.White;
@@ -532,7 +532,7 @@
             // 
             // cbProductGroup_Update
             // 
-            this.cbProductGroup_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbProductGroup_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbProductGroup_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProductGroup_Update.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProductGroup_Update.ForeColor = System.Drawing.Color.White;
@@ -544,7 +544,7 @@
             // 
             // cb_ComponentType_Update
             // 
-            this.cb_ComponentType_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cb_ComponentType_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cb_ComponentType_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cb_ComponentType_Update.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_ComponentType_Update.ForeColor = System.Drawing.Color.White;
@@ -560,7 +560,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.tabPage4.Controls.Add(this.cbProductName_Delete);
             this.tabPage4.Controls.Add(this.btnDeleteProduct);
             this.tabPage4.Controls.Add(this.materialLabel5);
@@ -573,7 +573,7 @@
             // 
             // cbProductName_Delete
             // 
-            this.cbProductName_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbProductName_Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbProductName_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbProductName_Delete.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProductName_Delete.ForeColor = System.Drawing.Color.White;
@@ -625,7 +625,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);

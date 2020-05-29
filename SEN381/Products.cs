@@ -250,10 +250,8 @@ namespace SEN381
         {
             BusinessLayer.Component comp = (BusinessLayer.Component)cbProductName_Update.SelectedItem;
             if(comp != null)
-            {
                 txtComponentName_Update.Text = comp.Name;
-            }
-               
         }
+
     }
 }
