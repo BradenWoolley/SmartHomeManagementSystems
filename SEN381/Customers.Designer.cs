@@ -122,11 +122,11 @@
             this.materialTabControl1.Controls.Add(this.tabPage4);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialTabControl1.Location = new System.Drawing.Point(0, 55);
+            this.materialTabControl1.Location = new System.Drawing.Point(0, 41);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1000, 845);
+            this.materialTabControl1.Size = new System.Drawing.Size(998, 857);
             this.materialTabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -145,7 +145,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(992, 819);
+            this.tabPage1.Size = new System.Drawing.Size(990, 831);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View Customers";
             // 
@@ -1072,7 +1072,7 @@
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
             this.Name = "Customers";
-            this.Size = new System.Drawing.Size(1000, 900);
+            this.Size = new System.Drawing.Size(998, 898);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
