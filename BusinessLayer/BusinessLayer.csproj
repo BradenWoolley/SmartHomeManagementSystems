@@ -51,7 +51,6 @@
     <Compile Include="ProductManagement.cs" />
     <Compile Include="Sensor.cs" />
     <Compile Include="TechnologySupport.cs" />
-    <Compile Include="test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

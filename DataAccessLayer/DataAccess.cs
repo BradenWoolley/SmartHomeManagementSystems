@@ -135,7 +135,6 @@ namespace DataAccessLayer
         /// <summary>
         /// Inserts
         /// </summary>
-        /// 
         public void Insert(string name, int componentType, double cost, int productGroup)
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
