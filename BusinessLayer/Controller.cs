@@ -7,14 +7,15 @@ namespace BusinessLayer
     public class Controller : Component
     {
         public Controller() { }
-        public Controller(int id, string name, double cost)
+        public Controller(int id, string name, double cost, int type)
         {
             ID = id;
             Name = name;
             Cost = cost;
+            Type = 1;
         }
 
-        public List<Controller> GetControllers()
+        /*public List<Controller> GetControllers()
         {
             List<Controller> controllers = new List<Controller>();
             DataSet rawData = new DataAccess().ReadData("tblComponent", "1");
@@ -23,7 +24,7 @@ namespace BusinessLayer
                 controllers.Add(new Controller(int.Parse(item["ID"].ToString()), item["Name"].ToString(), double.Parse(item["Cost"].ToString())));
             }
             return controllers;
-        }
+        }*/
 
         public List<Controller> GetControllers(int productID)
         {
@@ -34,7 +35,9 @@ namespace BusinessLayer
             {
                 controllers.Add(new Controller(int.Parse(item["ID"].ToString()),
                     item["Name"].ToString(),
-                    double.Parse(item["Cost"].ToString())));
+                    double.Parse(item["Cost"].ToString()),
+                    this.Type
+                    ));
             }
             return controllers;
         }

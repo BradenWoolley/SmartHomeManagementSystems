@@ -7,12 +7,12 @@ namespace BusinessLayer
     public class Actor : Component
     {
         public Actor() { }
-        public Actor(int id, string name, double cost/*, int type*/)
+        public Actor(int id, string name, double cost, int type)
         {
             ID = id;
             Name = name;
             Cost = cost;
-            //Type = type;
+            Type = 3;
         }
 
         public List<Actor> GetActors()
@@ -21,7 +21,7 @@ namespace BusinessLayer
             DataSet rawData = new DataAccess().ReadData("tblComponent", "3");
             foreach (DataRow item in rawData.Tables["tblComponent"].Rows)
             {
-                actors.Add(new Actor(int.Parse(item["ID"].ToString()), item["Name"].ToString(), double.Parse(item["Cost"].ToString())/*, int.Parse(item["Type"].ToString())*/));
+                actors.Add(new Actor(int.Parse(item["ID"].ToString()), item["Name"].ToString(), double.Parse(item["Cost"].ToString()), int.Parse(item["Type"].ToString())));
             }
             return actors;
         }
@@ -34,9 +34,10 @@ namespace BusinessLayer
             foreach (DataRow item in rawData.Tables["Table"].Rows)
             {
                 actors.Add(new Actor(int.Parse(item["ID"].ToString()),
-                    item["Name"].ToString(), 
-                    double.Parse(item["Cost"].ToString())/*,
-                    int.Parse(item["ComponentType"].ToString())*/));
+                    item["Name"].ToString(),
+                    double.Parse(item["Cost"].ToString()),
+                    this.Type
+                    ));
             }
             return actors;
         }

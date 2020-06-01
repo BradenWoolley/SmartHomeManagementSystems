@@ -9,18 +9,18 @@ namespace BusinessLayer
         private int id;
         private string name;
         private double cost;
-        private string type;
+        private int type;
 
         public Component() { }
 
-        public Component(int id, string name, double cost)
+       /* public Component(int id, string name, double cost)
         {
             ID = id;
             Name = name;
             Cost = cost;
-        }
+        }*/
 
-        public Component(int id, string name, double cost, string type)
+        public Component(int id, string name, double cost, int type)
         {
             ID = id;
             Name = name;
@@ -31,7 +31,7 @@ namespace BusinessLayer
         public int ID { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public double Cost { get => cost; set => cost = value; }
-        public string Type { get => type; set => type = value; }
+        public int Type { get => type; set => type = value; }
 
         public List<Component> GetComponents()
         {
@@ -39,7 +39,7 @@ namespace BusinessLayer
             DataSet rawData = new DataAccess().ReadData("tblComponent");
             foreach (DataRow item in rawData.Tables["tblComponent"].Rows)
             {
-                components.Add(new Component(int.Parse(item["ID"].ToString()), item["Name"].ToString(), double.Parse(item["Cost"].ToString())));
+                components.Add(new Component(int.Parse(item["ID"].ToString()), item["Name"].ToString(), double.Parse(item["Cost"].ToString()), int.Parse(item["ComponentType"].ToString())));
             }
             return components;
         }

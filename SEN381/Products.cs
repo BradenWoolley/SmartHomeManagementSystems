@@ -37,6 +37,24 @@ namespace SEN381
             RefreshSensors();
         }
 
+        private void cb_ProductGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cb_ProductGroup_Insert.DataSource = bs;
+            cb_ProductGroup_Insert.DisplayMember = "ProductSuite";
+        }
+
+        private void cbProductName_Update_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BusinessLayer.Component comp = (BusinessLayer.Component)cbProductName_Update.SelectedItem;
+            if (comp != null)
+            {
+                txtComponentName_Update.Text = comp.Name;
+                txtCost_Update.Text = comp.ID.ToString();
+                cb_ComponentType_Update.SelectedIndex = (comp.Type - 1);
+            }
+
+        }
+
         //Clears and resets all bindingsources
         void RefreshAll()
         {
@@ -99,12 +117,6 @@ namespace SEN381
                 bsSensors.DataSource = sensors;
                 dgView_Sensors.DataSource = bsSensors;
             }
-        }
-
-        private void cb_ProductGroup_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cb_ProductGroup_Insert.DataSource = bs;
-            cb_ProductGroup_Insert.DisplayMember = "ProductSuite";
         }
 
         //Refreshes comboboxes datasource
@@ -244,13 +256,6 @@ namespace SEN381
             RefreshAll();
 
             MessageBox.Show($"{comp.Name} successfully deleted", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
-        }
-
-        private void cbProductName_Update_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BusinessLayer.Component comp = (BusinessLayer.Component)cbProductName_Update.SelectedItem;
-            if(comp != null)
-                txtComponentName_Update.Text = comp.Name;
         }
 
     }

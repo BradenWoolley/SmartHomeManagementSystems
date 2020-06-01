@@ -7,14 +7,15 @@ namespace BusinessLayer
     public class Sensor : Component
     {
         public Sensor() { }
-        public Sensor(int id, string name, double cost)
+        public Sensor(int id, string name, double cost, int type)
         {
             ID = id;
             Name = name;
             Cost = cost;
+            Type = type;
         }
 
-        public List<Sensor> GetSensors()
+        /*public List<Sensor> GetSensors()
         {
             List<Sensor> sensors = new List<Sensor>();
             DataSet rawData = new DataAccess().ReadData("tblComponent", "2");
@@ -23,7 +24,7 @@ namespace BusinessLayer
                 sensors.Add(new Sensor(int.Parse(item["ID"].ToString()), item["Name"].ToString(), double.Parse(item["Cost"].ToString())));
             }
             return sensors;
-        }
+        }*/
 
         public List<Sensor> GetSensors(int productID)
         {
@@ -34,7 +35,9 @@ namespace BusinessLayer
             {
                 sensors.Add(new Sensor(int.Parse(item["ID"].ToString()),
                     item["Name"].ToString(),
-                    double.Parse(item["Cost"].ToString())));
+                    double.Parse(item["Cost"].ToString()),
+                    this.Type
+                    ));
             }
             return sensors;
         }
