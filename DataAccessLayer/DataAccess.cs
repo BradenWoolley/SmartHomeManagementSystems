@@ -8,21 +8,46 @@ namespace DataAccessLayer
     public class DataAccess
     {
 
-        SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
+        //static SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
+        private static string connectionString = @" Data Source = REACTOR-5\SQLEXPRESS;Initial Catalog = SMSManagementSystem; Integrated Security = True";
+        private static DataAccess singleton;
+        private static SqlConnection connection;
+
+        public SqlConnection SqlConnectionFactory
+        {
+            get { return connection; }
+        }
 
         public DataAccess()
+        {
+  
+
+        }
+        public static DataAccess Singleton
+        {
+            get
+            {
+                if (singleton == null)
+                    singleton = new DataAccess();
+
+                connection = new SqlConnection(connectionString);
+                return singleton;
+            }
+        }
+
+        /*public DataAccess()
         {
             connection.DataSource = @"REACTOR-5\SQLEXPRESS";
             connection.InitialCatalog = "SMSManagementSystem";
             connection.IntegratedSecurity = true;
-        }
+        }*/
 
         /// <summary>
         /// Reading Data
         /// </summary>
        public DataSet ReadProc(string procedure)
        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
+            SqlConnection conn = new SqlConnection(connectionString);
             DataSet rawData = new DataSet();
             try
             {
@@ -32,12 +57,10 @@ namespace DataAccessLayer
                 command.ExecuteNonQuery();
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.FillSchema(rawData, SchemaType.Source);//sets structure
-                adapter.Fill(rawData);//gets actual data from query result
-                
+                adapter.Fill(rawData);//gets actual data from query result              
             }
             catch (SqlException se)
             {
-                //TODO exception back to presentation layer
 
             }
             finally
@@ -54,7 +77,7 @@ namespace DataAccessLayer
         //BAD method
         public DataSet ReadComponent(string procedure, int productID, int componentType)
         {
-            SqlConnection conn = new SqlConnection(connection.ToString());
+            SqlConnection conn = new SqlConnection(connectionString);
             DataSet rawData = new DataSet();
             try
             {
@@ -88,7 +111,7 @@ namespace DataAccessLayer
         public DataSet ReadData(string tableName)
         {
             DataSet rawData = new DataSet();
-            using (SqlConnection conn = new SqlConnection(connection.ToString()))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string qry = string.Format("SELECT * FROM {0}", tableName);
                 conn.Open();
@@ -102,7 +125,7 @@ namespace DataAccessLayer
         public DataSet ReadData(string tableName, string componentType)
         {
             DataSet rawData = new DataSet();
-            using (SqlConnection conn = new SqlConnection(connection.ToString()))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string qry = string.Format("SELECT * FROM {0} WHERE ComponentType = {1}", tableName, componentType);
                 conn.Open();
@@ -113,7 +136,7 @@ namespace DataAccessLayer
             return rawData;
         } //Reads all from Components
 
-        public DataSet ReadAllTechSupport()
+        /*public DataSet ReadAllTechSupport()
         {
             //TODO change SQL
             string tableName = "tblTechSupport";
@@ -130,14 +153,14 @@ namespace DataAccessLayer
                 adapter.Fill(rawData, tableName);//gets actual data from query result
             }
             return rawData;
-        }
+        }*/
 
         /// <summary>
         /// Inserts
         /// </summary>
         public void Insert(string name, int componentType, double cost, int productGroup)
         {
-            SqlConnection conn = new SqlConnection(connection.ToString());
+            SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
@@ -320,7 +343,7 @@ namespace DataAccessLayer
         //UpdateCompoonents
         public void Update(string procedure, int id, string name, int componentType, double cost, int productGroup)
         {
-            SqlConnection conn = new SqlConnection(connection.ToString());
+            SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
@@ -370,7 +393,7 @@ namespace DataAccessLayer
 
         public void Delete(string procedure, int id)
         {
-            SqlConnection conn = new SqlConnection(connection.ToString());
+            SqlConnection conn = new SqlConnection(connectionString);
             try
             {
                 conn.Open();

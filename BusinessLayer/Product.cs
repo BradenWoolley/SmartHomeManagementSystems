@@ -6,6 +6,8 @@ namespace BusinessLayer
 {
     public class Product
     {
+        DataAccess access = DataAccess.Singleton;
+
         private int productId;
         private string productSuite;
 
@@ -23,7 +25,7 @@ namespace BusinessLayer
         public List<Product> GetProducts()
         {
             List<Product> products = new List<Product>();
-            DataSet rawData = new DataAccess().ReadData("tblProductCatalogue");
+            DataSet rawData = access.ReadData("tblProductCatalogue");
             foreach (DataRow item in rawData.Tables["tblProductCatalogue"].Rows)
             {
                 products.Add(new Product(int.Parse(item["ID"].ToString()), item["ProductSuite"].ToString()));

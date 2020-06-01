@@ -6,6 +6,8 @@ namespace BusinessLayer
 {
     public class Component
     {
+        DataAccess access = DataAccess.Singleton;
+
         private int id;
         private string name;
         private double cost;
@@ -35,8 +37,9 @@ namespace BusinessLayer
 
         public List<Component> GetComponents()
         {
+            
             List<Component> components = new List<Component>();
-            DataSet rawData = new DataAccess().ReadData("tblComponent");
+            DataSet rawData = access.ReadData("tblComponent");
             foreach (DataRow item in rawData.Tables["tblComponent"].Rows)
             {
                 components.Add(new Component(int.Parse(item["ID"].ToString()), item["Name"].ToString(), double.Parse(item["Cost"].ToString()), int.Parse(item["ComponentType"].ToString())));

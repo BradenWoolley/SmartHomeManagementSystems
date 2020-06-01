@@ -13,7 +13,7 @@ namespace BusinessLayer
 
         public ProductManagement()
         {
-            access = new DataAccess();
+
         }
 
         public void Insert(string name, int componentType, double cost, int productGroup)

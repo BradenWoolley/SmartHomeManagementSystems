@@ -7,6 +7,8 @@ namespace BusinessLayer
 {
     public class ClientManagement
     {
+        //DataAccess access;
+
         /*public List<Customer> ViewAllCustomers()
         {
             List<Customer> customers = new List<Customer>();
@@ -56,13 +58,12 @@ namespace BusinessLayer
             return customers;
         }*/
 
-        List<TechnologySupport> GetAllSupport()
+        /*List<TechnologySupport> GetAllSupport()
         {
             List<TechnologySupport> customerSupport = new List<TechnologySupport>();
             TechnologySupport techSupport = new TechnologySupport();
 
-            DataAccess dataAccess = new DataAccess();
-            DataSet productRawData = dataAccess.ReadAllTechSupport();
+            DataSet productRawData = access.ReadAllTechSupport();
 
             //Gets productsuite to find all components, sensors, and actors needed
             foreach (DataRow item in productRawData.Tables["tblTechSupport"].Rows)
@@ -75,7 +76,7 @@ namespace BusinessLayer
                 //TODO Database needs to be edited to access Client configuration and account for changes made
                 //techSupport.Configuration = 
 
-                /*switch ((ComponentTypes)int.Parse(item["ComponentType"].ToString()))
+                switch ((ComponentTypes)int.Parse(item["ComponentType"].ToString()))
                 {
                     case ComponentTypes.Controller:
                         
@@ -92,12 +93,12 @@ namespace BusinessLayer
                     default:
                         //TODO add exception
                         break;
-                }*/
+                }
 
                 customerSupport.Add(techSupport);
             }
             return customerSupport;
-        }
+        }*/
 
         /* List<Customer> SearchCustomer(CustomerID, Or Name)
         {

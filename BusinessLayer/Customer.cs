@@ -7,6 +7,8 @@ namespace BusinessLayer
 {
     public class Customer
     {
+        DataAccess access = DataAccess.Singleton;
+
         private int customerID, phoneNumber, productCount;
 
         private string name, surname, email, address;
@@ -74,7 +76,7 @@ namespace BusinessLayer
         {
             List<Customer> customers = new List<Customer>();
 
-            DataSet rawData = new DataAccess().ReadProc("GetCustomers");
+            DataSet rawData = access.ReadProc("GetCustomers");
             foreach (DataRow item in rawData.Tables["Table"].Rows)
             {
                 customers.Add(new Customer(int.Parse(item["ID"].ToString()),

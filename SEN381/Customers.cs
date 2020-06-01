@@ -15,7 +15,6 @@ namespace SEN381
         BindingSource bs = new BindingSource();
 
         List<Customer> customers;
-        Customer customer;
         public Customers()
         {
             InitializeComponent();

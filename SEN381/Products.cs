@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
@@ -15,14 +16,13 @@ namespace SEN381
         BindingSource bsSensors = new BindingSource();
         BindingSource bsComponents = new BindingSource();
 
-        List<Product> catalogue;// = new List<Product>();
+        List<Product> catalogue;
         List<Actor> actors = new List<Actor>();
         List<Controller> controllers = new List<Controller>();
         List<Sensor> sensors = new List<Sensor>();
 
         ProductManagement management = new ProductManagement();
         Product product;
-
 
         public Products()
         {
@@ -49,7 +49,7 @@ namespace SEN381
             if (comp != null)
             {
                 txtComponentName_Update.Text = comp.Name;
-                txtCost_Update.Text = comp.ID.ToString();
+                txtCost_Update.Text = $"{comp.Cost.ToString("C", CultureInfo.GetCultureInfo("en-ZA"))}";
                 cb_ComponentType_Update.SelectedIndex = (comp.Type - 1);
             }
 

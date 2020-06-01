@@ -6,6 +6,9 @@ namespace BusinessLayer
 {
     public class Actor : Component
     {
+
+        DataAccess access = DataAccess.Singleton;
+
         public Actor() { }
         public Actor(int id, string name, double cost, int type)
         {
@@ -15,22 +18,11 @@ namespace BusinessLayer
             Type = 3;
         }
 
-        public List<Actor> GetActors()
-        {
-            List<Actor> actors = new List<Actor>();
-            DataSet rawData = new DataAccess().ReadData("tblComponent", "3");
-            foreach (DataRow item in rawData.Tables["tblComponent"].Rows)
-            {
-                actors.Add(new Actor(int.Parse(item["ID"].ToString()), item["Name"].ToString(), double.Parse(item["Cost"].ToString()), int.Parse(item["Type"].ToString())));
-            }
-            return actors;
-        }
-
         public List<Actor> GetActors(int productID)
         {
             List<Actor> actors = new List<Actor>();
 
-            DataSet rawData = new DataAccess().ReadComponent("GetComponent",productID, 3);
+            DataSet rawData = access.ReadComponent("GetComponent",productID, 3);
             foreach (DataRow item in rawData.Tables["Table"].Rows)
             {
                 actors.Add(new Actor(int.Parse(item["ID"].ToString()),

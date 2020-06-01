@@ -3,4 +3,3 @@ C:\Users\Braden\Desktop\SEN381\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
 C:\Users\Braden\Desktop\SEN381\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Braden\Desktop\SEN381\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\Braden\Desktop\SEN381\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
-C:\Users\Braden\Desktop\SEN381\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
