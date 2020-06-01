@@ -36,13 +36,11 @@ namespace SEN381
             RefreshControllers();
             RefreshSensors();
         }
-
         private void cb_ProductGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             cb_ProductGroup_Insert.DataSource = bs;
             cb_ProductGroup_Insert.DisplayMember = "ProductSuite";
         }
-
         private void cbProductName_Update_SelectedIndexChanged(object sender, EventArgs e)
         {
             BusinessLayer.Component comp = (BusinessLayer.Component)cbProductName_Update.SelectedItem;
@@ -118,7 +116,6 @@ namespace SEN381
                 dgView_Sensors.DataSource = bsSensors;
             }
         }
-
         //Refreshes comboboxes datasource
         void AllComponents()
         {
@@ -188,7 +185,6 @@ namespace SEN381
 
             }
         }
-
         //TODO Correct multi-product group updates and move index increment to business layer
         private void btnUpdate_Click(object sender, EventArgs e)
         {

@@ -14,14 +14,6 @@ namespace BusinessLayer
         private int type;
 
         public Component() { }
-
-       /* public Component(int id, string name, double cost)
-        {
-            ID = id;
-            Name = name;
-            Cost = cost;
-        }*/
-
         public Component(int id, string name, double cost, int type)
         {
             ID = id;

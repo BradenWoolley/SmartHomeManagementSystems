@@ -14,7 +14,7 @@ namespace BusinessLayer
             ID = id;
             Name = name;
             Cost = cost;
-            Type = type;
+            Type = 2;
         }
 
         public List<Sensor> GetSensors(int productID)
