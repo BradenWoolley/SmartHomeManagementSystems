@@ -9,7 +9,7 @@ namespace BusinessLayer
 {
     public class ProductManagement
     {
-        DataAccess access;
+        DataAccess access = DataAccess.Singleton;
 
         public ProductManagement()
         {

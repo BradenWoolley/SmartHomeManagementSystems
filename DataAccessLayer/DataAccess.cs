@@ -35,13 +35,6 @@ namespace DataAccessLayer
             }
         }
 
-        /*public DataAccess()
-        {
-            connection.DataSource = @"REACTOR-5\SQLEXPRESS";
-            connection.InitialCatalog = "SMSManagementSystem";
-            connection.IntegratedSecurity = true;
-        }*/
-
         /// <summary>
         /// Reading Data
         /// </summary>
