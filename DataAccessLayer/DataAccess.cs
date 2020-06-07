@@ -367,7 +367,6 @@ namespace DataAccessLayer
         /// <summary>
         /// DELETE DATA No deleting entire tables will be implemented
         /// </summary>
-        /// 
 
         //TODO - Override or use switch statement to reuse for composite tables   
         public DataSet DeleteData(string tableName, string ID)

@@ -24,7 +24,7 @@ namespace BusinessLayer
         {
             access.Update("UpdateComponent", id, name, componentType, cost, productGroup);
         }
-
+        //Poes
         public void Delete(int id)
         {
             access.Delete("DeleteComponent", id);

@@ -7,7 +7,7 @@ namespace BusinessLayer
 {
     public class ClientManagement
     {
-        //DataAccess access;
+        //DataAccess access = DataAccess.Singleton;
 
         /*public List<Customer> ViewAllCustomers()
         {
