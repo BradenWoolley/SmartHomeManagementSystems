@@ -817,7 +817,7 @@
             // txtUpdateBank
             // 
             this.txtUpdateBank.Depth = 0;
-            this.txtUpdateBank.Hint = "";
+            this.txtUpdateBank.Hint = "Edit Account";
             this.txtUpdateBank.Location = new System.Drawing.Point(117, 273);
             this.txtUpdateBank.MaxLength = 32767;
             this.txtUpdateBank.MouseState = MaterialSkin.MouseState.HOVER;
@@ -847,7 +847,7 @@
             // txtUpdateTelephone
             // 
             this.txtUpdateTelephone.Depth = 0;
-            this.txtUpdateTelephone.Hint = "";
+            this.txtUpdateTelephone.Hint = "Edit Telephone";
             this.txtUpdateTelephone.Location = new System.Drawing.Point(117, 225);
             this.txtUpdateTelephone.MaxLength = 32767;
             this.txtUpdateTelephone.MouseState = MaterialSkin.MouseState.HOVER;
@@ -877,7 +877,7 @@
             // txtUpdateAddress
             // 
             this.txtUpdateAddress.Depth = 0;
-            this.txtUpdateAddress.Hint = "";
+            this.txtUpdateAddress.Hint = "Edit Address";
             this.txtUpdateAddress.Location = new System.Drawing.Point(117, 172);
             this.txtUpdateAddress.MaxLength = 32767;
             this.txtUpdateAddress.MouseState = MaterialSkin.MouseState.HOVER;
@@ -907,7 +907,7 @@
             // txtUpdateEmail
             // 
             this.txtUpdateEmail.Depth = 0;
-            this.txtUpdateEmail.Hint = "";
+            this.txtUpdateEmail.Hint = "Edit Email";
             this.txtUpdateEmail.Location = new System.Drawing.Point(117, 123);
             this.txtUpdateEmail.MaxLength = 32767;
             this.txtUpdateEmail.MouseState = MaterialSkin.MouseState.HOVER;
@@ -937,7 +937,7 @@
             // txtUpdateSurname
             // 
             this.txtUpdateSurname.Depth = 0;
-            this.txtUpdateSurname.Hint = "";
+            this.txtUpdateSurname.Hint = "Edit Surname";
             this.txtUpdateSurname.Location = new System.Drawing.Point(117, 73);
             this.txtUpdateSurname.MaxLength = 32767;
             this.txtUpdateSurname.MouseState = MaterialSkin.MouseState.HOVER;
@@ -967,7 +967,7 @@
             // txtUpdateName
             // 
             this.txtUpdateName.Depth = 0;
-            this.txtUpdateName.Hint = "";
+            this.txtUpdateName.Hint = "Edit Name";
             this.txtUpdateName.Location = new System.Drawing.Point(117, 19);
             this.txtUpdateName.MaxLength = 32767;
             this.txtUpdateName.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1102,7 +1102,7 @@
             this.materialTabSelector1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(56)))), ((int)(((byte)(69)))));
             this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
             this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(7, 15);
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
             this.materialTabSelector1.Size = new System.Drawing.Size(638, 46);

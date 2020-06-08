@@ -11,10 +11,7 @@ namespace BusinessLayer
     {
         DataAccess access = DataAccess.Singleton;
 
-        public ProductManagement()
-        {
-        }
-
+        public ProductManagement() { }
         public void Insert(string name, int componentType, double cost, int productGroup)
         {
             string[] nameParam = new string[2];
@@ -38,15 +35,9 @@ namespace BusinessLayer
             
         }
 
-        public void Update(int id, string name, int componentType, double cost, int productGroup)
-        {
-            access.Update("UpdateComponent", id, name, componentType, cost, productGroup);
-        }
+        public void Update(int id, string name, int componentType, double cost, int productGroup) => access.Update("UpdateComponent", id, name, componentType, cost, productGroup);
 
-        public void Delete(int id)
-        {
-            access.Delete("DeleteComponent", id);
-        }
+        public void Delete(int id) => access.Delete("DeleteComponent", id);
 
     }
 }

@@ -240,7 +240,7 @@ namespace DataAccessLayer
                 }
             }
         }*/
-
+        //TODO - Remove arrays and switch to hardcoded strings
         public void Insert(string procedure, string[] name, string[] componentType, string[] cost, string[] productGroup)
         {
             SqlConnection conn = new SqlConnection(connectionString);

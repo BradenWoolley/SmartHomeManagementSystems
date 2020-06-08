@@ -39,6 +39,8 @@ namespace SEN381
             customers = new Customer().GetCustomers();
             bs.DataSource = customers;
             dgView_Customers.DataSource = bs;
+
+            RefreshOwnedProducts();
         }
 
         public void RefreshComponents()
@@ -119,13 +121,15 @@ namespace SEN381
             }
         }
 
-        private void dgView_Customers_Click(object sender, EventArgs e)
+        void RefreshOwnedProducts()
         {
             RefreshProducts();
             RefreshActors();
             RefreshControllers();
             RefreshSensors();
         }
+
+        private void dgView_Customers_Click(object sender, EventArgs e) => RefreshOwnedProducts();
 
         private void lsBox_products_SelectedIndexChanged(object sender, EventArgs e)
         {

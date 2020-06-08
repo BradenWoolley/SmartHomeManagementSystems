@@ -51,7 +51,6 @@
             this.cb_ComponentType_Insert = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.cbProductName_Update = new System.Windows.Forms.ComboBox();
-            this.btnSearchProduct = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblSearchName_Update = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCost_Update = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -377,7 +376,6 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.tabPage3.Controls.Add(this.cbProductName_Update);
-            this.tabPage3.Controls.Add(this.btnSearchProduct);
             this.tabPage3.Controls.Add(this.lblSearchName_Update);
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -399,21 +397,6 @@
             this.cbProductName_Update.Size = new System.Drawing.Size(200, 24);
             this.cbProductName_Update.TabIndex = 13;
             this.cbProductName_Update.SelectedIndexChanged += new System.EventHandler(this.cbProductName_Update_SelectedIndexChanged);
-            // 
-            // btnSearchProduct
-            // 
-            this.btnSearchProduct.AutoSize = true;
-            this.btnSearchProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSearchProduct.Depth = 0;
-            this.btnSearchProduct.Icon = null;
-            this.btnSearchProduct.Location = new System.Drawing.Point(142, 72);
-            this.btnSearchProduct.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSearchProduct.Name = "btnSearchProduct";
-            this.btnSearchProduct.Primary = true;
-            this.btnSearchProduct.Size = new System.Drawing.Size(73, 36);
-            this.btnSearchProduct.TabIndex = 12;
-            this.btnSearchProduct.Text = "Search";
-            this.btnSearchProduct.UseVisualStyleBackColor = true;
             // 
             // lblSearchName_Update
             // 
@@ -439,7 +422,7 @@
             this.groupBox1.Controls.Add(this.materialLabel4);
             this.groupBox1.Controls.Add(this.cbProductGroup_Update);
             this.groupBox1.Controls.Add(this.cb_ComponentType_Update);
-            this.groupBox1.Location = new System.Drawing.Point(25, 114);
+            this.groupBox1.Location = new System.Drawing.Point(25, 67);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(337, 283);
             this.groupBox1.TabIndex = 9;
@@ -695,7 +678,6 @@
         private System.Windows.Forms.ComboBox cbProductGroup_Update;
         private System.Windows.Forms.ComboBox cb_ComponentType_Update;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtComponentName_Update;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSearchProduct;
         private MaterialSkin.Controls.MaterialRaisedButton btnDeleteProduct;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtComponentName_Insert;
