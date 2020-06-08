@@ -269,6 +269,7 @@
             this.dgView_Customers.ReadOnly = true;
             this.dgView_Customers.Size = new System.Drawing.Size(1137, 272);
             this.dgView_Customers.TabIndex = 8;
+            this.dgView_Customers.Click += new System.EventHandler(this.dgView_Customers_Click);
             // 
             // tabPage2
             // 

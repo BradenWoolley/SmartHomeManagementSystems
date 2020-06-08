@@ -33,5 +33,20 @@ namespace BusinessLayer
             }
             return controllers;
         }
+        public List<Controller> GetCustomerControllers(int customerID)
+        {
+            List<Controller> controllers = new List<Controller>();
+
+            DataSet rawData = access.ReadData("GetCustomerComponents", customerID, 1);
+            foreach (DataRow item in rawData.Tables["Table"].Rows)
+            {
+                controllers.Add(new Controller(int.Parse(item["ID"].ToString()),
+                    item["Name"].ToString(),
+                    double.Parse(item["Cost"].ToString()),
+                    this.Type
+                    ));
+            }
+            return controllers;
+        }
     }
 }

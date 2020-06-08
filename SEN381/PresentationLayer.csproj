@@ -59,6 +59,7 @@
     <Compile Include="Customers.Designer.cs">
       <DependentUpon>Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="IBinding.cs" />
     <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>

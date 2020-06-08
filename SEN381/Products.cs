@@ -7,7 +7,7 @@ using BusinessLayer;
 
 namespace SEN381
 {
-    public partial class Products : UserControl
+    public partial class Products : UserControl, IBinding
     {
 
         BindingSource bs = new BindingSource();
@@ -54,7 +54,7 @@ namespace SEN381
         }
 
         //Clears and resets all bindingsources
-        void RefreshAll()
+        public void RefreshAll()
         {
             bs.Clear();
             catalogue = new Product().GetProducts();
@@ -72,11 +72,10 @@ namespace SEN381
             RefreshActors();
             RefreshControllers();
             RefreshSensors();
-
-            AllComponents();
+            RefreshComponents();
         }
         //Clears and resets Actos bindingsources
-        void RefreshActors()
+        public void RefreshActors()
         {
             bsActors.Clear();
             actors.Clear();
@@ -91,7 +90,7 @@ namespace SEN381
             }
         }
         //Clears and resets Controller bindingsources
-        void RefreshControllers()
+        public void RefreshControllers()
         {
             bsControllers.Clear();
             controllers.Clear();
@@ -104,7 +103,7 @@ namespace SEN381
             }
         }
         //Clears and resets Sensor bindingsources
-        void RefreshSensors()
+        public void RefreshSensors()
         {
             bsSensors.Clear();
             sensors.Clear();
@@ -117,7 +116,7 @@ namespace SEN381
             }
         }
         //Refreshes comboboxes datasource
-        void AllComponents()
+        public void RefreshComponents()
         {
             bsComponents.Clear();
             

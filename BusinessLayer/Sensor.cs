@@ -32,5 +32,21 @@ namespace BusinessLayer
             }
             return sensors;
         }
+
+        public List<Sensor> GetCustomerSensors(int customerID)
+        {
+            List<Sensor> sensors = new List<Sensor>();
+
+            DataSet rawData = access.ReadData("GetCustomerComponents", customerID, 2);
+            foreach (DataRow item in rawData.Tables["Table"].Rows)
+            {
+                sensors.Add(new Sensor(int.Parse(item["ID"].ToString()),
+                    item["Name"].ToString(),
+                    double.Parse(item["Cost"].ToString()),
+                    this.Type
+                    ));
+            }
+            return sensors;
+        }
     }
 }

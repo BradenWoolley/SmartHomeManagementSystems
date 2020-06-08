@@ -10,17 +10,106 @@ using BusinessLayer;
 
 namespace SEN381
 {
-    public partial class Customers : UserControl
+    public partial class Customers : UserControl, IBinding
     {
         BindingSource bs = new BindingSource();
 
+        BindingSource bsActors = new BindingSource();
+        BindingSource bsControllers = new BindingSource();
+        BindingSource bsSensors = new BindingSource();
+        BindingSource bsComponents = new BindingSource();
+
         List<Customer> customers;
+        List<Actor> actors = new List<Actor>();
+        List<Controller> controllers = new List<Controller>();
+        List<Sensor> sensors = new List<Sensor>();
+
+        Customer customer;
         public Customers()
         {
             InitializeComponent();
+            RefreshAll();
+        }
+
+        public void RefreshAll()
+        {
+            bs.Clear();
             customers = new Customer().GetCustomers();
             bs.DataSource = customers;
             dgView_Customers.DataSource = bs;
+            dgView_Controllers.DataSource = bsControllers;
+        }
+
+        public void RefreshComponents()
+        {
+            /* bsComponents.Clear();
+
+
+             if (customer != null)
+             {
+                 List<BusinessLayer.Component> components = new List<BusinessLayer.Component>();
+                 components.Clear();
+
+                 components = new BusinessLayer.Component().GetComponents();
+
+                 bsComponents.DataSource = components;
+
+                 cbProductName_Update.DataSource = bsComponents;
+                 cbProductName_Update.DisplayMember = "Name";
+
+                 cbProductName_Delete.DataSource = bsComponents;
+                 cbProductName_Delete.DisplayMember = "Name";
+                 }*/
+        }
+
+        public void RefreshActors()
+        {
+            bsActors.Clear();
+            actors.Clear();
+
+            customer = (Customer)bs.Current;
+
+            if (customer != null)
+            {
+                actors = new Actor().GetCustomerActors(customer.CustomerID);
+                bsActors.DataSource = actors;
+                dgView_Actors.DataSource = bsActors;
+            }
+        }
+
+        public void RefreshControllers()
+        {
+            bsControllers.Clear();
+            controllers.Clear();
+
+            if (customer != null)
+            {
+                controllers = new Controller().GetCustomerControllers(customer.CustomerID);
+                bsControllers.DataSource = controllers;
+                dgView_Controllers.DataSource = bsControllers;
+            }
+        }
+
+        public void RefreshSensors()
+        {
+            bsSensors.Clear();
+            sensors.Clear();
+
+            if (customer != null)
+            {
+                sensors = new Sensor().GetCustomerSensors(customer.CustomerID);
+                bsSensors.DataSource = sensors;
+                dgView_Sensors.DataSource = bsSensors;
+            }
+        }
+
+
+        private void dgView_Customers_Click(object sender, EventArgs e)
+        {
+            RefreshActors();
+            RefreshControllers();
+            RefreshSensors();
         }
     }
+
 }

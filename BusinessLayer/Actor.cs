@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using DataAccessLayer;
 
 namespace BusinessLayer
@@ -23,6 +24,23 @@ namespace BusinessLayer
             List<Actor> actors = new List<Actor>();
 
             DataSet rawData = access.ReadComponent("GetComponent",productID, 3);
+            foreach (DataRow item in rawData.Tables["Table"].Rows)
+            {
+                actors.Add(new Actor(int.Parse(item["ID"].ToString()),
+                    item["Name"].ToString(),
+                    double.Parse(item["Cost"].ToString()),
+                    this.Type
+                    ));
+            }
+            return actors;
+        }
+
+        public List<Actor> GetCustomerActors(int customerID)
+        {
+            List<Actor> actors = new List<Actor>();
+
+            DataSet rawData = access.ReadData("GetCustomerComponents", customerID, 3);
+            
             foreach (DataRow item in rawData.Tables["Table"].Rows)
             {
                 actors.Add(new Actor(int.Parse(item["ID"].ToString()),

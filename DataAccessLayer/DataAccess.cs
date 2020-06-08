@@ -115,7 +115,8 @@ namespace DataAccessLayer
             return rawData;
         }//Default Data Reader
 
-        public DataSet ReadData(string tableName, string componentType)
+        //Deprecated Method
+        /*public DataSet ReadData(string tableName, string componentType)
         {
             DataSet rawData = new DataSet();
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -127,7 +128,36 @@ namespace DataAccessLayer
                 adapter.Fill(rawData, tableName);//gets actual data from query result
             }
             return rawData;
-        } //Reads all from Components
+        } //Reads all from Components*/
+
+        public DataSet ReadData(string procedure, int customerID, int componentType)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            DataSet rawData = new DataSet();
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(procedure, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CustomerID", customerID);
+                command.Parameters.AddWithValue("@ComponentType", componentType);
+                command.ExecuteNonQuery();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(rawData);//gets actual data from query result
+            }
+            catch (SqlException se)
+            {
+                //TODO exception back to presentation layer
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return rawData;
+        }
 
         /*public DataSet ReadAllTechSupport()
         {
