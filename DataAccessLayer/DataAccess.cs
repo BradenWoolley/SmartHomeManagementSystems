@@ -151,7 +151,9 @@ namespace DataAccessLayer
         /// <summary>
         /// Inserts
         /// </summary>
-        public void Insert(string name, int componentType, double cost, int productGroup)
+        
+        //Deprecated Method
+        /*public void Insert(string name, int componentType, double cost, int productGroup)
         {
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -164,6 +166,35 @@ namespace DataAccessLayer
                 command.Parameters.AddWithValue("@Type", componentType);
                 command.Parameters.AddWithValue("@Cost", cost);
                 command.Parameters.AddWithValue("@ProductID", productGroup);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException se)
+            {
+                //TODO exception back to presentation layer
+
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }*/
+
+        public void Insert(string procedure, string[] name, string[] componentType, string[] cost, string[] productGroup)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(procedure, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue(name[0], name[1]);
+                command.Parameters.AddWithValue(componentType[0], componentType[1]);
+                command.Parameters.AddWithValue(cost[0], cost[1]);
+                command.Parameters.AddWithValue(productGroup[0], productGroup[1]);
                 command.ExecuteNonQuery();
             }
             catch (SqlException se)

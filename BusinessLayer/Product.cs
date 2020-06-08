@@ -30,6 +30,7 @@ namespace BusinessLayer
             {
                 products.Add(new Product(int.Parse(item["ID"].ToString()), item["ProductSuite"].ToString()));
             }
+
             return products;
         }
     }
