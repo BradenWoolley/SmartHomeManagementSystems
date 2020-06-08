@@ -18,11 +18,13 @@ namespace SEN381
         BindingSource bsControllers = new BindingSource();
         BindingSource bsSensors = new BindingSource();
         BindingSource bsComponents = new BindingSource();
+        BindingSource bsProducts = new BindingSource();
 
         List<Customer> customers;
         List<Actor> actors = new List<Actor>();
         List<Controller> controllers = new List<Controller>();
         List<Sensor> sensors = new List<Sensor>();
+        List<Product> products = new List<Product>();
 
         Customer customer;
         public Customers()
@@ -37,7 +39,6 @@ namespace SEN381
             customers = new Customer().GetCustomers();
             bs.DataSource = customers;
             dgView_Customers.DataSource = bs;
-            dgView_Controllers.DataSource = bsControllers;
         }
 
         public void RefreshComponents()
@@ -66,8 +67,6 @@ namespace SEN381
         {
             bsActors.Clear();
             actors.Clear();
-
-            customer = (Customer)bs.Current;
 
             if (customer != null)
             {
@@ -103,8 +102,32 @@ namespace SEN381
             }
         }
 
+        void RefreshProducts()
+        {
+
+            bsProducts.Clear();
+            products.Clear();
+
+            customer = (Customer)bs.Current;
+
+            if (customer != null)
+            {
+                products = new Product().GetCustomerProducts(customer.CustomerID);
+                bsProducts.DataSource = products;
+                lsBox_products.DataSource = bsProducts;
+                lsBox_products.DisplayMember = "ProductSuite";
+            }
+        }
 
         private void dgView_Customers_Click(object sender, EventArgs e)
+        {
+            RefreshProducts();
+            RefreshActors();
+            RefreshControllers();
+            RefreshSensors();
+        }
+
+        private void lsBox_products_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshActors();
             RefreshControllers();

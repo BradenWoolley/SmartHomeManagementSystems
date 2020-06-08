@@ -246,6 +246,7 @@
             this.txtCost_Insert.Hint = "Enter Component Cost";
             this.txtCost_Insert.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtCost_Insert.Location = new System.Drawing.Point(117, 179);
+            this.txtCost_Insert.MaxLength = 32767;
             this.txtCost_Insert.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCost_Insert.Name = "txtCost_Insert";
             this.txtCost_Insert.PasswordChar = '\0';
@@ -254,6 +255,7 @@
             this.txtCost_Insert.SelectionStart = 0;
             this.txtCost_Insert.Size = new System.Drawing.Size(200, 23);
             this.txtCost_Insert.TabIndex = 14;
+            this.txtCost_Insert.TabStop = false;
             this.txtCost_Insert.UseSystemPasswordChar = false;
             // 
             // materialLabel6
@@ -275,6 +277,7 @@
             this.txtComponentName_Insert.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComponentName_Insert.Hint = "Enter Component Name";
             this.txtComponentName_Insert.Location = new System.Drawing.Point(117, 88);
+            this.txtComponentName_Insert.MaxLength = 32767;
             this.txtComponentName_Insert.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtComponentName_Insert.Name = "txtComponentName_Insert";
             this.txtComponentName_Insert.PasswordChar = '\0';
@@ -283,6 +286,7 @@
             this.txtComponentName_Insert.SelectionStart = 0;
             this.txtComponentName_Insert.Size = new System.Drawing.Size(200, 23);
             this.txtComponentName_Insert.TabIndex = 12;
+            this.txtComponentName_Insert.TabStop = false;
             this.txtComponentName_Insert.UseSystemPasswordChar = false;
             // 
             // materialLabel1
@@ -300,12 +304,15 @@
             // 
             // btnSubmitNewProduct
             // 
+            this.btnSubmitNewProduct.AutoSize = true;
+            this.btnSubmitNewProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSubmitNewProduct.Depth = 0;
+            this.btnSubmitNewProduct.Icon = null;
             this.btnSubmitNewProduct.Location = new System.Drawing.Point(117, 225);
             this.btnSubmitNewProduct.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSubmitNewProduct.Name = "btnSubmitNewProduct";
             this.btnSubmitNewProduct.Primary = true;
-            this.btnSubmitNewProduct.Size = new System.Drawing.Size(200, 36);
+            this.btnSubmitNewProduct.Size = new System.Drawing.Size(71, 36);
             this.btnSubmitNewProduct.TabIndex = 7;
             this.btnSubmitNewProduct.Text = "Submit";
             this.btnSubmitNewProduct.UseVisualStyleBackColor = true;
@@ -395,12 +402,15 @@
             // 
             // btnSearchProduct
             // 
+            this.btnSearchProduct.AutoSize = true;
+            this.btnSearchProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSearchProduct.Depth = 0;
+            this.btnSearchProduct.Icon = null;
             this.btnSearchProduct.Location = new System.Drawing.Point(142, 72);
             this.btnSearchProduct.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSearchProduct.Name = "btnSearchProduct";
             this.btnSearchProduct.Primary = true;
-            this.btnSearchProduct.Size = new System.Drawing.Size(200, 36);
+            this.btnSearchProduct.Size = new System.Drawing.Size(73, 36);
             this.btnSearchProduct.TabIndex = 12;
             this.btnSearchProduct.Text = "Search";
             this.btnSearchProduct.UseVisualStyleBackColor = true;
@@ -440,6 +450,7 @@
             this.txtCost_Update.Depth = 0;
             this.txtCost_Update.Hint = "Edit Cost";
             this.txtCost_Update.Location = new System.Drawing.Point(117, 178);
+            this.txtCost_Update.MaxLength = 32767;
             this.txtCost_Update.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCost_Update.Name = "txtCost_Update";
             this.txtCost_Update.PasswordChar = '\0';
@@ -448,6 +459,7 @@
             this.txtCost_Update.SelectionStart = 0;
             this.txtCost_Update.Size = new System.Drawing.Size(200, 23);
             this.txtCost_Update.TabIndex = 15;
+            this.txtCost_Update.TabStop = false;
             this.txtCost_Update.UseSystemPasswordChar = false;
             // 
             // txtComponentName_Update
@@ -455,6 +467,7 @@
             this.txtComponentName_Update.Depth = 0;
             this.txtComponentName_Update.Hint = "Edit Component Name";
             this.txtComponentName_Update.Location = new System.Drawing.Point(117, 93);
+            this.txtComponentName_Update.MaxLength = 32767;
             this.txtComponentName_Update.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtComponentName_Update.Name = "txtComponentName_Update";
             this.txtComponentName_Update.PasswordChar = '\0';
@@ -463,6 +476,7 @@
             this.txtComponentName_Update.SelectionStart = 0;
             this.txtComponentName_Update.Size = new System.Drawing.Size(200, 23);
             this.txtComponentName_Update.TabIndex = 12;
+            this.txtComponentName_Update.TabStop = false;
             this.txtComponentName_Update.UseSystemPasswordChar = false;
             // 
             // materialLabel7
@@ -493,12 +507,15 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdate.Depth = 0;
+            this.btnUpdate.Icon = null;
             this.btnUpdate.Location = new System.Drawing.Point(117, 223);
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Primary = true;
-            this.btnUpdate.Size = new System.Drawing.Size(200, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(73, 36);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -585,12 +602,15 @@
             // 
             // btnDeleteProduct
             // 
+            this.btnDeleteProduct.AutoSize = true;
+            this.btnDeleteProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDeleteProduct.Depth = 0;
+            this.btnDeleteProduct.Icon = null;
             this.btnDeleteProduct.Location = new System.Drawing.Point(142, 72);
             this.btnDeleteProduct.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Primary = true;
-            this.btnDeleteProduct.Size = new System.Drawing.Size(200, 36);
+            this.btnDeleteProduct.Size = new System.Drawing.Size(69, 36);
             this.btnDeleteProduct.TabIndex = 16;
             this.btnDeleteProduct.Text = "Delete";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;

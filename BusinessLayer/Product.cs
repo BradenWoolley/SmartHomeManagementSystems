@@ -33,5 +33,17 @@ namespace BusinessLayer
 
             return products;
         }
+
+        public List<Product> GetCustomerProducts(int customerID)
+        {
+            List<Product> products = new List<Product>();
+            DataSet rawData = access.ReadProc("GetCustomerProducts", customerID);
+            foreach (DataRow item in rawData.Tables["Table"].Rows)
+            {
+                products.Add(new Product(int.Parse(item["ID"].ToString()), item["ProductSuite"].ToString()));
+            }
+
+            return products;
+        }
     }
 }

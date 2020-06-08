@@ -173,6 +173,7 @@
             this.lsBox_products.Name = "lsBox_products";
             this.lsBox_products.Size = new System.Drawing.Size(241, 434);
             this.lsBox_products.TabIndex = 22;
+            this.lsBox_products.SelectedIndexChanged += new System.EventHandler(this.lsBox_products_SelectedIndexChanged);
             // 
             // lblSensors
             // 
@@ -382,12 +383,15 @@
             // 
             // btnPurchase
             // 
+            this.btnPurchase.AutoSize = true;
+            this.btnPurchase.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnPurchase.Depth = 0;
+            this.btnPurchase.Icon = null;
             this.btnPurchase.Location = new System.Drawing.Point(117, 217);
             this.btnPurchase.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPurchase.Name = "btnPurchase";
             this.btnPurchase.Primary = true;
-            this.btnPurchase.Size = new System.Drawing.Size(200, 36);
+            this.btnPurchase.Size = new System.Drawing.Size(91, 36);
             this.btnPurchase.TabIndex = 7;
             this.btnPurchase.Text = "Purchase";
             this.btnPurchase.UseVisualStyleBackColor = true;
@@ -448,6 +452,7 @@
             this.txtNewBankAccount.Depth = 0;
             this.txtNewBankAccount.Hint = "Enter Customer Account";
             this.txtNewBankAccount.Location = new System.Drawing.Point(117, 273);
+            this.txtNewBankAccount.MaxLength = 32767;
             this.txtNewBankAccount.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNewBankAccount.Name = "txtNewBankAccount";
             this.txtNewBankAccount.PasswordChar = '\0';
@@ -456,6 +461,7 @@
             this.txtNewBankAccount.SelectionStart = 0;
             this.txtNewBankAccount.Size = new System.Drawing.Size(200, 23);
             this.txtNewBankAccount.TabIndex = 18;
+            this.txtNewBankAccount.TabStop = false;
             this.txtNewBankAccount.UseSystemPasswordChar = false;
             // 
             // materialLabel9
@@ -476,6 +482,7 @@
             this.txtNewPhone.Depth = 0;
             this.txtNewPhone.Hint = "Enter Customer Number";
             this.txtNewPhone.Location = new System.Drawing.Point(117, 225);
+            this.txtNewPhone.MaxLength = 32767;
             this.txtNewPhone.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNewPhone.Name = "txtNewPhone";
             this.txtNewPhone.PasswordChar = '\0';
@@ -484,6 +491,7 @@
             this.txtNewPhone.SelectionStart = 0;
             this.txtNewPhone.Size = new System.Drawing.Size(200, 23);
             this.txtNewPhone.TabIndex = 16;
+            this.txtNewPhone.TabStop = false;
             this.txtNewPhone.UseSystemPasswordChar = false;
             // 
             // materialLabel8
@@ -504,6 +512,7 @@
             this.txtNewAddress.Depth = 0;
             this.txtNewAddress.Hint = "Enter Customer Address";
             this.txtNewAddress.Location = new System.Drawing.Point(117, 172);
+            this.txtNewAddress.MaxLength = 32767;
             this.txtNewAddress.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNewAddress.Name = "txtNewAddress";
             this.txtNewAddress.PasswordChar = '\0';
@@ -512,6 +521,7 @@
             this.txtNewAddress.SelectionStart = 0;
             this.txtNewAddress.Size = new System.Drawing.Size(200, 23);
             this.txtNewAddress.TabIndex = 14;
+            this.txtNewAddress.TabStop = false;
             this.txtNewAddress.UseSystemPasswordChar = false;
             // 
             // materialLabel7
@@ -532,6 +542,7 @@
             this.txtNewEmail.Depth = 0;
             this.txtNewEmail.Hint = "Enter Customer Email";
             this.txtNewEmail.Location = new System.Drawing.Point(117, 123);
+            this.txtNewEmail.MaxLength = 32767;
             this.txtNewEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNewEmail.Name = "txtNewEmail";
             this.txtNewEmail.PasswordChar = '\0';
@@ -540,6 +551,7 @@
             this.txtNewEmail.SelectionStart = 0;
             this.txtNewEmail.Size = new System.Drawing.Size(200, 23);
             this.txtNewEmail.TabIndex = 12;
+            this.txtNewEmail.TabStop = false;
             this.txtNewEmail.UseSystemPasswordChar = false;
             // 
             // materialLabel6
@@ -560,6 +572,7 @@
             this.txtNewSurname.Depth = 0;
             this.txtNewSurname.Hint = "Enter Customer Surname";
             this.txtNewSurname.Location = new System.Drawing.Point(117, 73);
+            this.txtNewSurname.MaxLength = 32767;
             this.txtNewSurname.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNewSurname.Name = "txtNewSurname";
             this.txtNewSurname.PasswordChar = '\0';
@@ -568,6 +581,7 @@
             this.txtNewSurname.SelectionStart = 0;
             this.txtNewSurname.Size = new System.Drawing.Size(200, 23);
             this.txtNewSurname.TabIndex = 10;
+            this.txtNewSurname.TabStop = false;
             this.txtNewSurname.UseSystemPasswordChar = false;
             // 
             // materialLabel1
@@ -588,6 +602,7 @@
             this.txtNewName.Depth = 0;
             this.txtNewName.Hint = "Enter Custom Name";
             this.txtNewName.Location = new System.Drawing.Point(117, 19);
+            this.txtNewName.MaxLength = 32767;
             this.txtNewName.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNewName.Name = "txtNewName";
             this.txtNewName.PasswordChar = '\0';
@@ -596,16 +611,20 @@
             this.txtNewName.SelectionStart = 0;
             this.txtNewName.Size = new System.Drawing.Size(200, 23);
             this.txtNewName.TabIndex = 8;
+            this.txtNewName.TabStop = false;
             this.txtNewName.UseSystemPasswordChar = false;
             // 
             // btnNewCustomer
             // 
+            this.btnNewCustomer.AutoSize = true;
+            this.btnNewCustomer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnNewCustomer.Depth = 0;
+            this.btnNewCustomer.Icon = null;
             this.btnNewCustomer.Location = new System.Drawing.Point(117, 381);
             this.btnNewCustomer.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNewCustomer.Name = "btnNewCustomer";
             this.btnNewCustomer.Primary = true;
-            this.btnNewCustomer.Size = new System.Drawing.Size(200, 36);
+            this.btnNewCustomer.Size = new System.Drawing.Size(71, 36);
             this.btnNewCustomer.TabIndex = 7;
             this.btnNewCustomer.Text = "Submit";
             this.btnNewCustomer.UseVisualStyleBackColor = true;
@@ -726,12 +745,15 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUpdate.Depth = 0;
+            this.btnUpdate.Icon = null;
             this.btnUpdate.Location = new System.Drawing.Point(117, 265);
             this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Primary = true;
-            this.btnUpdate.Size = new System.Drawing.Size(200, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(73, 36);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -797,6 +819,7 @@
             this.txtUpdateBank.Depth = 0;
             this.txtUpdateBank.Hint = "";
             this.txtUpdateBank.Location = new System.Drawing.Point(117, 273);
+            this.txtUpdateBank.MaxLength = 32767;
             this.txtUpdateBank.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUpdateBank.Name = "txtUpdateBank";
             this.txtUpdateBank.PasswordChar = '\0';
@@ -805,6 +828,7 @@
             this.txtUpdateBank.SelectionStart = 0;
             this.txtUpdateBank.Size = new System.Drawing.Size(200, 23);
             this.txtUpdateBank.TabIndex = 18;
+            this.txtUpdateBank.TabStop = false;
             this.txtUpdateBank.UseSystemPasswordChar = false;
             // 
             // materialLabel14
@@ -825,6 +849,7 @@
             this.txtUpdateTelephone.Depth = 0;
             this.txtUpdateTelephone.Hint = "";
             this.txtUpdateTelephone.Location = new System.Drawing.Point(117, 225);
+            this.txtUpdateTelephone.MaxLength = 32767;
             this.txtUpdateTelephone.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUpdateTelephone.Name = "txtUpdateTelephone";
             this.txtUpdateTelephone.PasswordChar = '\0';
@@ -833,6 +858,7 @@
             this.txtUpdateTelephone.SelectionStart = 0;
             this.txtUpdateTelephone.Size = new System.Drawing.Size(200, 23);
             this.txtUpdateTelephone.TabIndex = 16;
+            this.txtUpdateTelephone.TabStop = false;
             this.txtUpdateTelephone.UseSystemPasswordChar = false;
             // 
             // materialLabel16
@@ -853,6 +879,7 @@
             this.txtUpdateAddress.Depth = 0;
             this.txtUpdateAddress.Hint = "";
             this.txtUpdateAddress.Location = new System.Drawing.Point(117, 172);
+            this.txtUpdateAddress.MaxLength = 32767;
             this.txtUpdateAddress.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUpdateAddress.Name = "txtUpdateAddress";
             this.txtUpdateAddress.PasswordChar = '\0';
@@ -861,6 +888,7 @@
             this.txtUpdateAddress.SelectionStart = 0;
             this.txtUpdateAddress.Size = new System.Drawing.Size(200, 23);
             this.txtUpdateAddress.TabIndex = 14;
+            this.txtUpdateAddress.TabStop = false;
             this.txtUpdateAddress.UseSystemPasswordChar = false;
             // 
             // materialLabel17
@@ -881,6 +909,7 @@
             this.txtUpdateEmail.Depth = 0;
             this.txtUpdateEmail.Hint = "";
             this.txtUpdateEmail.Location = new System.Drawing.Point(117, 123);
+            this.txtUpdateEmail.MaxLength = 32767;
             this.txtUpdateEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUpdateEmail.Name = "txtUpdateEmail";
             this.txtUpdateEmail.PasswordChar = '\0';
@@ -889,6 +918,7 @@
             this.txtUpdateEmail.SelectionStart = 0;
             this.txtUpdateEmail.Size = new System.Drawing.Size(200, 23);
             this.txtUpdateEmail.TabIndex = 12;
+            this.txtUpdateEmail.TabStop = false;
             this.txtUpdateEmail.UseSystemPasswordChar = false;
             // 
             // materialLabel18
@@ -909,6 +939,7 @@
             this.txtUpdateSurname.Depth = 0;
             this.txtUpdateSurname.Hint = "";
             this.txtUpdateSurname.Location = new System.Drawing.Point(117, 73);
+            this.txtUpdateSurname.MaxLength = 32767;
             this.txtUpdateSurname.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUpdateSurname.Name = "txtUpdateSurname";
             this.txtUpdateSurname.PasswordChar = '\0';
@@ -917,6 +948,7 @@
             this.txtUpdateSurname.SelectionStart = 0;
             this.txtUpdateSurname.Size = new System.Drawing.Size(200, 23);
             this.txtUpdateSurname.TabIndex = 10;
+            this.txtUpdateSurname.TabStop = false;
             this.txtUpdateSurname.UseSystemPasswordChar = false;
             // 
             // materialLabel19
@@ -937,6 +969,7 @@
             this.txtUpdateName.Depth = 0;
             this.txtUpdateName.Hint = "";
             this.txtUpdateName.Location = new System.Drawing.Point(117, 19);
+            this.txtUpdateName.MaxLength = 32767;
             this.txtUpdateName.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUpdateName.Name = "txtUpdateName";
             this.txtUpdateName.PasswordChar = '\0';
@@ -945,6 +978,7 @@
             this.txtUpdateName.SelectionStart = 0;
             this.txtUpdateName.Size = new System.Drawing.Size(200, 23);
             this.txtUpdateName.TabIndex = 8;
+            this.txtUpdateName.TabStop = false;
             this.txtUpdateName.UseSystemPasswordChar = false;
             // 
             // materialLabel20
@@ -962,12 +996,15 @@
             // 
             // materialRaisedButton3
             // 
+            this.materialRaisedButton3.AutoSize = true;
+            this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Icon = null;
             this.materialRaisedButton3.Location = new System.Drawing.Point(127, 53);
             this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton3.Name = "materialRaisedButton3";
             this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(200, 36);
+            this.materialRaisedButton3.Size = new System.Drawing.Size(73, 36);
             this.materialRaisedButton3.TabIndex = 12;
             this.materialRaisedButton3.Text = "Search";
             this.materialRaisedButton3.UseVisualStyleBackColor = true;
@@ -977,6 +1014,7 @@
             this.txtUpdateCustomerName.Depth = 0;
             this.txtUpdateCustomerName.Hint = "";
             this.txtUpdateCustomerName.Location = new System.Drawing.Point(127, 18);
+            this.txtUpdateCustomerName.MaxLength = 32767;
             this.txtUpdateCustomerName.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUpdateCustomerName.Name = "txtUpdateCustomerName";
             this.txtUpdateCustomerName.PasswordChar = '\0';
@@ -985,6 +1023,7 @@
             this.txtUpdateCustomerName.SelectionStart = 0;
             this.txtUpdateCustomerName.Size = new System.Drawing.Size(200, 23);
             this.txtUpdateCustomerName.TabIndex = 11;
+            this.txtUpdateCustomerName.TabStop = false;
             this.txtUpdateCustomerName.UseSystemPasswordChar = false;
             // 
             // lblSearchName_Update
@@ -1015,12 +1054,15 @@
             // 
             // btnDeleteCustomer
             // 
+            this.btnDeleteCustomer.AutoSize = true;
+            this.btnDeleteCustomer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDeleteCustomer.Depth = 0;
+            this.btnDeleteCustomer.Icon = null;
             this.btnDeleteCustomer.Location = new System.Drawing.Point(127, 53);
             this.btnDeleteCustomer.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Primary = true;
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(200, 36);
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(69, 36);
             this.btnDeleteCustomer.TabIndex = 16;
             this.btnDeleteCustomer.Text = "Delete";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
@@ -1030,6 +1072,7 @@
             this.txtDeleteCustomer.Depth = 0;
             this.txtDeleteCustomer.Hint = "";
             this.txtDeleteCustomer.Location = new System.Drawing.Point(127, 18);
+            this.txtDeleteCustomer.MaxLength = 32767;
             this.txtDeleteCustomer.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtDeleteCustomer.Name = "txtDeleteCustomer";
             this.txtDeleteCustomer.PasswordChar = '\0';
@@ -1038,6 +1081,7 @@
             this.txtDeleteCustomer.SelectionStart = 0;
             this.txtDeleteCustomer.Size = new System.Drawing.Size(200, 23);
             this.txtDeleteCustomer.TabIndex = 15;
+            this.txtDeleteCustomer.TabStop = false;
             this.txtDeleteCustomer.UseSystemPasswordChar = false;
             // 
             // materialLabel5

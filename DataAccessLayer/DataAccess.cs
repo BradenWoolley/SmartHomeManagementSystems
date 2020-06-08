@@ -67,6 +67,35 @@ namespace DataAccessLayer
             return rawData;
        }
 
+        public DataSet ReadProc(string procedure, int customerID)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            DataSet rawData = new DataSet();
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(procedure, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CustomerID", customerID);
+                command.ExecuteNonQuery();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.FillSchema(rawData, SchemaType.Source);//sets structure
+                adapter.Fill(rawData);//gets actual data from query result              
+            }
+            catch (SqlException se)
+            {
+
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+            return rawData;
+        }
+
         //BAD method
         public DataSet ReadComponent(string procedure, int productID, int componentType)
         {

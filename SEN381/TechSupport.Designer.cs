@@ -34,7 +34,6 @@
             this.dgView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gpAddProducts = new System.Windows.Forms.GroupBox();
-            this.sfDateTimeEdit1 = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnSubmitNewProduct = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -46,17 +45,16 @@
             this.txtSearchProd_Update = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblSearchName_Update = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.sfDateTimeEdit2 = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.sfDateTimeEdit3 = new Syncfusion.WinForms.Input.SfDateTimeEdit();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
@@ -126,7 +124,7 @@
             // 
             // gpAddProducts
             // 
-            this.gpAddProducts.Controls.Add(this.sfDateTimeEdit1);
+            this.gpAddProducts.Controls.Add(this.dateTimePicker1);
             this.gpAddProducts.Controls.Add(this.materialSingleLineTextField2);
             this.gpAddProducts.Controls.Add(this.materialLabel1);
             this.gpAddProducts.Controls.Add(this.btnSubmitNewProduct);
@@ -138,16 +136,6 @@
             this.gpAddProducts.Size = new System.Drawing.Size(425, 221);
             this.gpAddProducts.TabIndex = 8;
             this.gpAddProducts.TabStop = false;
-            // 
-            // sfDateTimeEdit1
-            // 
-            this.sfDateTimeEdit1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.sfDateTimeEdit1.DateTimePattern = Syncfusion.WinForms.Input.Enums.DateTimePattern.LongDate;
-            this.sfDateTimeEdit1.Location = new System.Drawing.Point(207, 113);
-            this.sfDateTimeEdit1.Name = "sfDateTimeEdit1";
-            this.sfDateTimeEdit1.Size = new System.Drawing.Size(200, 31);
-            this.sfDateTimeEdit1.TabIndex = 9;
-            this.sfDateTimeEdit1.Watermark = "Choose Date";
             // 
             // materialSingleLineTextField2
             // 
@@ -282,7 +270,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.sfDateTimeEdit2);
             this.groupBox1.Controls.Add(this.materialLabel2);
             this.groupBox1.Controls.Add(this.materialRaisedButton1);
             this.groupBox1.Controls.Add(this.materialLabel3);
@@ -292,13 +279,6 @@
             this.groupBox1.Size = new System.Drawing.Size(361, 217);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            // 
-            // sfDateTimeEdit2
-            // 
-            this.sfDateTimeEdit2.Location = new System.Drawing.Point(137, 93);
-            this.sfDateTimeEdit2.Name = "sfDateTimeEdit2";
-            this.sfDateTimeEdit2.Size = new System.Drawing.Size(200, 31);
-            this.sfDateTimeEdit2.TabIndex = 13;
             // 
             // materialLabel2
             // 
@@ -352,7 +332,6 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tabPage4.Controls.Add(this.sfDateTimeEdit3);
             this.tabPage4.Controls.Add(this.materialLabel4);
             this.tabPage4.Controls.Add(this.materialRaisedButton2);
             this.tabPage4.Controls.Add(this.materialSingleLineTextField1);
@@ -363,13 +342,6 @@
             this.tabPage4.Size = new System.Drawing.Size(986, 804);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Delete Schedule";
-            // 
-            // sfDateTimeEdit3
-            // 
-            this.sfDateTimeEdit3.Location = new System.Drawing.Point(170, 96);
-            this.sfDateTimeEdit3.Name = "sfDateTimeEdit3";
-            this.sfDateTimeEdit3.Size = new System.Drawing.Size(200, 31);
-            this.sfDateTimeEdit3.TabIndex = 18;
             // 
             // materialLabel4
             // 
@@ -423,6 +395,14 @@
             this.materialLabel5.Size = new System.Drawing.Size(119, 19);
             this.materialLabel5.TabIndex = 14;
             this.materialLabel5.Text = "Customer Name";
+
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(207, 111);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 13;
             // 
             // TechSupport
             // 
@@ -476,9 +456,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private Syncfusion.WinForms.Input.SfDateTimeEdit sfDateTimeEdit1;
-        private Syncfusion.WinForms.Input.SfDateTimeEdit sfDateTimeEdit2;
-        private Syncfusion.WinForms.Input.SfDateTimeEdit sfDateTimeEdit3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
