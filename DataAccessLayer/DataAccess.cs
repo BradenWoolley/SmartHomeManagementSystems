@@ -7,8 +7,6 @@ namespace DataAccessLayer
 {
     public class DataAccess
     {
-
-        //static SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
         private static string connectionString = @" Data Source = REACTOR-5\SQLEXPRESS;Initial Catalog = SMSManagementSystem; Integrated Security = True";
         private static DataAccess singleton;
         private static SqlConnection connection;
