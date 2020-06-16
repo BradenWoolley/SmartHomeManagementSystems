@@ -13,6 +13,9 @@ namespace SEN381
 {
     public partial class Customers : UserControl, IBinding, IValidate
     {
+        public enum CheckedState { Checked = 0, Unchecked = 1};
+        CheckedState state;
+
         BindingSource bs = new BindingSource();
 
         BindingSource bsActors = new BindingSource();
@@ -26,6 +29,8 @@ namespace SEN381
         List<Controller> controllers = new List<Controller>();
         List<Sensor> sensors = new List<Sensor>();
         List<Product> products = new List<Product>();
+
+        ClientManagement management = new ClientManagement();
 
         Customer customer;
         public Customers()
@@ -144,10 +149,15 @@ namespace SEN381
         private void chckBoxAdd_CheckedChanged(object sender, EventArgs e)
         {
             if (chckBoxAdd.Checked)
+            {
                 gbAddProducts.Visible = true;
+            }
 
             else
+            {
                 gbAddProducts.Visible = false;
+            }
+                
         }
 
         private void btnNewCustomer_Click(object sender, EventArgs e)
@@ -155,19 +165,21 @@ namespace SEN381
             List<MaterialSingleLineTextField> allFields = NewCustomerDetails();
             List<MaterialSingleLineTextField> numericFields = new List<MaterialSingleLineTextField>();
             numericFields.Add(txtNewPhone);
-            //MessageBox.Show(IsNullOrWhitespace(fields).ToString());
 
-            /*if (!IsNullOrWhiteSpace(allFields))
+            if (!IsNullOrWhiteSpace(allFields) && IsNumeric(numericFields))
             {
-                if (IsNumeric(numericFields))
+                if (!chckBoxAdd.Checked)
                 {
-
+                    management.Insert(txtNewName.Text, txtNewSurname.Text, txtNewEmail.Text, txtNewAddress.Text, int.Parse(txtNewPhone.Text), txtNewBankAccount.Text, 0);
+                    RefreshAll();
+                    ClearFields(allFields);
                 }
-            }*/
+            }
 
-            MessageBox.Show($"Numeric is {IsNumeric(numericFields)}");
-            MessageBox.Show($"Empty or whitespace is {IsNullOrWhiteSpace(allFields)}");
+            else
+            {
 
+            }
 
         }
 

@@ -9,10 +9,9 @@ namespace BusinessLayer
     {
         DataAccess access = DataAccess.Singleton;
 
-        public void AddNewCustomer(string fName, string sName)
-        {
-
-        }
+        public void Insert(string name, string surname, string email, 
+            string address, int phoneNumber, string bankingDetails, double amountDue) => 
+            access.NewCustomer(name, surname, email, address, phoneNumber, bankingDetails, amountDue);
 
         public void EditCustomerDetails()
         {

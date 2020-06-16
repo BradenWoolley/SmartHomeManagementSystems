@@ -84,7 +84,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1912, 952);
+            this.tabPage2.Size = new System.Drawing.Size(1912, 990);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Customers";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1912, 952);
+            this.tabPage3.Size = new System.Drawing.Size(1912, 990);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Technical Support";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -116,7 +116,7 @@
             this.customers1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customers1.Location = new System.Drawing.Point(3, 3);
             this.customers1.Name = "customers1";
-            this.customers1.Size = new System.Drawing.Size(1906, 946);
+            this.customers1.Size = new System.Drawing.Size(1906, 984);
             this.customers1.TabIndex = 0;
             // 
             // techSupport1
@@ -125,7 +125,7 @@
             this.techSupport1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.techSupport1.Location = new System.Drawing.Point(3, 3);
             this.techSupport1.Name = "techSupport1";
-            this.techSupport1.Size = new System.Drawing.Size(1906, 946);
+            this.techSupport1.Size = new System.Drawing.Size(1906, 984);
             this.techSupport1.TabIndex = 0;
             // 
             // MainFrm

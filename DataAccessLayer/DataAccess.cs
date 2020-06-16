@@ -268,71 +268,14 @@ namespace DataAccessLayer
             }
         }
 
-        public void NewCustomer(string fName, string sName)
+        public void NewCustomer(string fName, string sName, string email, string address, int telephone, string banking, double amountDue)
         {
-            SqlConnection conn = new SqlConnection(connection.ToString());
+            SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand("InsertNewCustomer", conn);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Name", fName);
-                command.Parameters.AddWithValue("@Surname", sName);
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//add new customer basic details
-
-        public void NewCustomer(string fName, string sName, string email, string address, string telephone)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-
-            try
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand("InsertNewCustomerWithDetails", conn);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Name", fName);
-                command.Parameters.AddWithValue("@Surname", sName);
-                command.Parameters.AddWithValue("@Email", email);
-                command.Parameters.AddWithValue("@Address", address);
-                command.Parameters.AddWithValue("@Telephone", telephone);
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }//add new customer and contact
-
-        public void NewCustomer(string fName, string sName, string email, string address, string telephone, string banking, double amountDue)
-        {
-            SqlConnection conn = new SqlConnection(connection.ToString());
-
-            try
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand("InsertNewCustomerWithDetailsAndBank", conn);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@Name", fName);
                 command.Parameters.AddWithValue("@Surname", sName);
