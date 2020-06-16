@@ -12,6 +12,7 @@ namespace BusinessLayer
         DataAccess access = DataAccess.Singleton;
 
         public ProductManagement() { }
+        //Switch to Lambda
         public void Insert(string name, int componentType, double cost, int productGroup)
         {
             string[] nameParam = new string[2];

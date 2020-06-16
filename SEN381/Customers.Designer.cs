@@ -41,7 +41,7 @@
             this.lblCustomers = new MaterialSkin.Controls.MaterialLabel();
             this.dgView_Customers = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbAddProducts = new System.Windows.Forms.GroupBox();
             this.cbNewControllers = new System.Windows.Forms.ComboBox();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.cbNewSensors = new System.Windows.Forms.ComboBox();
@@ -51,7 +51,7 @@
             this.cbNewProductName = new System.Windows.Forms.ComboBox();
             this.btnPurchase = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
-            this.gpAddProducts = new System.Windows.Forms.GroupBox();
+            this.gpAddCustomer = new System.Windows.Forms.GroupBox();
             this.chckBoxAdd = new MaterialSkin.Controls.MaterialCheckBox();
             this.txtNewBankAccount = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
@@ -106,8 +106,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Actors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Customers)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.gpAddProducts.SuspendLayout();
+            this.gbAddProducts.SuspendLayout();
+            this.gpAddCustomer.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -275,8 +275,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.gpAddProducts);
+            this.tabPage2.Controls.Add(this.gbAddProducts);
+            this.tabPage2.Controls.Add(this.gpAddCustomer);
             this.tabPage2.ForeColor = System.Drawing.Color.White;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -285,22 +285,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add Customers";
             // 
-            // groupBox2
+            // gbAddProducts
             // 
-            this.groupBox2.Controls.Add(this.cbNewControllers);
-            this.groupBox2.Controls.Add(this.materialLabel12);
-            this.groupBox2.Controls.Add(this.cbNewSensors);
-            this.groupBox2.Controls.Add(this.materialLabel11);
-            this.groupBox2.Controls.Add(this.cbNewActors);
-            this.groupBox2.Controls.Add(this.materialLabel10);
-            this.groupBox2.Controls.Add(this.cbNewProductName);
-            this.groupBox2.Controls.Add(this.btnPurchase);
-            this.groupBox2.Controls.Add(this.materialLabel15);
-            this.groupBox2.Location = new System.Drawing.Point(500, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(357, 431);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
+            this.gbAddProducts.Controls.Add(this.cbNewControllers);
+            this.gbAddProducts.Controls.Add(this.materialLabel12);
+            this.gbAddProducts.Controls.Add(this.cbNewSensors);
+            this.gbAddProducts.Controls.Add(this.materialLabel11);
+            this.gbAddProducts.Controls.Add(this.cbNewActors);
+            this.gbAddProducts.Controls.Add(this.materialLabel10);
+            this.gbAddProducts.Controls.Add(this.cbNewProductName);
+            this.gbAddProducts.Controls.Add(this.btnPurchase);
+            this.gbAddProducts.Controls.Add(this.materialLabel15);
+            this.gbAddProducts.Location = new System.Drawing.Point(500, 6);
+            this.gbAddProducts.Name = "gbAddProducts";
+            this.gbAddProducts.Size = new System.Drawing.Size(357, 431);
+            this.gbAddProducts.TabIndex = 9;
+            this.gbAddProducts.TabStop = false;
             // 
             // cbNewControllers
             // 
@@ -409,28 +409,28 @@
             this.materialLabel15.TabIndex = 0;
             this.materialLabel15.Text = "Product Name";
             // 
-            // gpAddProducts
+            // gpAddCustomer
             // 
-            this.gpAddProducts.Controls.Add(this.chckBoxAdd);
-            this.gpAddProducts.Controls.Add(this.txtNewBankAccount);
-            this.gpAddProducts.Controls.Add(this.materialLabel9);
-            this.gpAddProducts.Controls.Add(this.txtNewPhone);
-            this.gpAddProducts.Controls.Add(this.materialLabel8);
-            this.gpAddProducts.Controls.Add(this.txtNewAddress);
-            this.gpAddProducts.Controls.Add(this.materialLabel7);
-            this.gpAddProducts.Controls.Add(this.txtNewEmail);
-            this.gpAddProducts.Controls.Add(this.materialLabel6);
-            this.gpAddProducts.Controls.Add(this.txtNewSurname);
-            this.gpAddProducts.Controls.Add(this.materialLabel1);
-            this.gpAddProducts.Controls.Add(this.txtNewName);
-            this.gpAddProducts.Controls.Add(this.btnNewCustomer);
-            this.gpAddProducts.Controls.Add(this.lblName);
-            this.gpAddProducts.Controls.Add(this.lblType);
-            this.gpAddProducts.Location = new System.Drawing.Point(6, 6);
-            this.gpAddProducts.Name = "gpAddProducts";
-            this.gpAddProducts.Size = new System.Drawing.Size(348, 431);
-            this.gpAddProducts.TabIndex = 8;
-            this.gpAddProducts.TabStop = false;
+            this.gpAddCustomer.Controls.Add(this.chckBoxAdd);
+            this.gpAddCustomer.Controls.Add(this.txtNewBankAccount);
+            this.gpAddCustomer.Controls.Add(this.materialLabel9);
+            this.gpAddCustomer.Controls.Add(this.txtNewPhone);
+            this.gpAddCustomer.Controls.Add(this.materialLabel8);
+            this.gpAddCustomer.Controls.Add(this.txtNewAddress);
+            this.gpAddCustomer.Controls.Add(this.materialLabel7);
+            this.gpAddCustomer.Controls.Add(this.txtNewEmail);
+            this.gpAddCustomer.Controls.Add(this.materialLabel6);
+            this.gpAddCustomer.Controls.Add(this.txtNewSurname);
+            this.gpAddCustomer.Controls.Add(this.materialLabel1);
+            this.gpAddCustomer.Controls.Add(this.txtNewName);
+            this.gpAddCustomer.Controls.Add(this.btnNewCustomer);
+            this.gpAddCustomer.Controls.Add(this.lblName);
+            this.gpAddCustomer.Controls.Add(this.lblType);
+            this.gpAddCustomer.Location = new System.Drawing.Point(6, 6);
+            this.gpAddCustomer.Name = "gpAddCustomer";
+            this.gpAddCustomer.Size = new System.Drawing.Size(348, 431);
+            this.gpAddCustomer.TabIndex = 8;
+            this.gpAddCustomer.TabStop = false;
             // 
             // chckBoxAdd
             // 
@@ -446,6 +446,7 @@
             this.chckBoxAdd.Size = new System.Drawing.Size(26, 30);
             this.chckBoxAdd.TabIndex = 19;
             this.chckBoxAdd.UseVisualStyleBackColor = true;
+            this.chckBoxAdd.CheckedChanged += new System.EventHandler(this.chckBoxAdd_CheckedChanged);
             // 
             // txtNewBankAccount
             // 
@@ -628,6 +629,7 @@
             this.btnNewCustomer.TabIndex = 7;
             this.btnNewCustomer.Text = "Submit";
             this.btnNewCustomer.UseVisualStyleBackColor = true;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
             // 
             // lblName
             // 
@@ -1126,10 +1128,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Actors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Customers)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.gpAddProducts.ResumeLayout(false);
-            this.gpAddProducts.PerformLayout();
+            this.gbAddProducts.ResumeLayout(false);
+            this.gbAddProducts.PerformLayout();
+            this.gpAddCustomer.ResumeLayout(false);
+            this.gpAddCustomer.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1147,7 +1149,7 @@
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.GroupBox gpAddProducts;
+        private System.Windows.Forms.GroupBox gpAddCustomer;
         private MaterialSkin.Controls.MaterialRaisedButton btnNewCustomer;
         private MaterialSkin.Controls.MaterialLabel lblName;
         private System.Windows.Forms.TabPage tabPage3;
@@ -1168,7 +1170,7 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNewSurname;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNewName;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbAddProducts;
         private System.Windows.Forms.ComboBox cbNewControllers;
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private System.Windows.Forms.ComboBox cbNewSensors;

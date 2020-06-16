@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using MaterialSkin.Controls;
 
 namespace SEN381
 {
-    public partial class Customers : UserControl, IBinding
+    public partial class Customers : UserControl, IBinding, IValidate
     {
         BindingSource bs = new BindingSource();
 
@@ -31,6 +32,8 @@ namespace SEN381
         {
             InitializeComponent();
             RefreshAll();
+            chckBoxAdd.CheckState = CheckState.Unchecked;
+            gbAddProducts.Visible = false;
         }
 
         public void RefreshAll()
@@ -136,6 +139,84 @@ namespace SEN381
             RefreshActors();
             RefreshControllers();
             RefreshSensors();
+        }
+        //Displays and hides the option to purchase a product when creating a new customer
+        private void chckBoxAdd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chckBoxAdd.Checked)
+                gbAddProducts.Visible = true;
+
+            else
+                gbAddProducts.Visible = false;
+        }
+
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            List<MaterialSingleLineTextField> allFields = NewCustomerDetails();
+            List<MaterialSingleLineTextField> numericFields = new List<MaterialSingleLineTextField>();
+            numericFields.Add(txtNewPhone);
+            //MessageBox.Show(IsNullOrWhitespace(fields).ToString());
+
+            /*if (!IsNullOrWhiteSpace(allFields))
+            {
+                if (IsNumeric(numericFields))
+                {
+
+                }
+            }*/
+
+            MessageBox.Show($"Numeric is {IsNumeric(numericFields)}");
+            MessageBox.Show($"Empty or whitespace is {IsNullOrWhiteSpace(allFields)}");
+
+
+        }
+
+        List<MaterialSingleLineTextField> NewCustomerDetails()
+        {
+            List<MaterialSingleLineTextField> fields = new List<MaterialSingleLineTextField>();
+            fields.Add(txtNewName);
+            fields.Add(txtNewSurname);
+            fields.Add(txtNewEmail);
+            fields.Add(txtNewAddress);
+            fields.Add(txtNewPhone);
+            fields.Add(txtNewBankAccount);
+
+            return fields;
+        }
+
+        void ClearFields(List<MaterialSingleLineTextField> fields)
+        {
+            foreach(var txtBox in fields)
+            {
+                txtBox.Clear();
+            }
+        }
+
+        public bool IsNullOrWhiteSpace(List<MaterialSingleLineTextField> fields)
+        {
+            foreach (var txtBox in fields)
+            {
+                if (string.IsNullOrWhiteSpace(txtBox.Text) || txtBox.Text.Equals(0))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool IsNumeric(List<MaterialSingleLineTextField> fields)
+        {
+            int number;
+ 
+            foreach (var txtBox in fields)
+            {
+                if (int.TryParse(txtBox.Text, out number) && txtBox.Text.Length.Equals(10) && int.Parse(txtBox.Text.ToString()) > 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 
