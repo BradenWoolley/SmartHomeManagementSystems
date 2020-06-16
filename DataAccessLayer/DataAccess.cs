@@ -142,21 +142,6 @@ namespace DataAccessLayer
             return rawData;
         }//Default Data Reader
 
-        //Deprecated Method
-        /*public DataSet ReadData(string tableName, string componentType)
-        {
-            DataSet rawData = new DataSet();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string qry = string.Format("SELECT * FROM {0} WHERE ComponentType = {1}", tableName, componentType);
-                conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(qry, conn);
-                adapter.FillSchema(rawData, SchemaType.Source, tableName);//sets structure
-                adapter.Fill(rawData, tableName);//gets actual data from query result
-            }
-            return rawData;
-        } //Reads all from Components*/
-
         public DataSet ReadData(string procedure, int customerID, int componentType)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -208,36 +193,7 @@ namespace DataAccessLayer
         /// <summary>
         /// Inserts
         /// </summary>
-        
-        //Deprecated Method
-        /*public void Insert(string name, int componentType, double cost, int productGroup)
-        {
-            SqlConnection conn = new SqlConnection(connectionString);
-
-            try
-            {
-                conn.Open();
-                SqlCommand command = new SqlCommand("NewComponent", conn);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@Name", name);
-                command.Parameters.AddWithValue("@Type", componentType);
-                command.Parameters.AddWithValue("@Cost", cost);
-                command.Parameters.AddWithValue("@ProductID", productGroup);
-                command.ExecuteNonQuery();
-            }
-            catch (SqlException se)
-            {
-                //TODO exception back to presentation layer
-
-            }
-            finally
-            {
-                if (conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-        }*/
+       
         //TODO - Remove arrays and switch to hardcoded strings
         public void Insert(string procedure, string[] name, string[] componentType, string[] cost, string[] productGroup)
         {

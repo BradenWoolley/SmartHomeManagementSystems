@@ -68,6 +68,7 @@
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.lblType = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.cbUpdateCustomer = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -91,12 +92,10 @@
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
             this.txtUpdateName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtUpdateCustomerName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lblSearchName_Update = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.cbDeleteCustomer = new System.Windows.Forms.ComboBox();
             this.btnDeleteCustomer = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtDeleteCustomer = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1.SuspendLayout();
@@ -306,6 +305,7 @@
             // 
             this.cbNewControllers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbNewControllers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbNewControllers.ForeColor = System.Drawing.Color.White;
             this.cbNewControllers.FormattingEnabled = true;
             this.cbNewControllers.Location = new System.Drawing.Point(117, 124);
             this.cbNewControllers.Name = "cbNewControllers";
@@ -329,6 +329,7 @@
             // 
             this.cbNewSensors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbNewSensors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbNewSensors.ForeColor = System.Drawing.Color.White;
             this.cbNewSensors.FormattingEnabled = true;
             this.cbNewSensors.Location = new System.Drawing.Point(117, 173);
             this.cbNewSensors.Name = "cbNewSensors";
@@ -352,6 +353,7 @@
             // 
             this.cbNewActors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbNewActors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbNewActors.ForeColor = System.Drawing.Color.White;
             this.cbNewActors.FormattingEnabled = true;
             this.cbNewActors.Location = new System.Drawing.Point(117, 74);
             this.cbNewActors.Name = "cbNewActors";
@@ -375,6 +377,7 @@
             // 
             this.cbNewProductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbNewProductName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbNewProductName.ForeColor = System.Drawing.Color.White;
             this.cbNewProductName.FormattingEnabled = true;
             this.cbNewProductName.Location = new System.Drawing.Point(117, 20);
             this.cbNewProductName.Name = "cbNewProductName";
@@ -660,10 +663,9 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.tabPage3.Controls.Add(this.cbUpdateCustomer);
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Controls.Add(this.materialRaisedButton3);
-            this.tabPage3.Controls.Add(this.txtUpdateCustomerName);
             this.tabPage3.Controls.Add(this.lblSearchName_Update);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -671,6 +673,18 @@
             this.tabPage3.Size = new System.Drawing.Size(990, 831);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Update Customers";
+            // 
+            // cbUpdateCustomer
+            // 
+            this.cbUpdateCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbUpdateCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbUpdateCustomer.ForeColor = System.Drawing.Color.White;
+            this.cbUpdateCustomer.FormattingEnabled = true;
+            this.cbUpdateCustomer.Location = new System.Drawing.Point(127, 19);
+            this.cbUpdateCustomer.Name = "cbUpdateCustomer";
+            this.cbUpdateCustomer.Size = new System.Drawing.Size(200, 21);
+            this.cbUpdateCustomer.TabIndex = 21;
+            this.cbUpdateCustomer.SelectedIndexChanged += new System.EventHandler(this.cbCustomer_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -693,6 +707,7 @@
             // 
             this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(117, 124);
             this.comboBox1.Name = "comboBox1";
@@ -716,6 +731,7 @@
             // 
             this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox2.ForeColor = System.Drawing.Color.White;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(117, 173);
             this.comboBox2.Name = "comboBox2";
@@ -739,6 +755,7 @@
             // 
             this.comboBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.comboBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox7.ForeColor = System.Drawing.Color.White;
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(117, 74);
             this.comboBox7.Name = "comboBox7";
@@ -759,6 +776,7 @@
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // materialLabel4
             // 
@@ -777,6 +795,7 @@
             // 
             this.cbUpateProductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cbUpateProductName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbUpateProductName.ForeColor = System.Drawing.Color.White;
             this.cbUpateProductName.FormattingEnabled = true;
             this.cbUpateProductName.Location = new System.Drawing.Point(117, 20);
             this.cbUpateProductName.Name = "cbUpateProductName";
@@ -996,38 +1015,6 @@
             this.materialLabel20.TabIndex = 0;
             this.materialLabel20.Text = "Name";
             // 
-            // materialRaisedButton3
-            // 
-            this.materialRaisedButton3.AutoSize = true;
-            this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Icon = null;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(127, 53);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(73, 36);
-            this.materialRaisedButton3.TabIndex = 12;
-            this.materialRaisedButton3.Text = "Search";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
-            // 
-            // txtUpdateCustomerName
-            // 
-            this.txtUpdateCustomerName.Depth = 0;
-            this.txtUpdateCustomerName.Hint = "";
-            this.txtUpdateCustomerName.Location = new System.Drawing.Point(127, 18);
-            this.txtUpdateCustomerName.MaxLength = 32767;
-            this.txtUpdateCustomerName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtUpdateCustomerName.Name = "txtUpdateCustomerName";
-            this.txtUpdateCustomerName.PasswordChar = '\0';
-            this.txtUpdateCustomerName.SelectedText = "";
-            this.txtUpdateCustomerName.SelectionLength = 0;
-            this.txtUpdateCustomerName.SelectionStart = 0;
-            this.txtUpdateCustomerName.Size = new System.Drawing.Size(200, 23);
-            this.txtUpdateCustomerName.TabIndex = 11;
-            this.txtUpdateCustomerName.TabStop = false;
-            this.txtUpdateCustomerName.UseSystemPasswordChar = false;
-            // 
             // lblSearchName_Update
             // 
             this.lblSearchName_Update.AutoSize = true;
@@ -1044,8 +1031,8 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.tabPage4.Controls.Add(this.cbDeleteCustomer);
             this.tabPage4.Controls.Add(this.btnDeleteCustomer);
-            this.tabPage4.Controls.Add(this.txtDeleteCustomer);
             this.tabPage4.Controls.Add(this.materialLabel5);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -1053,6 +1040,17 @@
             this.tabPage4.Size = new System.Drawing.Size(990, 831);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Delete Customers";
+            // 
+            // cbDeleteCustomer
+            // 
+            this.cbDeleteCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbDeleteCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbDeleteCustomer.ForeColor = System.Drawing.Color.White;
+            this.cbDeleteCustomer.FormattingEnabled = true;
+            this.cbDeleteCustomer.Location = new System.Drawing.Point(127, 17);
+            this.cbDeleteCustomer.Name = "cbDeleteCustomer";
+            this.cbDeleteCustomer.Size = new System.Drawing.Size(200, 21);
+            this.cbDeleteCustomer.TabIndex = 22;
             // 
             // btnDeleteCustomer
             // 
@@ -1068,23 +1066,7 @@
             this.btnDeleteCustomer.TabIndex = 16;
             this.btnDeleteCustomer.Text = "Delete";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
-            // 
-            // txtDeleteCustomer
-            // 
-            this.txtDeleteCustomer.Depth = 0;
-            this.txtDeleteCustomer.Hint = "";
-            this.txtDeleteCustomer.Location = new System.Drawing.Point(127, 18);
-            this.txtDeleteCustomer.MaxLength = 32767;
-            this.txtDeleteCustomer.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtDeleteCustomer.Name = "txtDeleteCustomer";
-            this.txtDeleteCustomer.PasswordChar = '\0';
-            this.txtDeleteCustomer.SelectedText = "";
-            this.txtDeleteCustomer.SelectionLength = 0;
-            this.txtDeleteCustomer.SelectionStart = 0;
-            this.txtDeleteCustomer.Size = new System.Drawing.Size(200, 23);
-            this.txtDeleteCustomer.TabIndex = 15;
-            this.txtDeleteCustomer.TabStop = false;
-            this.txtDeleteCustomer.UseSystemPasswordChar = false;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // materialLabel5
             // 
@@ -1153,12 +1135,9 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnNewCustomer;
         private MaterialSkin.Controls.MaterialLabel lblName;
         private System.Windows.Forms.TabPage tabPage3;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtUpdateCustomerName;
         private MaterialSkin.Controls.MaterialLabel lblSearchName_Update;
         private System.Windows.Forms.TabPage tabPage4;
         private MaterialSkin.Controls.MaterialRaisedButton btnDeleteCustomer;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtDeleteCustomer;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNewPhone;
@@ -1217,5 +1196,7 @@
         private System.Windows.Forms.DataGridView dgView_Actors;
         private MaterialSkin.Controls.MaterialLabel lblProducts;
         private System.Windows.Forms.ListBox lsBox_products;
+        private System.Windows.Forms.ComboBox cbUpdateCustomer;
+        private System.Windows.Forms.ComboBox cbDeleteCustomer;
     }
 }

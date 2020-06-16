@@ -13,8 +13,6 @@ namespace SEN381
 {
     public partial class Customers : UserControl, IBinding, IValidate
     {
-        public enum CheckedState { Checked = 0, Unchecked = 1};
-        CheckedState state;
 
         BindingSource bs = new BindingSource();
 
@@ -48,12 +46,18 @@ namespace SEN381
             bs.DataSource = customers;
             dgView_Customers.DataSource = bs;
 
+            cbUpdateCustomer.DataSource = bs;
+            cbUpdateCustomer.DisplayMember = "Name";
+
+            cbDeleteCustomer.DataSource = bs;
+            cbDeleteCustomer.DisplayMember = "Name";
+
             RefreshOwnedProducts();
         }
 
         public void RefreshComponents()
         {
-            /* bsComponents.Clear();
+             /*bsComponents.Clear();
 
 
              if (customer != null)
@@ -139,6 +143,20 @@ namespace SEN381
 
         private void dgView_Customers_Click(object sender, EventArgs e) => RefreshOwnedProducts();
 
+        private void cbCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Customer temp = (Customer)cbUpdateCustomer.SelectedItem;
+
+            if (temp != null)
+            {
+                txtUpdateName.Text = temp.Name;
+                txtUpdateSurname.Text = temp.Surname;
+                txtUpdateEmail.Text = temp.Email;
+                txtUpdateAddress.Text = temp.Address;
+                txtUpdateTelephone.Text = temp.PhoneNumber.ToString();
+                txtUpdateBank.Text = temp.BankingDetails;
+            }
+        }
         private void lsBox_products_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshActors();
@@ -159,7 +177,7 @@ namespace SEN381
             }
                 
         }
-
+        //TODO ~ Add addd products to new Customer update stored procedure to use scope_identity
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
             List<MaterialSingleLineTextField> allFields = NewCustomerDetails();
@@ -171,6 +189,7 @@ namespace SEN381
                 if (!chckBoxAdd.Checked)
                 {
                     management.Insert(txtNewName.Text, txtNewSurname.Text, txtNewEmail.Text, txtNewAddress.Text, int.Parse(txtNewPhone.Text), txtNewBankAccount.Text, 0);
+                    MessageBox.Show("Insertion successful!");
                     RefreshAll();
                     ClearFields(allFields);
                 }
@@ -178,8 +197,18 @@ namespace SEN381
 
             else
             {
-
+                MessageBox.Show("Vaules in incorrect format");
             }
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -198,7 +227,7 @@ namespace SEN381
 
         void ClearFields(List<MaterialSingleLineTextField> fields)
         {
-            foreach(var txtBox in fields)
+            foreach (var txtBox in fields)
             {
                 txtBox.Clear();
             }
@@ -219,7 +248,7 @@ namespace SEN381
         public bool IsNumeric(List<MaterialSingleLineTextField> fields)
         {
             int number;
- 
+
             foreach (var txtBox in fields)
             {
                 if (int.TryParse(txtBox.Text, out number) && txtBox.Text.Length.Equals(10) && int.Parse(txtBox.Text.ToString()) > 0)
@@ -230,6 +259,8 @@ namespace SEN381
 
             return false;
         }
+
+        public bool IsInRange(ComboBox combo) { return (combo.SelectedIndex >= 0) ? true : false; }
     }
 
 }
