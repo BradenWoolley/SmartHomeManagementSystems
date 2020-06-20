@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
 
 namespace SEN381
 {
-    public partial class TechSupport : UserControl, IBinding
+    public partial class TechSupport : UserControl, IBinding, IValidate
     {
         public TechSupport()
         {
             InitializeComponent();
         }
+
+        
 
         public void RefreshActors()
         {
@@ -40,6 +43,24 @@ namespace SEN381
         public void RefreshSensors()
         {
             //throw new NotImplementedException();
+        }
+
+        public bool IsInRange(ComboBox combo)
+        {
+            //throw new NotImplementedException();
+            return true;
+        }
+
+        public bool IsNullOrWhiteSpace(List<MaterialSingleLineTextField> fields)
+        {
+            //throw new NotImplementedException();
+            return false;
+        }
+
+        public bool IsNumeric(List<MaterialSingleLineTextField> fields)
+        {
+            //throw new NotImplementedException();
+            return true;
         }
     }
 }

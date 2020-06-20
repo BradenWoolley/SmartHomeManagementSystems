@@ -195,7 +195,7 @@ namespace DataAccessLayer
         /// </summary>
        
         //TODO - Remove arrays and switch to hardcoded strings
-        public void Insert(string procedure, string[] name, string[] componentType, string[] cost, string[] productGroup)
+        public void Insert(string procedure, string name, int componentType, double cost, int productGroup)
         {
             SqlConnection conn = new SqlConnection(connectionString);
 
@@ -204,10 +204,10 @@ namespace DataAccessLayer
                 conn.Open();
                 SqlCommand command = new SqlCommand(procedure, conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue(name[0], name[1]);
-                command.Parameters.AddWithValue(componentType[0], componentType[1]);
-                command.Parameters.AddWithValue(cost[0], cost[1]);
-                command.Parameters.AddWithValue(productGroup[0], productGroup[1]);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Type", componentType);
+                command.Parameters.AddWithValue("@Cost", cost);
+                command.Parameters.AddWithValue("@ProductID", productGroup);
                 command.ExecuteNonQuery();
             }
             catch (SqlException se)
