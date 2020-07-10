@@ -18,8 +18,6 @@ namespace DataAccessLayer
 
         public DataAccess()
         {
-  
-
         }
         public static DataAccess Singleton
         {
@@ -33,10 +31,8 @@ namespace DataAccessLayer
             }
         }
 
-        /// <summary>
-        /// Reading Data
-        /// </summary>
-       public DataSet ReadProc(string procedure)
+        #region ReadMethods
+        public DataSet ReadProc(string procedure)
        {
             SqlConnection conn = new SqlConnection(connectionString);
             DataSet rawData = new DataSet();
@@ -171,6 +167,8 @@ namespace DataAccessLayer
             return rawData;
         }
 
+        #endregion
+
         /*public DataSet ReadAllTechSupport()
         {
             //TODO change SQL
@@ -190,11 +188,8 @@ namespace DataAccessLayer
             return rawData;
         }*/
 
-        /// <summary>
-        /// Inserts
-        /// </summary>
-       
-        //TODO - Remove arrays and switch to hardcoded strings
+        #region InsertMethods
+
         public void Insert(string procedure, string name, int componentType, double cost, int productGroup)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -315,10 +310,9 @@ namespace DataAccessLayer
                 }
             }
         }//schedule new maintainence
+        #endregion
 
-        /// <summary>
-        /// Updates
-        /// </summary>
+        #region UpdateMethods
 
         //UpdateCompoonents
         public void Update(string procedure, int id, string name, int componentType, double cost, int productGroup)
@@ -350,10 +344,9 @@ namespace DataAccessLayer
                 }
             }
         }
+        #endregion
 
-        /// <summary>
-        /// DELETE DATA No deleting entire tables will be implemented
-        /// </summary>
+        #region DeleteMethods
 
         //TODO - Override or use switch statement to reuse for composite tables   
         public DataSet DeleteData(string tableName, string ID)
@@ -394,5 +387,7 @@ namespace DataAccessLayer
                 }
             }
         }
+
+        #endregion
     }
 }

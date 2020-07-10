@@ -187,7 +187,6 @@ namespace SEN381
 
             MessageBox.Show($"{comp.Name} successfully deleted", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
-
         public bool IsNullOrWhiteSpace(List<MaterialSingleLineTextField> fields)
         {
             foreach (var txtBox in fields)
@@ -199,7 +198,6 @@ namespace SEN381
             }
             return false;
         }
-
         public bool IsNumeric(List<MaterialSingleLineTextField> fields)
         {
             double number;

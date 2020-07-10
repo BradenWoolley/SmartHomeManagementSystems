@@ -57,24 +57,24 @@ namespace SEN381
 
         public void RefreshComponents()
         {
-             /*bsComponents.Clear();
+            /*bsComponents.Clear();
 
 
-             if (customer != null)
-             {
-                 List<BusinessLayer.Component> components = new List<BusinessLayer.Component>();
-                 components.Clear();
+            if (customer != null)
+            {
+                List<BusinessLayer.Component> components = new List<BusinessLayer.Component>();
+                components.Clear();
 
-                 components = new BusinessLayer.Component().GetComponents();
+                components = new BusinessLayer.Component().GetComponents();
 
-                 bsComponents.DataSource = components;
+                bsComponents.DataSource = components;
 
-                 cbProductName_Update.DataSource = bsComponents;
-                 cbProductName_Update.DisplayMember = "Name";
+                cbProductName_Update.DataSource = bsComponents;
+                cbProductName_Update.DisplayMember = "Name";
 
-                 cbProductName_Delete.DataSource = bsComponents;
-                 cbProductName_Delete.DisplayMember = "Name";
-                 }*/
+                cbProductName_Delete.DataSource = bsComponents;
+                cbProductName_Delete.DisplayMember = "Name";
+                }*/
         }
 
         public void RefreshActors()
@@ -175,9 +175,9 @@ namespace SEN381
             {
                 gbAddProducts.Visible = false;
             }
-                
+
         }
-        //TODO ~ Add addd products to new Customer update stored procedure to use scope_identity
+        //TODO ~ Add products to new Customer update stored procedure to use scope_identity
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
             List<MaterialSingleLineTextField> allFields = NewCustomerDetails();
@@ -201,7 +201,7 @@ namespace SEN381
             }
 
         }
-
+        //TODO ~ Add functionality
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
@@ -209,7 +209,8 @@ namespace SEN381
 
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-
+            Customer temp = (Customer)cbDeleteCustomer.SelectedItem;
+            management.Delete(temp.CustomerID);
         }
 
         List<MaterialSingleLineTextField> NewCustomerDetails()
@@ -260,7 +261,7 @@ namespace SEN381
             return false;
         }
 
-        public bool IsInRange(ComboBox combo) { return (combo.SelectedIndex >= 0) ? true : false; }
+        public bool IsInRange(ComboBox combo){return (combo.SelectedIndex >= 0) ? true : false;}
     }
 
 }

@@ -23,6 +23,7 @@ namespace BusinessLayer
         private List<Sensor> ownedSensors;
         private List<Controller> ownedControllers;
 
+        #region Properties
         public int CustomerID { get => customerID; set => customerID = value; }
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
@@ -36,6 +37,7 @@ namespace BusinessLayer
         internal List<Sensor> OwnedSensors { get => ownedSensors; set => ownedSensors = value; }
         internal List<Controller> OwnedControllers { get => ownedControllers; set => ownedControllers = value; }
         public int ProductCount { get => productCount; set => productCount = value; }
+        #endregion
 
         //Default Constructor
         public Customer() { }

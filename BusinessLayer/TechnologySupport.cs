@@ -17,7 +17,6 @@ namespace BusinessLayer
 
         //Will send email to client informing them of their scheduled maintenance details
         public event OnSchedule onSchedule;
-
         public TechnologySupport() { }
         public TechnologySupport(int customerID, /*List<string> configuration,*/ DateTime scheduledDate)
         {

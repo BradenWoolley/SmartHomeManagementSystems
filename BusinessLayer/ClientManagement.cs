@@ -12,6 +12,8 @@ namespace BusinessLayer
         public void Insert(string name, string surname, string email, 
             string address, int phoneNumber, string bankingDetails, double amountDue) => 
             access.NewCustomer(name, surname, email, address, phoneNumber, bankingDetails, amountDue);
+        //TODO ~ Implement stored procedure
+        public void Delete(int id) => access.Delete("DeleteCustomer", id);
 
         public void EditCustomerDetails()
         {
