@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TechSupport));
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gpAddProducts = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnSubmitNewProduct = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -54,7 +56,14 @@
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.CallCentre = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnStartCall = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnEndCall = new MaterialSkin.Controls.MaterialFlatButton();
+            this.txtSearchClientName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lsBoxClientNames = new System.Windows.Forms.ListBox();
+            this.JobsInProgress = new System.Windows.Forms.TabPage();
+            this.treeCurrentJobs = new System.Windows.Forms.TreeView();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
@@ -63,6 +72,9 @@
             this.tabPage3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.CallCentre.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.JobsInProgress.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -73,7 +85,7 @@
             this.materialTabSelector1.Location = new System.Drawing.Point(7, 15);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(600, 46);
+            this.materialTabSelector1.Size = new System.Drawing.Size(860, 46);
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "tabSelector";
             // 
@@ -83,6 +95,8 @@
             this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Controls.Add(this.tabPage4);
+            this.materialTabControl1.Controls.Add(this.CallCentre);
+            this.materialTabControl1.Controls.Add(this.JobsInProgress);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 61);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -137,11 +151,19 @@
             this.gpAddProducts.TabIndex = 8;
             this.gpAddProducts.TabStop = false;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(207, 111);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 13;
+            // 
             // materialSingleLineTextField2
             // 
             this.materialSingleLineTextField2.Depth = 0;
             this.materialSingleLineTextField2.Hint = "";
             this.materialSingleLineTextField2.Location = new System.Drawing.Point(207, 16);
+            this.materialSingleLineTextField2.MaxLength = 32767;
             this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
             this.materialSingleLineTextField2.PasswordChar = '\0';
@@ -150,6 +172,7 @@
             this.materialSingleLineTextField2.SelectionStart = 0;
             this.materialSingleLineTextField2.Size = new System.Drawing.Size(200, 23);
             this.materialSingleLineTextField2.TabIndex = 12;
+            this.materialSingleLineTextField2.TabStop = false;
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
             // 
             // materialLabel1
@@ -167,12 +190,15 @@
             // 
             // btnSubmitNewProduct
             // 
+            this.btnSubmitNewProduct.AutoSize = true;
+            this.btnSubmitNewProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSubmitNewProduct.Depth = 0;
+            this.btnSubmitNewProduct.Icon = null;
             this.btnSubmitNewProduct.Location = new System.Drawing.Point(207, 164);
             this.btnSubmitNewProduct.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSubmitNewProduct.Name = "btnSubmitNewProduct";
             this.btnSubmitNewProduct.Primary = true;
-            this.btnSubmitNewProduct.Size = new System.Drawing.Size(200, 36);
+            this.btnSubmitNewProduct.Size = new System.Drawing.Size(71, 36);
             this.btnSubmitNewProduct.TabIndex = 7;
             this.btnSubmitNewProduct.Text = "Create";
             this.btnSubmitNewProduct.UseVisualStyleBackColor = true;
@@ -230,12 +256,15 @@
             // 
             // materialRaisedButton3
             // 
+            this.materialRaisedButton3.AutoSize = true;
+            this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Icon = null;
             this.materialRaisedButton3.Location = new System.Drawing.Point(162, 72);
             this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton3.Name = "materialRaisedButton3";
             this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(200, 36);
+            this.materialRaisedButton3.Size = new System.Drawing.Size(73, 36);
             this.materialRaisedButton3.TabIndex = 12;
             this.materialRaisedButton3.Text = "Search";
             this.materialRaisedButton3.UseVisualStyleBackColor = true;
@@ -245,6 +274,7 @@
             this.txtSearchProd_Update.Depth = 0;
             this.txtSearchProd_Update.Hint = "";
             this.txtSearchProd_Update.Location = new System.Drawing.Point(162, 37);
+            this.txtSearchProd_Update.MaxLength = 32767;
             this.txtSearchProd_Update.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSearchProd_Update.Name = "txtSearchProd_Update";
             this.txtSearchProd_Update.PasswordChar = '\0';
@@ -253,6 +283,7 @@
             this.txtSearchProd_Update.SelectionStart = 0;
             this.txtSearchProd_Update.Size = new System.Drawing.Size(200, 23);
             this.txtSearchProd_Update.TabIndex = 11;
+            this.txtSearchProd_Update.TabStop = false;
             this.txtSearchProd_Update.UseSystemPasswordChar = false;
             // 
             // lblSearchName_Update
@@ -295,12 +326,15 @@
             // 
             // materialRaisedButton1
             // 
+            this.materialRaisedButton1.AutoSize = true;
+            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Icon = null;
             this.materialRaisedButton1.Location = new System.Drawing.Point(137, 155);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(200, 36);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(73, 36);
             this.materialRaisedButton1.TabIndex = 7;
             this.materialRaisedButton1.Text = "Update";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
@@ -358,12 +392,15 @@
             // 
             // materialRaisedButton2
             // 
+            this.materialRaisedButton2.AutoSize = true;
+            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Icon = null;
             this.materialRaisedButton2.Location = new System.Drawing.Point(170, 179);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton2.Name = "materialRaisedButton2";
             this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(200, 36);
+            this.materialRaisedButton2.Size = new System.Drawing.Size(69, 36);
             this.materialRaisedButton2.TabIndex = 16;
             this.materialRaisedButton2.Text = "Delete";
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
@@ -373,6 +410,7 @@
             this.materialSingleLineTextField1.Depth = 0;
             this.materialSingleLineTextField1.Hint = "";
             this.materialSingleLineTextField1.Location = new System.Drawing.Point(170, 42);
+            this.materialSingleLineTextField1.MaxLength = 32767;
             this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
             this.materialSingleLineTextField1.PasswordChar = '\0';
@@ -381,6 +419,7 @@
             this.materialSingleLineTextField1.SelectionStart = 0;
             this.materialSingleLineTextField1.Size = new System.Drawing.Size(200, 23);
             this.materialSingleLineTextField1.TabIndex = 15;
+            this.materialSingleLineTextField1.TabStop = false;
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             // 
             // materialLabel5
@@ -395,14 +434,106 @@
             this.materialLabel5.Size = new System.Drawing.Size(119, 19);
             this.materialLabel5.TabIndex = 14;
             this.materialLabel5.Text = "Customer Name";
-
             // 
-            // dateTimePicker1
+            // CallCentre
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(207, 111);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 13;
+            this.CallCentre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.CallCentre.Controls.Add(this.groupBox2);
+            this.CallCentre.Controls.Add(this.txtSearchClientName);
+            this.CallCentre.Controls.Add(this.lsBoxClientNames);
+            this.CallCentre.Location = new System.Drawing.Point(4, 22);
+            this.CallCentre.Name = "CallCentre";
+            this.CallCentre.Size = new System.Drawing.Size(986, 804);
+            this.CallCentre.TabIndex = 4;
+            this.CallCentre.Text = "Call Centre";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnStartCall);
+            this.groupBox2.Controls.Add(this.btnEndCall);
+            this.groupBox2.Location = new System.Drawing.Point(72, 295);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(144, 56);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            // 
+            // btnStartCall
+            // 
+            this.btnStartCall.AutoSize = true;
+            this.btnStartCall.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnStartCall.Depth = 0;
+            this.btnStartCall.Icon = ((System.Drawing.Image)(resources.GetObject("btnStartCall.Icon")));
+            this.btnStartCall.Image = ((System.Drawing.Image)(resources.GetObject("btnStartCall.Image")));
+            this.btnStartCall.Location = new System.Drawing.Point(7, 11);
+            this.btnStartCall.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnStartCall.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnStartCall.Name = "btnStartCall";
+            this.btnStartCall.Primary = true;
+            this.btnStartCall.Size = new System.Drawing.Size(44, 36);
+            this.btnStartCall.TabIndex = 0;
+            this.btnStartCall.UseVisualStyleBackColor = true;
+            this.btnStartCall.Click += new System.EventHandler(this.btnStartCall_Click);
+            // 
+            // btnEndCall
+            // 
+            this.btnEndCall.AutoSize = true;
+            this.btnEndCall.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnEndCall.Depth = 0;
+            this.btnEndCall.Icon = ((System.Drawing.Image)(resources.GetObject("btnEndCall.Icon")));
+            this.btnEndCall.Image = ((System.Drawing.Image)(resources.GetObject("btnEndCall.Image")));
+            this.btnEndCall.Location = new System.Drawing.Point(91, 11);
+            this.btnEndCall.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEndCall.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEndCall.Name = "btnEndCall";
+            this.btnEndCall.Primary = true;
+            this.btnEndCall.Size = new System.Drawing.Size(44, 36);
+            this.btnEndCall.TabIndex = 1;
+            this.btnEndCall.UseVisualStyleBackColor = true;
+            this.btnEndCall.Click += new System.EventHandler(this.btnEndCall_Click);
+            // 
+            // txtSearchClientName
+            // 
+            this.txtSearchClientName.Depth = 0;
+            this.txtSearchClientName.ForeColor = System.Drawing.Color.White;
+            this.txtSearchClientName.Hint = "Enter Customer Name";
+            this.txtSearchClientName.Location = new System.Drawing.Point(4, 22);
+            this.txtSearchClientName.MaxLength = 32767;
+            this.txtSearchClientName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSearchClientName.Name = "txtSearchClientName";
+            this.txtSearchClientName.PasswordChar = '\0';
+            this.txtSearchClientName.SelectedText = "";
+            this.txtSearchClientName.SelectionLength = 0;
+            this.txtSearchClientName.SelectionStart = 0;
+            this.txtSearchClientName.Size = new System.Drawing.Size(178, 23);
+            this.txtSearchClientName.TabIndex = 3;
+            this.txtSearchClientName.TabStop = false;
+            this.txtSearchClientName.UseSystemPasswordChar = false;
+            this.txtSearchClientName.TextChanged += new System.EventHandler(this.txtSearchClientName_TextChanged);
+            // 
+            // lsBoxClientNames
+            // 
+            this.lsBoxClientNames.FormattingEnabled = true;
+            this.lsBoxClientNames.Location = new System.Drawing.Point(4, 51);
+            this.lsBoxClientNames.Name = "lsBoxClientNames";
+            this.lsBoxClientNames.Size = new System.Drawing.Size(294, 238);
+            this.lsBoxClientNames.TabIndex = 2;
+            // 
+            // JobsInProgress
+            // 
+            this.JobsInProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.JobsInProgress.Controls.Add(this.treeCurrentJobs);
+            this.JobsInProgress.Location = new System.Drawing.Point(4, 22);
+            this.JobsInProgress.Name = "JobsInProgress";
+            this.JobsInProgress.Size = new System.Drawing.Size(986, 804);
+            this.JobsInProgress.TabIndex = 5;
+            this.JobsInProgress.Text = "Current Jobs";
+            // 
+            // treeCurrentJobs
+            // 
+            this.treeCurrentJobs.Location = new System.Drawing.Point(81, 98);
+            this.treeCurrentJobs.Name = "treeCurrentJobs";
+            this.treeCurrentJobs.Size = new System.Drawing.Size(796, 412);
+            this.treeCurrentJobs.TabIndex = 0;
             // 
             // TechSupport
             // 
@@ -425,6 +556,10 @@
             this.groupBox1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.CallCentre.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.JobsInProgress.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -458,5 +593,13 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TabPage CallCentre;
+        private MaterialSkin.Controls.MaterialFlatButton btnEndCall;
+        private MaterialSkin.Controls.MaterialFlatButton btnStartCall;
+        private System.Windows.Forms.TabPage JobsInProgress;
+        private System.Windows.Forms.TreeView treeCurrentJobs;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearchClientName;
+        private System.Windows.Forms.ListBox lsBoxClientNames;
     }
 }

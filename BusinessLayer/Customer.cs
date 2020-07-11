@@ -9,6 +9,7 @@ namespace BusinessLayer
     {
         DataAccess access = DataAccess.Singleton;
 
+        #region Properties
         private int customerID, phoneNumber, productCount;
 
         private string name, surname, email, address;
@@ -23,7 +24,6 @@ namespace BusinessLayer
         private List<Sensor> ownedSensors;
         private List<Controller> ownedControllers;
 
-        #region Properties
         public int CustomerID { get => customerID; set => customerID = value; }
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
