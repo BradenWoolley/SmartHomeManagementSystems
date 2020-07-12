@@ -13,6 +13,5 @@ namespace SEN381
         void RefreshActors();
         void RefreshSensors();
         void RefreshControllers();
-
     }
 }

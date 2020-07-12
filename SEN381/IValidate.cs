@@ -11,9 +11,7 @@ namespace SEN381
     interface IValidate
     {
         bool IsNullOrWhiteSpace(List<MaterialSingleLineTextField> fields);
-
         bool IsNumeric(List<MaterialSingleLineTextField> fields);
         bool IsInRange(ComboBox combo);
-
     }
 }

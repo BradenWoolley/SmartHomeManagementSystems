@@ -54,6 +54,7 @@ namespace SEN381
 
         }
 
+        #region InterfaceMethods
         //Clears and resets all bindingsources
         public void RefreshAll()
         {
@@ -138,6 +139,33 @@ namespace SEN381
                 cbProductName_Delete.DisplayMember = "Name";
             }
         }
+        public bool IsNullOrWhiteSpace(List<MaterialSingleLineTextField> fields)
+        {
+            foreach (var txtBox in fields)
+            {
+                if (string.IsNullOrWhiteSpace(txtBox.Text) || txtBox.Text.Equals(0))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool IsNumeric(List<MaterialSingleLineTextField> fields)
+        {
+            double number;
+
+            foreach (var txtBox in fields)
+            {
+                if (double.TryParse(txtBox.Text, out number) && txtBox.Text.Length > 0.0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool IsInRange(ComboBox combo) { return (combo.SelectedIndex >= 0) ? true : false; }
+        #endregion
+
         //Insert new component after checking fields ~ TODO move index increment to business layer Implement exception handling
         private void btnSubmitNewProduct_Click(object sender, EventArgs e)
         {
@@ -187,32 +215,7 @@ namespace SEN381
 
             MessageBox.Show($"{comp.Name} successfully deleted", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
-        public bool IsNullOrWhiteSpace(List<MaterialSingleLineTextField> fields)
-        {
-            foreach (var txtBox in fields)
-            {
-                if (string.IsNullOrWhiteSpace(txtBox.Text) || txtBox.Text.Equals(0))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public bool IsNumeric(List<MaterialSingleLineTextField> fields)
-        {
-            double number;
-
-            foreach (var txtBox in fields)
-            {
-                if (double.TryParse(txtBox.Text, out number) && txtBox.Text.Length > 0.0)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public bool IsInRange(ComboBox combo) { return (combo.SelectedIndex >= 0) ? true : false; }
-
+        
         List<MaterialSingleLineTextField> NewProductDetails()
         {
             List<MaterialSingleLineTextField> fields = new List<MaterialSingleLineTextField>();

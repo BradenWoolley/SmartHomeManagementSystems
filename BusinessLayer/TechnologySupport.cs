@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLayer;
 
 namespace BusinessLayer
 {
     public class TechnologySupport
     {
+        DataAccess access = DataAccess.Singleton;
+
         private int customerID;
         //private List<string> configuration;
         private double cost;
@@ -30,6 +33,8 @@ namespace BusinessLayer
         //public List<string> Configuration { get => configuration; set => configuration = value; }
         public double Cost { get => cost; set => cost = value; }
         public DateTime ScheduledDate { get => scheduledDate; set => scheduledDate = value; }
+
+        public void LogCall(int custID,string[] callLogs) => access.LogCall(custID, callLogs, "LogCalls");
 
         //Potentially remove
         private double GetCost()

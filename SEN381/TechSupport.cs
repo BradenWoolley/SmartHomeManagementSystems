@@ -14,8 +14,10 @@ namespace SEN381
 {
     public partial class TechSupport : UserControl, IBinding, IValidate
     {
-        List<Customer> SearchedCustomers = new List<Customer>();
-        List<Customer> Customers;
+        List<Customer> SearchedCustomers = new List<Customer>(), Customers;
+        string callStarted, callEnded;
+
+        TechnologySupport tech = new TechnologySupport();
 
         BindingSource bsCustomer = new BindingSource();
         public TechSupport()
@@ -65,17 +67,8 @@ namespace SEN381
             //throw new NotImplementedException();
             return true;
         }
+
         #endregion
-
-        private void btnStartCall_Click(object sender, EventArgs e)
-        {
-            //testText.Text = $"Call started at: {DateTime.Now.ToLocalTime().ToString()}";
-        }
-
-        private void btnEndCall_Click(object sender, EventArgs e)
-        {
-            //testText.Text = $"Call started at: {DateTime.Now.ToLocalTime().ToString()}";
-        }
 
         //Filters listbox for similar names to call
         private void txtSearchClientName_TextChanged(object sender, EventArgs e)
@@ -100,6 +93,36 @@ namespace SEN381
 
                 lsBoxClientNames.DataSource = SearchedCustomers;
             }
+        }
+
+        private void btn_Call_Click(object sender, EventArgs e) 
+        {
+            Customer cus = (Customer)lsBoxClientNames.SelectedItem;
+            txtSearchClientName.Text = cus.Name;
+            callStarted = DateTime.Now.ToLocalTime().ToString();
+        } 
+
+        private void btn_EndCall_Click(object sender, EventArgs e)
+        {
+            if (callStarted == null)
+                return;
+
+
+            callEnded = DateTime.Now.ToLocalTime().ToString();
+
+            string[] callLogs = new string[2];
+
+            callLogs[0] = callStarted;
+            callLogs[1] = callEnded;
+
+            Customer customerCalled = (Customer)lsBoxClientNames.SelectedItem;
+
+            string name = customerCalled.Name;
+            tech.LogCall(customerCalled.CustomerID, callLogs);
+
+            txtSearchClientName.Clear();
+
+            MessageBox.Show($"Called with {customerCalled.Name} {customerCalled.Surname} ended at {callLogs[1]}", "Called Ended", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

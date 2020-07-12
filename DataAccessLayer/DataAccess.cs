@@ -310,6 +310,35 @@ namespace DataAccessLayer
                 }
             }
         }//schedule new maintainence
+
+        public void LogCall(int custID, string[] callLogs, string proc)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(proc, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@CustomerID", custID);
+                command.Parameters.AddWithValue("@CallInitiated", callLogs[0]);
+                command.Parameters.AddWithValue("@CallEnded", callLogs[1]);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException se)
+            {
+                //TODO exception back to presentation layer
+
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         #endregion
 
         #region UpdateMethods
