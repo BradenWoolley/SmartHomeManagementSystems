@@ -167,25 +167,6 @@ namespace DataAccessLayer
 
         #endregion
 
-        /*public DataSet ReadAllTechSupport()
-        {
-            //TODO change SQL
-            string tableName = "tblTechSupport";
-            DataSet rawData = new DataSet();
-            using (SqlConnection conn = new SqlConnection(connection.ToString()))
-            {
-                string qry = string.Format("SELECT tblProductCatalogue.ProductID, tblProductCatalogue.ProductSuite, tblComponent.ComponentID tblComponent.Name, tblComponent.ComponentType "
-                    + "FROM((tblProductCatalogueINNER JOIN tblProductComponents ON tblProductCatalogue.ProductID = tblProductComponents.ProductID)"
-                    + "INNER JOIN tblComponent ON tblProductComponents.ComponentID = tblComponent.ComponentID);");
-
-                conn.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(qry, conn);
-                adapter.FillSchema(rawData, SchemaType.Source, tableName);//sets structure
-                adapter.Fill(rawData, tableName);//gets actual data from query result
-            }
-            return rawData;
-        }*/
-
         #region InsertMethods
 
         public void Insert(string procedure, string name, int componentType, double cost, int productGroup)
@@ -248,6 +229,35 @@ namespace DataAccessLayer
                 }
             }
         }//add new customer with full details
+
+        public void AddOrder(string proc, int customerID, int productID, int componentID, string serial)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(proc, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@Serial", serial);
+                command.Parameters.AddWithValue("@CustomerID", customerID);
+                command.Parameters.AddWithValue("@ComponentID", componentID);
+                command.Parameters.AddWithValue("@ProductID", productID);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException se)
+            {
+                //TODO exception back to presentation layer
+
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
 
         public void NewCustomerOrder(int customerID, int productID, List<int> componentIDs)
         {
@@ -356,6 +366,40 @@ namespace DataAccessLayer
                 command.Parameters.AddWithValue("@Type", componentType);
                 command.Parameters.AddWithValue("@Cost", cost);
                 command.Parameters.AddWithValue("@ProductID", productGroup);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException se)
+            {
+                //TODO exception back to presentation layer
+
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public void Update(int id, string name, string surname, string email,
+            string address, string phoneNumber, string bankingDetails)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            string procedure = "UpdateCustomer";
+
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(procedure, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@ID", id);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@Surname", surname);
+                command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@Address", address);
+                command.Parameters.AddWithValue("@Phone", phoneNumber);
+                command.Parameters.AddWithValue("@Banking", bankingDetails);
                 command.ExecuteNonQuery();
             }
             catch (SqlException se)

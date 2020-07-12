@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customers));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.ViewCustomers = new System.Windows.Forms.TabPage();
             this.lblProducts = new MaterialSkin.Controls.MaterialLabel();
@@ -55,6 +56,20 @@
             this.txtNewName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnNewCustomer = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
+            this.PurchaseProduct = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPurchaseProducts = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnClearCart = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtSearchClientName = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.lsBoxClientNames = new System.Windows.Forms.ListBox();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
+            this.lsBoxPurchaseSensors = new System.Windows.Forms.CheckedListBox();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.lsBoxPurchaseControllers = new System.Windows.Forms.CheckedListBox();
+            this.lsBoxPurchaseProducts = new System.Windows.Forms.ListBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.lsBoxPurchaseActors = new System.Windows.Forms.CheckedListBox();
             this.UpdateCustomers = new System.Windows.Forms.TabPage();
             this.cbUpdateCustomer = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -76,7 +91,7 @@
             this.btnDeleteCustomer = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.PurchaseProduct = new System.Windows.Forms.TabPage();
+            this.btnUpdateCustomer = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
             this.ViewCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Sensors)).BeginInit();
@@ -85,6 +100,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Customers)).BeginInit();
             this.AddCustomers.SuspendLayout();
             this.gpAddCustomer.SuspendLayout();
+            this.PurchaseProduct.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.UpdateCustomers.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.DeleteCustomers.SuspendLayout();
@@ -478,9 +495,199 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
+            // PurchaseProduct
+            // 
+            this.PurchaseProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.PurchaseProduct.Controls.Add(this.groupBox2);
+            this.PurchaseProduct.Controls.Add(this.txtSearchClientName);
+            this.PurchaseProduct.Controls.Add(this.lsBoxClientNames);
+            this.PurchaseProduct.Controls.Add(this.materialLabel10);
+            this.PurchaseProduct.Controls.Add(this.lsBoxPurchaseSensors);
+            this.PurchaseProduct.Controls.Add(this.materialLabel4);
+            this.PurchaseProduct.Controls.Add(this.lsBoxPurchaseControllers);
+            this.PurchaseProduct.Controls.Add(this.lsBoxPurchaseProducts);
+            this.PurchaseProduct.Controls.Add(this.materialLabel3);
+            this.PurchaseProduct.Controls.Add(this.materialLabel2);
+            this.PurchaseProduct.Controls.Add(this.lsBoxPurchaseActors);
+            this.PurchaseProduct.Location = new System.Drawing.Point(4, 22);
+            this.PurchaseProduct.Name = "PurchaseProduct";
+            this.PurchaseProduct.Size = new System.Drawing.Size(990, 831);
+            this.PurchaseProduct.TabIndex = 4;
+            this.PurchaseProduct.Text = "Sales";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnPurchaseProducts);
+            this.groupBox2.Controls.Add(this.btnClearCart);
+            this.groupBox2.Location = new System.Drawing.Point(67, 62);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(208, 52);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            // 
+            // btnPurchaseProducts
+            // 
+            this.btnPurchaseProducts.AutoSize = true;
+            this.btnPurchaseProducts.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnPurchaseProducts.Depth = 0;
+            this.btnPurchaseProducts.Icon = ((System.Drawing.Image)(resources.GetObject("btnPurchaseProducts.Icon")));
+            this.btnPurchaseProducts.Location = new System.Drawing.Point(103, 10);
+            this.btnPurchaseProducts.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnPurchaseProducts.Name = "btnPurchaseProducts";
+            this.btnPurchaseProducts.Primary = true;
+            this.btnPurchaseProducts.Size = new System.Drawing.Size(99, 36);
+            this.btnPurchaseProducts.TabIndex = 3;
+            this.btnPurchaseProducts.Text = "Submit";
+            this.btnPurchaseProducts.UseVisualStyleBackColor = true;
+            this.btnPurchaseProducts.Click += new System.EventHandler(this.btnPurchaseProducts_Click);
+            // 
+            // btnClearCart
+            // 
+            this.btnClearCart.AutoSize = true;
+            this.btnClearCart.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnClearCart.Depth = 0;
+            this.btnClearCart.Icon = ((System.Drawing.Image)(resources.GetObject("btnClearCart.Icon")));
+            this.btnClearCart.Location = new System.Drawing.Point(6, 10);
+            this.btnClearCart.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnClearCart.Name = "btnClearCart";
+            this.btnClearCart.Primary = true;
+            this.btnClearCart.Size = new System.Drawing.Size(91, 36);
+            this.btnClearCart.TabIndex = 2;
+            this.btnClearCart.Text = "Clear";
+            this.btnClearCart.UseVisualStyleBackColor = true;
+            this.btnClearCart.Click += new System.EventHandler(this.btnClearCart_Click);
+            // 
+            // txtSearchClientName
+            // 
+            this.txtSearchClientName.Depth = 0;
+            this.txtSearchClientName.ForeColor = System.Drawing.Color.White;
+            this.txtSearchClientName.Hint = "Enter Customer Name";
+            this.txtSearchClientName.Location = new System.Drawing.Point(67, 23);
+            this.txtSearchClientName.MaxLength = 32767;
+            this.txtSearchClientName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSearchClientName.Name = "txtSearchClientName";
+            this.txtSearchClientName.PasswordChar = '\0';
+            this.txtSearchClientName.SelectedText = "";
+            this.txtSearchClientName.SelectionLength = 0;
+            this.txtSearchClientName.SelectionStart = 0;
+            this.txtSearchClientName.Size = new System.Drawing.Size(196, 23);
+            this.txtSearchClientName.TabIndex = 1;
+            this.txtSearchClientName.TabStop = false;
+            this.txtSearchClientName.UseSystemPasswordChar = false;
+            this.txtSearchClientName.TextChanged += new System.EventHandler(this.txtSearchClientName_TextChanged);
+            // 
+            // lsBoxClientNames
+            // 
+            this.lsBoxClientNames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lsBoxClientNames.ForeColor = System.Drawing.Color.White;
+            this.lsBoxClientNames.FormattingEnabled = true;
+            this.lsBoxClientNames.Location = new System.Drawing.Point(47, 131);
+            this.lsBoxClientNames.Name = "lsBoxClientNames";
+            this.lsBoxClientNames.Size = new System.Drawing.Size(328, 576);
+            this.lsBoxClientNames.TabIndex = 4;
+            // 
+            // materialLabel10
+            // 
+            this.materialLabel10.AutoSize = true;
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel10.Location = new System.Drawing.Point(498, 556);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(68, 19);
+            this.materialLabel10.TabIndex = 10;
+            this.materialLabel10.Text = "Sensors:";
+            // 
+            // lsBoxPurchaseSensors
+            // 
+            this.lsBoxPurchaseSensors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lsBoxPurchaseSensors.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsBoxPurchaseSensors.ForeColor = System.Drawing.Color.White;
+            this.lsBoxPurchaseSensors.FormattingEnabled = true;
+            this.lsBoxPurchaseSensors.Location = new System.Drawing.Point(502, 591);
+            this.lsBoxPurchaseSensors.Name = "lsBoxPurchaseSensors";
+            this.lsBoxPurchaseSensors.Size = new System.Drawing.Size(370, 116);
+            this.lsBoxPurchaseSensors.TabIndex = 8;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(498, 379);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(88, 19);
+            this.materialLabel4.TabIndex = 9;
+            this.materialLabel4.Text = "Controllers:";
+            // 
+            // lsBoxPurchaseControllers
+            // 
+            this.lsBoxPurchaseControllers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lsBoxPurchaseControllers.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsBoxPurchaseControllers.ForeColor = System.Drawing.Color.White;
+            this.lsBoxPurchaseControllers.FormattingEnabled = true;
+            this.lsBoxPurchaseControllers.Location = new System.Drawing.Point(502, 414);
+            this.lsBoxPurchaseControllers.Name = "lsBoxPurchaseControllers";
+            this.lsBoxPurchaseControllers.Size = new System.Drawing.Size(370, 116);
+            this.lsBoxPurchaseControllers.TabIndex = 7;
+            // 
+            // lsBoxPurchaseProducts
+            // 
+            this.lsBoxPurchaseProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lsBoxPurchaseProducts.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsBoxPurchaseProducts.ForeColor = System.Drawing.Color.White;
+            this.lsBoxPurchaseProducts.FormattingEnabled = true;
+            this.lsBoxPurchaseProducts.ItemHeight = 16;
+            this.lsBoxPurchaseProducts.Location = new System.Drawing.Point(502, 94);
+            this.lsBoxPurchaseProducts.Name = "lsBoxPurchaseProducts";
+            this.lsBoxPurchaseProducts.Size = new System.Drawing.Size(370, 84);
+            this.lsBoxPurchaseProducts.TabIndex = 5;
+            this.lsBoxPurchaseProducts.SelectedIndexChanged += new System.EventHandler(this.lsBoxPurchaseProducts_SelectedIndexChanged);
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(498, 198);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(58, 19);
+            this.materialLabel3.TabIndex = 14;
+            this.materialLabel3.Text = "Actors:";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(498, 66);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(73, 19);
+            this.materialLabel2.TabIndex = 16;
+            this.materialLabel2.Text = "Products:";
+            // 
+            // lsBoxPurchaseActors
+            // 
+            this.lsBoxPurchaseActors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.lsBoxPurchaseActors.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsBoxPurchaseActors.ForeColor = System.Drawing.Color.White;
+            this.lsBoxPurchaseActors.FormattingEnabled = true;
+            this.lsBoxPurchaseActors.Location = new System.Drawing.Point(502, 233);
+            this.lsBoxPurchaseActors.Name = "lsBoxPurchaseActors";
+            this.lsBoxPurchaseActors.Size = new System.Drawing.Size(370, 116);
+            this.lsBoxPurchaseActors.TabIndex = 6;
+            // 
             // UpdateCustomers
             // 
             this.UpdateCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.UpdateCustomers.Controls.Add(this.btnUpdateCustomer);
             this.UpdateCustomers.Controls.Add(this.cbUpdateCustomer);
             this.UpdateCustomers.Controls.Add(this.groupBox3);
             this.UpdateCustomers.Controls.Add(this.lblSearchName_Update);
@@ -781,14 +988,21 @@
             this.materialTabSelector1.TabIndex = 2;
             this.materialTabSelector1.Text = "tabSelector";
             // 
-            // PurchaseProduct
+            // btnUpdateCustomer
             // 
-            this.PurchaseProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.PurchaseProduct.Location = new System.Drawing.Point(4, 22);
-            this.PurchaseProduct.Name = "PurchaseProduct";
-            this.PurchaseProduct.Size = new System.Drawing.Size(990, 831);
-            this.PurchaseProduct.TabIndex = 4;
-            this.PurchaseProduct.Text = "Sales";
+            this.btnUpdateCustomer.AutoSize = true;
+            this.btnUpdateCustomer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpdateCustomer.Depth = 0;
+            this.btnUpdateCustomer.Icon = null;
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(127, 59);
+            this.btnUpdateCustomer.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
+            this.btnUpdateCustomer.Primary = true;
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(73, 36);
+            this.btnUpdateCustomer.TabIndex = 22;
+            this.btnUpdateCustomer.Text = "Update";
+            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
             // Customers
             // 
@@ -809,6 +1023,10 @@
             this.AddCustomers.ResumeLayout(false);
             this.gpAddCustomer.ResumeLayout(false);
             this.gpAddCustomer.PerformLayout();
+            this.PurchaseProduct.ResumeLayout(false);
+            this.PurchaseProduct.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.UpdateCustomers.ResumeLayout(false);
             this.UpdateCustomers.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -870,5 +1088,19 @@
         private System.Windows.Forms.ComboBox cbUpdateCustomer;
         private System.Windows.Forms.ComboBox cbDeleteCustomer;
         private System.Windows.Forms.TabPage PurchaseProduct;
+        private System.Windows.Forms.ListBox lsBoxPurchaseProducts;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.CheckedListBox lsBoxPurchaseActors;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
+        private System.Windows.Forms.CheckedListBox lsBoxPurchaseSensors;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.CheckedListBox lsBoxPurchaseControllers;
+        private MaterialSkin.Controls.MaterialRaisedButton btnPurchaseProducts;
+        private MaterialSkin.Controls.MaterialRaisedButton btnClearCart;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearchClientName;
+        private System.Windows.Forms.ListBox lsBoxClientNames;
+        private MaterialSkin.Controls.MaterialRaisedButton btnUpdateCustomer;
     }
 }

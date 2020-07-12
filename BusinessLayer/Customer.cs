@@ -10,9 +10,9 @@ namespace BusinessLayer
         DataAccess access = DataAccess.Singleton;
 
         #region Properties
-        private int customerID, phoneNumber, productCount;
+        private int customerID, productCount;
 
-        private string name, surname, email, address;
+        private string name, surname, phoneNumber, email, address;
 
         private DateTime billingDate;
 
@@ -29,7 +29,7 @@ namespace BusinessLayer
         public string Surname { get => surname; set => surname = value; }
         public string Email { get => email; set => email = value; }
         public string Address { get => address; set => address = value; }
-        public int PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public DateTime BillingDate { get => billingDate; set => billingDate = value; }
         public string BankingDetails { get => bankingDetails; set => bankingDetails = value; }
         public double AmountDue { get => amountDue; set => amountDue = value; }
@@ -42,7 +42,7 @@ namespace BusinessLayer
         //Default Constructor
         public Customer() { }
 
-        public Customer(int customerID, string name, string surname, string email, string address, int phoneNumber
+        public Customer(int customerID, string name, string surname, string email, string address, string phoneNumber
             , string bankingDetails, double amountDue)
         {
             CustomerID = customerID;
@@ -56,7 +56,7 @@ namespace BusinessLayer
             AmountDue = amountDue;
         }
 
-        public Customer(int customerID, string name, string surname, string email, string address, int phoneNumber
+        public Customer(int customerID, string name, string surname, string email, string address, string phoneNumber
             , string bankingDetails, double amountDue, int productCount, List<Actor> ownedActors, List<Sensor> ownedSensors, List<Controller> ownedControllers)
         {
             CustomerID = customerID;
@@ -86,7 +86,7 @@ namespace BusinessLayer
                     item["Surname"].ToString(),
                     item["Email"].ToString(),
                     item["Address"].ToString(),
-                    int.Parse(item["Telephone"].ToString()),
+                    item["Telephone"].ToString(),
                     item["BankingDetails"].ToString(),
                     double.Parse(item["AmountDue"].ToString())
                     ));

@@ -12,7 +12,7 @@ namespace SEN381
 {
     public partial class TechSupport : UserControl, IBinding, IValidate
     {
-        List<Customer> SearchedCustomers = new List<Customer>(), Customers;
+        List<Customer> SearchedCustomers = new List<Customer>(), Customers = new List<Customer>();
         string callStarted, callEnded;
 
         TechManagement tech = new TechManagement();
@@ -42,6 +42,7 @@ namespace SEN381
         public void RefreshAll()
         {
             bsCustomer.Clear();
+            Customers.Clear();
             Customers = new Customer().GetCustomers();
             bsCustomer.DataSource = Customers;
             lsBoxClientNames.DataSource = bsCustomer;
@@ -92,7 +93,7 @@ namespace SEN381
             {
                 foreach (var customer in Customers)
                 {
-                    if (customer.Name.Contains(searchValue))
+                    if (customer.Name.ToLower().Contains(searchValue.ToLower()))
                     {
                         SearchedCustomers.Add(customer);
                     }
