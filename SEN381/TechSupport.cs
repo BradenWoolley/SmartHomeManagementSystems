@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +15,7 @@ namespace SEN381
         List<Customer> SearchedCustomers = new List<Customer>(), Customers;
         string callStarted, callEnded;
 
-        TechnologySupport tech = new TechnologySupport();
+        TechManagement tech = new TechManagement();
 
         BindingSource bsCustomer = new BindingSource();
         public TechSupport()
@@ -25,6 +23,15 @@ namespace SEN381
             InitializeComponent();
 
             RefreshAll();
+
+            //TODO ~ Refactor to own method
+            TreeNode parentNode = new TreeNode("Volim");
+            treeCurrentJobs.Nodes.Add(parentNode);    
+            TreeNode childNode1 = new TreeNode("Guzu");
+            //TreeNode childNode2= new TreeNode("Makyu");
+            TreeNode[] childNodes = new TreeNode[] { childNode1/*, childNode2*/ };
+            parentNode = new TreeNode("Anjinu", childNodes);
+            treeCurrentJobs.Nodes.Add(parentNode);
         }
 
         #region InterfaceMethods
@@ -94,19 +101,16 @@ namespace SEN381
                 lsBoxClientNames.DataSource = SearchedCustomers;
             }
         }
-
         private void btn_Call_Click(object sender, EventArgs e) 
         {
             Customer cus = (Customer)lsBoxClientNames.SelectedItem;
             txtSearchClientName.Text = cus.Name;
             callStarted = DateTime.Now.ToLocalTime().ToString();
         } 
-
         private void btn_EndCall_Click(object sender, EventArgs e)
         {
             if (callStarted == null)
                 return;
-
 
             callEnded = DateTime.Now.ToLocalTime().ToString();
 
@@ -121,6 +125,8 @@ namespace SEN381
             tech.LogCall(customerCalled.CustomerID, callLogs);
 
             txtSearchClientName.Clear();
+            callEnded = null;
+            callStarted = null;
 
             MessageBox.Show($"Called with {customerCalled.Name} {customerCalled.Surname} ended at {callLogs[1]}", "Called Ended", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

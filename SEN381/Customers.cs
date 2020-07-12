@@ -15,18 +15,33 @@ namespace SEN381
     {
 
         BindingSource bs = new BindingSource();
-
+        //Owned binding sources
         BindingSource bsActors = new BindingSource();
         BindingSource bsControllers = new BindingSource();
         BindingSource bsSensors = new BindingSource();
         BindingSource bsComponents = new BindingSource();
         BindingSource bsProducts = new BindingSource();
+        //Unowned binding sources
+        BindingSource bsProductList = new BindingSource();
+        BindingSource bsActorsList = new BindingSource();
+        BindingSource bsControllersList = new BindingSource();
+        BindingSource bsSensorsList = new BindingSource();
+        BindingSource bsComponentsList = new BindingSource();
 
+        //owned lists
         List<Customer> customers;
         List<Actor> actors = new List<Actor>();
         List<Controller> controllers = new List<Controller>();
         List<Sensor> sensors = new List<Sensor>();
         List<Product> products = new List<Product>();
+
+        //Unowned lists
+        List<Product> catalogue = new List<Product>();
+        List<Actor> unownedActors = new List<Actor>();
+        List<Controller> unownedControllers = new List<Controller>();
+        List<Sensor> unownedSensors = new List<Sensor>();
+        Product product;
+        //List<Product> ownedProducts = new List<Product>();
 
         ClientManagement management = new ClientManagement();
 
@@ -35,8 +50,6 @@ namespace SEN381
         {
             InitializeComponent();
             RefreshAll();
-            chckBoxAdd.CheckState = CheckState.Unchecked;
-            gbAddProducts.Visible = false;
         }
 
         public void RefreshAll()
@@ -52,7 +65,15 @@ namespace SEN381
             cbDeleteCustomer.DataSource = bs;
             cbDeleteCustomer.DisplayMember = "Name";
 
+            bsProductList.Clear();
+            catalogue = new Product().GetProducts();
+            bsProductList.DataSource = catalogue;
+            //cbNewProductName.DataSource = bsProductList;
+            //cbNewProductName.DisplayMember = "ProductSuite";
+            //product = (Product)cbNewProductName.SelectedItem;
+
             RefreshOwnedProducts();
+            RefreshAllProducts();
         }
 
         public void RefreshComponents()
@@ -88,6 +109,27 @@ namespace SEN381
                 bsActors.DataSource = actors;
                 dgView_Actors.DataSource = bsActors;
             }
+
+
+
+        }
+
+        public void RefreshPurchaseActors()
+        {
+           /*bsActorsList.Clear();
+            unownedActors.Clear();
+
+            //bsProductList.Clear();
+
+            product = (Product)bsProductList.Current;
+
+            if (product != null)
+            {
+                unownedActors = new Actor().GetActors(product.ProductId);
+                bsActorsList.DataSource = unownedActors;
+                cbNewActors.DataSource = bsActorsList;
+                cbNewActors.DisplayMember = "Name";
+            }*/
         }
 
         public void RefreshControllers()
@@ -141,6 +183,11 @@ namespace SEN381
             RefreshSensors();
         }
 
+        void RefreshAllProducts()
+        {
+            RefreshPurchaseActors();
+        }
+
         private void dgView_Customers_Click(object sender, EventArgs e) => RefreshOwnedProducts();
 
         private void cbCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,20 +210,7 @@ namespace SEN381
             RefreshControllers();
             RefreshSensors();
         }
-        //Displays and hides the option to purchase a product when creating a new customer
-        private void chckBoxAdd_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chckBoxAdd.Checked)
-            {
-                gbAddProducts.Visible = true;
-            }
 
-            else
-            {
-                gbAddProducts.Visible = false;
-            }
-
-        }
         //TODO ~ Add products to new Customer update stored procedure to use scope_identity
         private void btnNewCustomer_Click(object sender, EventArgs e)
         {
@@ -186,13 +220,10 @@ namespace SEN381
 
             if (!IsNullOrWhiteSpace(allFields) && IsNumeric(numericFields))
             {
-                if (!chckBoxAdd.Checked)
-                {
-                    management.Insert(txtNewName.Text, txtNewSurname.Text, txtNewEmail.Text, txtNewAddress.Text, int.Parse(txtNewPhone.Text), txtNewBankAccount.Text, 0);
-                    MessageBox.Show("Insertion successful!");
-                    RefreshAll();
-                    ClearFields(allFields);
-                }
+                management.Insert(txtNewName.Text, txtNewSurname.Text, txtNewEmail.Text, txtNewAddress.Text, int.Parse(txtNewPhone.Text), txtNewBankAccount.Text, 0);
+                MessageBox.Show("Insertion successful!");
+                RefreshAll();
+                ClearFields(allFields);
             }
 
             else
@@ -211,6 +242,8 @@ namespace SEN381
         {
             Customer temp = (Customer)cbDeleteCustomer.SelectedItem;
             management.Delete(temp.CustomerID);
+            MessageBox.Show("Deletion successful!");
+            RefreshAll();
         }
 
         List<MaterialSingleLineTextField> NewCustomerDetails()
@@ -262,6 +295,11 @@ namespace SEN381
         }
 
         public bool IsInRange(ComboBox combo){return (combo.SelectedIndex >= 0) ? true : false;}
+
+        private void cbNewProductName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshAllProducts();
+        }
     }
 
 }

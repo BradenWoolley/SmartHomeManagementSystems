@@ -16,9 +16,7 @@ namespace DataAccessLayer
             get { return connection; }
         }
 
-        public DataAccess()
-        {
-        }
+        public DataAccess() { }
         public static DataAccess Singleton
         {
             get
@@ -376,7 +374,6 @@ namespace DataAccessLayer
         #endregion
 
         #region DeleteMethods
-
         //TODO - Override or use switch statement to reuse for composite tables   
         public DataSet DeleteData(string tableName, string ID)
         {

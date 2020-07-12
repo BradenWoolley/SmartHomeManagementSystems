@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ViewCustomers = new System.Windows.Forms.TabPage();
             this.lblProducts = new MaterialSkin.Controls.MaterialLabel();
             this.lsBox_products = new System.Windows.Forms.ListBox();
             this.lblSensors = new MaterialSkin.Controls.MaterialLabel();
@@ -40,19 +40,8 @@
             this.dgView_Actors = new System.Windows.Forms.DataGridView();
             this.lblCustomers = new MaterialSkin.Controls.MaterialLabel();
             this.dgView_Customers = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gbAddProducts = new System.Windows.Forms.GroupBox();
-            this.cbNewControllers = new System.Windows.Forms.ComboBox();
-            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
-            this.cbNewSensors = new System.Windows.Forms.ComboBox();
-            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
-            this.cbNewActors = new System.Windows.Forms.ComboBox();
-            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            this.cbNewProductName = new System.Windows.Forms.ComboBox();
-            this.btnPurchase = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
+            this.AddCustomers = new System.Windows.Forms.TabPage();
             this.gpAddCustomer = new System.Windows.Forms.GroupBox();
-            this.chckBoxAdd = new MaterialSkin.Controls.MaterialCheckBox();
             this.txtNewBankAccount = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.txtNewPhone = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -66,19 +55,8 @@
             this.txtNewName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnNewCustomer = new MaterialSkin.Controls.MaterialRaisedButton();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
-            this.lblType = new MaterialSkin.Controls.MaterialLabel();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.UpdateCustomers = new System.Windows.Forms.TabPage();
             this.cbUpdateCustomer = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.btnUpdate = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.cbUpateProductName = new System.Windows.Forms.ComboBox();
-            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtUpdateBank = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
@@ -93,32 +71,32 @@
             this.txtUpdateName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
             this.lblSearchName_Update = new MaterialSkin.Controls.MaterialLabel();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.DeleteCustomers = new System.Windows.Forms.TabPage();
             this.cbDeleteCustomer = new System.Windows.Forms.ComboBox();
             this.btnDeleteCustomer = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.PurchaseProduct = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.ViewCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Sensors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Controllers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Actors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Customers)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.gbAddProducts.SuspendLayout();
+            this.AddCustomers.SuspendLayout();
             this.gpAddCustomer.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.UpdateCustomers.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.DeleteCustomers.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
             // 
-            this.materialTabControl1.Controls.Add(this.tabPage1);
-            this.materialTabControl1.Controls.Add(this.tabPage2);
-            this.materialTabControl1.Controls.Add(this.tabPage3);
-            this.materialTabControl1.Controls.Add(this.tabPage4);
+            this.materialTabControl1.Controls.Add(this.ViewCustomers);
+            this.materialTabControl1.Controls.Add(this.AddCustomers);
+            this.materialTabControl1.Controls.Add(this.PurchaseProduct);
+            this.materialTabControl1.Controls.Add(this.UpdateCustomers);
+            this.materialTabControl1.Controls.Add(this.DeleteCustomers);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 41);
@@ -128,25 +106,25 @@
             this.materialTabControl1.Size = new System.Drawing.Size(998, 857);
             this.materialTabControl1.TabIndex = 1;
             // 
-            // tabPage1
+            // ViewCustomers
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tabPage1.Controls.Add(this.lblProducts);
-            this.tabPage1.Controls.Add(this.lsBox_products);
-            this.tabPage1.Controls.Add(this.lblSensors);
-            this.tabPage1.Controls.Add(this.lblControllers);
-            this.tabPage1.Controls.Add(this.lblActors);
-            this.tabPage1.Controls.Add(this.dgView_Sensors);
-            this.tabPage1.Controls.Add(this.dgView_Controllers);
-            this.tabPage1.Controls.Add(this.dgView_Actors);
-            this.tabPage1.Controls.Add(this.lblCustomers);
-            this.tabPage1.Controls.Add(this.dgView_Customers);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(990, 831);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "View Customers";
+            this.ViewCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.ViewCustomers.Controls.Add(this.lblProducts);
+            this.ViewCustomers.Controls.Add(this.lsBox_products);
+            this.ViewCustomers.Controls.Add(this.lblSensors);
+            this.ViewCustomers.Controls.Add(this.lblControllers);
+            this.ViewCustomers.Controls.Add(this.lblActors);
+            this.ViewCustomers.Controls.Add(this.dgView_Sensors);
+            this.ViewCustomers.Controls.Add(this.dgView_Controllers);
+            this.ViewCustomers.Controls.Add(this.dgView_Actors);
+            this.ViewCustomers.Controls.Add(this.lblCustomers);
+            this.ViewCustomers.Controls.Add(this.dgView_Customers);
+            this.ViewCustomers.Location = new System.Drawing.Point(4, 22);
+            this.ViewCustomers.Name = "ViewCustomers";
+            this.ViewCustomers.Padding = new System.Windows.Forms.Padding(3);
+            this.ViewCustomers.Size = new System.Drawing.Size(990, 831);
+            this.ViewCustomers.TabIndex = 0;
+            this.ViewCustomers.Text = "View Customers";
             // 
             // lblProducts
             // 
@@ -271,150 +249,20 @@
             this.dgView_Customers.TabIndex = 8;
             this.dgView_Customers.Click += new System.EventHandler(this.dgView_Customers_Click);
             // 
-            // tabPage2
+            // AddCustomers
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tabPage2.Controls.Add(this.gbAddProducts);
-            this.tabPage2.Controls.Add(this.gpAddCustomer);
-            this.tabPage2.ForeColor = System.Drawing.Color.White;
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(990, 831);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Add Customers";
-            // 
-            // gbAddProducts
-            // 
-            this.gbAddProducts.Controls.Add(this.cbNewControllers);
-            this.gbAddProducts.Controls.Add(this.materialLabel12);
-            this.gbAddProducts.Controls.Add(this.cbNewSensors);
-            this.gbAddProducts.Controls.Add(this.materialLabel11);
-            this.gbAddProducts.Controls.Add(this.cbNewActors);
-            this.gbAddProducts.Controls.Add(this.materialLabel10);
-            this.gbAddProducts.Controls.Add(this.cbNewProductName);
-            this.gbAddProducts.Controls.Add(this.btnPurchase);
-            this.gbAddProducts.Controls.Add(this.materialLabel15);
-            this.gbAddProducts.Location = new System.Drawing.Point(500, 6);
-            this.gbAddProducts.Name = "gbAddProducts";
-            this.gbAddProducts.Size = new System.Drawing.Size(357, 431);
-            this.gbAddProducts.TabIndex = 9;
-            this.gbAddProducts.TabStop = false;
-            // 
-            // cbNewControllers
-            // 
-            this.cbNewControllers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbNewControllers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbNewControllers.ForeColor = System.Drawing.Color.White;
-            this.cbNewControllers.FormattingEnabled = true;
-            this.cbNewControllers.Location = new System.Drawing.Point(117, 124);
-            this.cbNewControllers.Name = "cbNewControllers";
-            this.cbNewControllers.Size = new System.Drawing.Size(200, 21);
-            this.cbNewControllers.TabIndex = 26;
-            // 
-            // materialLabel12
-            // 
-            this.materialLabel12.AutoSize = true;
-            this.materialLabel12.Depth = 0;
-            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel12.Location = new System.Drawing.Point(6, 123);
-            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Size = new System.Drawing.Size(84, 19);
-            this.materialLabel12.TabIndex = 25;
-            this.materialLabel12.Text = "Controllers";
-            // 
-            // cbNewSensors
-            // 
-            this.cbNewSensors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbNewSensors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbNewSensors.ForeColor = System.Drawing.Color.White;
-            this.cbNewSensors.FormattingEnabled = true;
-            this.cbNewSensors.Location = new System.Drawing.Point(117, 173);
-            this.cbNewSensors.Name = "cbNewSensors";
-            this.cbNewSensors.Size = new System.Drawing.Size(200, 21);
-            this.cbNewSensors.TabIndex = 24;
-            // 
-            // materialLabel11
-            // 
-            this.materialLabel11.AutoSize = true;
-            this.materialLabel11.Depth = 0;
-            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel11.Location = new System.Drawing.Point(6, 172);
-            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(64, 19);
-            this.materialLabel11.TabIndex = 23;
-            this.materialLabel11.Text = "Sensors";
-            // 
-            // cbNewActors
-            // 
-            this.cbNewActors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbNewActors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbNewActors.ForeColor = System.Drawing.Color.White;
-            this.cbNewActors.FormattingEnabled = true;
-            this.cbNewActors.Location = new System.Drawing.Point(117, 74);
-            this.cbNewActors.Name = "cbNewActors";
-            this.cbNewActors.Size = new System.Drawing.Size(200, 21);
-            this.cbNewActors.TabIndex = 22;
-            // 
-            // materialLabel10
-            // 
-            this.materialLabel10.AutoSize = true;
-            this.materialLabel10.Depth = 0;
-            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel10.Location = new System.Drawing.Point(6, 73);
-            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(54, 19);
-            this.materialLabel10.TabIndex = 21;
-            this.materialLabel10.Text = "Actors";
-            // 
-            // cbNewProductName
-            // 
-            this.cbNewProductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbNewProductName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbNewProductName.ForeColor = System.Drawing.Color.White;
-            this.cbNewProductName.FormattingEnabled = true;
-            this.cbNewProductName.Location = new System.Drawing.Point(117, 20);
-            this.cbNewProductName.Name = "cbNewProductName";
-            this.cbNewProductName.Size = new System.Drawing.Size(200, 21);
-            this.cbNewProductName.TabIndex = 20;
-            // 
-            // btnPurchase
-            // 
-            this.btnPurchase.AutoSize = true;
-            this.btnPurchase.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnPurchase.Depth = 0;
-            this.btnPurchase.Icon = null;
-            this.btnPurchase.Location = new System.Drawing.Point(117, 217);
-            this.btnPurchase.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnPurchase.Name = "btnPurchase";
-            this.btnPurchase.Primary = true;
-            this.btnPurchase.Size = new System.Drawing.Size(91, 36);
-            this.btnPurchase.TabIndex = 7;
-            this.btnPurchase.Text = "Purchase";
-            this.btnPurchase.UseVisualStyleBackColor = true;
-            // 
-            // materialLabel15
-            // 
-            this.materialLabel15.AutoSize = true;
-            this.materialLabel15.Depth = 0;
-            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel15.Location = new System.Drawing.Point(6, 19);
-            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel15.Name = "materialLabel15";
-            this.materialLabel15.Size = new System.Drawing.Size(105, 19);
-            this.materialLabel15.TabIndex = 0;
-            this.materialLabel15.Text = "Product Name";
+            this.AddCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.AddCustomers.Controls.Add(this.gpAddCustomer);
+            this.AddCustomers.ForeColor = System.Drawing.Color.White;
+            this.AddCustomers.Location = new System.Drawing.Point(4, 22);
+            this.AddCustomers.Name = "AddCustomers";
+            this.AddCustomers.Padding = new System.Windows.Forms.Padding(3);
+            this.AddCustomers.Size = new System.Drawing.Size(990, 831);
+            this.AddCustomers.TabIndex = 1;
+            this.AddCustomers.Text = "Add Customers";
             // 
             // gpAddCustomer
             // 
-            this.gpAddCustomer.Controls.Add(this.chckBoxAdd);
             this.gpAddCustomer.Controls.Add(this.txtNewBankAccount);
             this.gpAddCustomer.Controls.Add(this.materialLabel9);
             this.gpAddCustomer.Controls.Add(this.txtNewPhone);
@@ -428,28 +276,11 @@
             this.gpAddCustomer.Controls.Add(this.txtNewName);
             this.gpAddCustomer.Controls.Add(this.btnNewCustomer);
             this.gpAddCustomer.Controls.Add(this.lblName);
-            this.gpAddCustomer.Controls.Add(this.lblType);
             this.gpAddCustomer.Location = new System.Drawing.Point(6, 6);
             this.gpAddCustomer.Name = "gpAddCustomer";
-            this.gpAddCustomer.Size = new System.Drawing.Size(348, 431);
+            this.gpAddCustomer.Size = new System.Drawing.Size(348, 364);
             this.gpAddCustomer.TabIndex = 8;
             this.gpAddCustomer.TabStop = false;
-            // 
-            // chckBoxAdd
-            // 
-            this.chckBoxAdd.AutoSize = true;
-            this.chckBoxAdd.Depth = 0;
-            this.chckBoxAdd.Font = new System.Drawing.Font("Roboto", 10F);
-            this.chckBoxAdd.Location = new System.Drawing.Point(117, 331);
-            this.chckBoxAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.chckBoxAdd.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chckBoxAdd.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chckBoxAdd.Name = "chckBoxAdd";
-            this.chckBoxAdd.Ripple = true;
-            this.chckBoxAdd.Size = new System.Drawing.Size(26, 30);
-            this.chckBoxAdd.TabIndex = 19;
-            this.chckBoxAdd.UseVisualStyleBackColor = true;
-            this.chckBoxAdd.CheckedChanged += new System.EventHandler(this.chckBoxAdd_CheckedChanged);
             // 
             // txtNewBankAccount
             // 
@@ -624,7 +455,7 @@
             this.btnNewCustomer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnNewCustomer.Depth = 0;
             this.btnNewCustomer.Icon = null;
-            this.btnNewCustomer.Location = new System.Drawing.Point(117, 381);
+            this.btnNewCustomer.Location = new System.Drawing.Point(117, 316);
             this.btnNewCustomer.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNewCustomer.Name = "btnNewCustomer";
             this.btnNewCustomer.Primary = true;
@@ -647,32 +478,18 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
-            // lblType
+            // UpdateCustomers
             // 
-            this.lblType.AutoSize = true;
-            this.lblType.Depth = 0;
-            this.lblType.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblType.Location = new System.Drawing.Point(6, 335);
-            this.lblType.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(91, 19);
-            this.lblType.TabIndex = 2;
-            this.lblType.Text = "Add Product";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tabPage3.Controls.Add(this.cbUpdateCustomer);
-            this.tabPage3.Controls.Add(this.groupBox1);
-            this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Controls.Add(this.lblSearchName_Update);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(990, 831);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Update Customers";
+            this.UpdateCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.UpdateCustomers.Controls.Add(this.cbUpdateCustomer);
+            this.UpdateCustomers.Controls.Add(this.groupBox3);
+            this.UpdateCustomers.Controls.Add(this.lblSearchName_Update);
+            this.UpdateCustomers.Location = new System.Drawing.Point(4, 22);
+            this.UpdateCustomers.Name = "UpdateCustomers";
+            this.UpdateCustomers.Padding = new System.Windows.Forms.Padding(3);
+            this.UpdateCustomers.Size = new System.Drawing.Size(990, 831);
+            this.UpdateCustomers.TabIndex = 2;
+            this.UpdateCustomers.Text = "Update Customers";
             // 
             // cbUpdateCustomer
             // 
@@ -685,135 +502,6 @@
             this.cbUpdateCustomer.Size = new System.Drawing.Size(200, 21);
             this.cbUpdateCustomer.TabIndex = 21;
             this.cbUpdateCustomer.SelectedIndexChanged += new System.EventHandler(this.cbCustomer_SelectedIndexChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.materialLabel2);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.materialLabel3);
-            this.groupBox1.Controls.Add(this.comboBox7);
-            this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.materialLabel4);
-            this.groupBox1.Controls.Add(this.cbUpateProductName);
-            this.groupBox1.Controls.Add(this.materialLabel13);
-            this.groupBox1.Location = new System.Drawing.Point(504, 112);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(357, 321);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 124);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 26;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(6, 123);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(84, 19);
-            this.materialLabel2.TabIndex = 25;
-            this.materialLabel2.Text = "Controllers";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.ForeColor = System.Drawing.Color.White;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(117, 173);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 24;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(6, 172);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(64, 19);
-            this.materialLabel3.TabIndex = 23;
-            this.materialLabel3.Text = "Sensors";
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.comboBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox7.ForeColor = System.Drawing.Color.White;
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(117, 74);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(200, 21);
-            this.comboBox7.TabIndex = 22;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.AutoSize = true;
-            this.btnUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnUpdate.Depth = 0;
-            this.btnUpdate.Icon = null;
-            this.btnUpdate.Location = new System.Drawing.Point(117, 265);
-            this.btnUpdate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Primary = true;
-            this.btnUpdate.Size = new System.Drawing.Size(73, 36);
-            this.btnUpdate.TabIndex = 7;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(6, 73);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(54, 19);
-            this.materialLabel4.TabIndex = 21;
-            this.materialLabel4.Text = "Actors";
-            // 
-            // cbUpateProductName
-            // 
-            this.cbUpateProductName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cbUpateProductName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbUpateProductName.ForeColor = System.Drawing.Color.White;
-            this.cbUpateProductName.FormattingEnabled = true;
-            this.cbUpateProductName.Location = new System.Drawing.Point(117, 20);
-            this.cbUpateProductName.Name = "cbUpateProductName";
-            this.cbUpateProductName.Size = new System.Drawing.Size(200, 21);
-            this.cbUpateProductName.TabIndex = 20;
-            // 
-            // materialLabel13
-            // 
-            this.materialLabel13.AutoSize = true;
-            this.materialLabel13.Depth = 0;
-            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel13.Location = new System.Drawing.Point(6, 19);
-            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel13.Name = "materialLabel13";
-            this.materialLabel13.Size = new System.Drawing.Size(105, 19);
-            this.materialLabel13.TabIndex = 0;
-            this.materialLabel13.Text = "Product Name";
             // 
             // groupBox3
             // 
@@ -1028,18 +716,18 @@
             this.lblSearchName_Update.TabIndex = 10;
             this.lblSearchName_Update.Text = "Customer Name";
             // 
-            // tabPage4
+            // DeleteCustomers
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tabPage4.Controls.Add(this.cbDeleteCustomer);
-            this.tabPage4.Controls.Add(this.btnDeleteCustomer);
-            this.tabPage4.Controls.Add(this.materialLabel5);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(990, 831);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Delete Customers";
+            this.DeleteCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.DeleteCustomers.Controls.Add(this.cbDeleteCustomer);
+            this.DeleteCustomers.Controls.Add(this.btnDeleteCustomer);
+            this.DeleteCustomers.Controls.Add(this.materialLabel5);
+            this.DeleteCustomers.Location = new System.Drawing.Point(4, 22);
+            this.DeleteCustomers.Name = "DeleteCustomers";
+            this.DeleteCustomers.Padding = new System.Windows.Forms.Padding(3);
+            this.DeleteCustomers.Size = new System.Drawing.Size(990, 831);
+            this.DeleteCustomers.TabIndex = 3;
+            this.DeleteCustomers.Text = "Delete Customers";
             // 
             // cbDeleteCustomer
             // 
@@ -1089,9 +777,18 @@
             this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(638, 46);
+            this.materialTabSelector1.Size = new System.Drawing.Size(729, 46);
             this.materialTabSelector1.TabIndex = 2;
             this.materialTabSelector1.Text = "tabSelector";
+            // 
+            // PurchaseProduct
+            // 
+            this.PurchaseProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.PurchaseProduct.Location = new System.Drawing.Point(4, 22);
+            this.PurchaseProduct.Name = "PurchaseProduct";
+            this.PurchaseProduct.Size = new System.Drawing.Size(990, 831);
+            this.PurchaseProduct.TabIndex = 4;
+            this.PurchaseProduct.Text = "Sales";
             // 
             // Customers
             // 
@@ -1103,25 +800,21 @@
             this.Name = "Customers";
             this.Size = new System.Drawing.Size(998, 898);
             this.materialTabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.ViewCustomers.ResumeLayout(false);
+            this.ViewCustomers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Sensors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Controllers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Actors)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgView_Customers)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.gbAddProducts.ResumeLayout(false);
-            this.gbAddProducts.PerformLayout();
+            this.AddCustomers.ResumeLayout(false);
             this.gpAddCustomer.ResumeLayout(false);
             this.gpAddCustomer.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.UpdateCustomers.ResumeLayout(false);
+            this.UpdateCustomers.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.DeleteCustomers.ResumeLayout(false);
+            this.DeleteCustomers.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1129,14 +822,14 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage ViewCustomers;
+        private System.Windows.Forms.TabPage AddCustomers;
         private System.Windows.Forms.GroupBox gpAddCustomer;
         private MaterialSkin.Controls.MaterialRaisedButton btnNewCustomer;
         private MaterialSkin.Controls.MaterialLabel lblName;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage UpdateCustomers;
         private MaterialSkin.Controls.MaterialLabel lblSearchName_Update;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage DeleteCustomers;
         private MaterialSkin.Controls.MaterialRaisedButton btnDeleteCustomer;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
@@ -1149,30 +842,8 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNewSurname;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNewName;
-        private System.Windows.Forms.GroupBox gbAddProducts;
-        private System.Windows.Forms.ComboBox cbNewControllers;
-        private MaterialSkin.Controls.MaterialLabel materialLabel12;
-        private System.Windows.Forms.ComboBox cbNewSensors;
-        private MaterialSkin.Controls.MaterialLabel materialLabel11;
-        private System.Windows.Forms.ComboBox cbNewActors;
-        private MaterialSkin.Controls.MaterialLabel materialLabel10;
-        private System.Windows.Forms.ComboBox cbNewProductName;
-        private MaterialSkin.Controls.MaterialRaisedButton btnPurchase;
-        private MaterialSkin.Controls.MaterialLabel materialLabel15;
-        private MaterialSkin.Controls.MaterialCheckBox chckBoxAdd;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNewBankAccount;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
-        private MaterialSkin.Controls.MaterialLabel lblType;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private MaterialSkin.Controls.MaterialRaisedButton btnUpdate;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.ComboBox cbUpateProductName;
-        private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private System.Windows.Forms.GroupBox groupBox3;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtUpdateBank;
         private MaterialSkin.Controls.MaterialLabel materialLabel14;
@@ -1198,5 +869,6 @@
         private System.Windows.Forms.ListBox lsBox_products;
         private System.Windows.Forms.ComboBox cbUpdateCustomer;
         private System.Windows.Forms.ComboBox cbDeleteCustomer;
+        private System.Windows.Forms.TabPage PurchaseProduct;
     }
 }

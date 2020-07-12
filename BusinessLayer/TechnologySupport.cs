@@ -34,8 +34,6 @@ namespace BusinessLayer
         public double Cost { get => cost; set => cost = value; }
         public DateTime ScheduledDate { get => scheduledDate; set => scheduledDate = value; }
 
-        public void LogCall(int custID,string[] callLogs) => access.LogCall(custID, callLogs, "LogCalls");
-
         //Potentially remove
         private double GetCost()
         {
