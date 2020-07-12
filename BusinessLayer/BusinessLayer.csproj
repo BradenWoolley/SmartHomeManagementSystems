@@ -46,11 +46,13 @@
     <Compile Include="Component.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Job.cs" />
     <Compile Include="Management.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductManagement.cs" />
     <Compile Include="Sensor.cs" />
     <Compile Include="TechManagement.cs" />
+    <Compile Include="Technician.cs" />
     <Compile Include="TechnologySupport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
