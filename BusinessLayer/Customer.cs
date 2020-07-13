@@ -81,7 +81,8 @@ namespace BusinessLayer
             DataSet rawData = access.ReadProc("GetCustomers");
             foreach (DataRow item in rawData.Tables["Table"].Rows)
             {
-                customers.Add(new Customer(int.Parse(item["ID"].ToString()),
+                customers.Add(new Customer(
+                    int.Parse(item["ID"].ToString()),
                     item["Name"].ToString(),
                     item["Surname"].ToString(),
                     item["Email"].ToString(),

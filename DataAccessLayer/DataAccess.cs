@@ -165,6 +165,36 @@ namespace DataAccessLayer
             return rawData;
         }
 
+        public DataSet ReadTechnicianJobs(string procedure, int technicianID)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            DataSet rawData = new DataSet();
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(procedure, conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@EmpID", technicianID);
+                command.ExecuteNonQuery();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(rawData);//gets actual data from query result
+            }
+            catch (SqlException se)
+            {
+                //TODO exception back to presentation layer
+
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+
+            return rawData;
+        }
+
         #endregion
 
         #region InsertMethods
@@ -290,19 +320,21 @@ namespace DataAccessLayer
             }
         }   //adds new order 
 
-        public void ScheduleSupport(int customerProductID, int customerID, DateTime date, double cost)
+        public void ScheduleSupport(int empID, string description, int customerID, int jobStatus, double cost, DateTime date)
         {
-            SqlConnection conn = new SqlConnection(connection.ToString());
+            SqlConnection conn = new SqlConnection(connectionString);
 
             try
             {
                 conn.Open();
-                SqlCommand command = new SqlCommand("ScheduleSupport", conn);
+                SqlCommand command = new SqlCommand("NewSupport", conn);
                 command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@customerProductID", customerProductID);
-                command.Parameters.AddWithValue("@customerID", customerID);
-                command.Parameters.AddWithValue("@date", date);
-                command.Parameters.AddWithValue("@cost", cost);
+                command.Parameters.AddWithValue("@EmpID",empID);
+                command.Parameters.AddWithValue("@Description",description);
+                command.Parameters.AddWithValue("@CustomerID", customerID);
+                command.Parameters.AddWithValue("@Status", jobStatus);
+                command.Parameters.AddWithValue("@Date", date);
+                command.Parameters.AddWithValue("@Cost", cost);
                 command.ExecuteNonQuery();
             }
             catch (SqlException se)
@@ -400,6 +432,36 @@ namespace DataAccessLayer
                 command.Parameters.AddWithValue("@Address", address);
                 command.Parameters.AddWithValue("@Phone", phoneNumber);
                 command.Parameters.AddWithValue("@Banking", bankingDetails);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException se)
+            {
+                //TODO exception back to presentation layer
+
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public void UpdateSupport(int jobID, int empID, string description, int jobStatus, double cost, DateTime date)
+        {
+            SqlConnection conn = new SqlConnection(connectionString);
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand("UpdateSupport", conn);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@JobID", jobID);
+                command.Parameters.AddWithValue("@EmpID", empID);
+                command.Parameters.AddWithValue("@Description", description);
+                command.Parameters.AddWithValue("@Status", jobStatus);
+                command.Parameters.AddWithValue("@Date", date);
+                command.Parameters.AddWithValue("@Cost", cost);
                 command.ExecuteNonQuery();
             }
             catch (SqlException se)

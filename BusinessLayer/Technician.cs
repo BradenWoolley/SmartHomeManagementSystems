@@ -19,6 +19,37 @@ namespace BusinessLayer
             Surname = surname;
         }
 
-        
+        public List<Technician> GetTechnicians()
+        {
+            List<Technician> technicians = new List<Technician>();
+
+            DataSet rawData = access.ReadProc("GetTechnicians");
+            foreach (DataRow item in rawData.Tables["Table"].Rows)
+            {
+                technicians.Add(new Technician(
+                    int.Parse(item["EmpID"].ToString()),
+                    item["Name"].ToString(),
+                    item["Surname"].ToString()
+                    ));
+            }
+            return technicians;
+        }
+
+        public List<Technician> GetActiveTechnicians()
+        {
+            List<Technician> technicians = new List<Technician>();
+
+            DataSet rawData = access.ReadProc("GetTechnicians");
+            foreach (DataRow item in rawData.Tables["Table"].Rows)
+            {
+                technicians.Add(new Technician(
+                    int.Parse(item["ID"].ToString()),
+                    item["Name"].ToString(),
+                    item["Surname"].ToString()
+                    ));
+            }
+            return technicians;
+        }
+
     }
 }

@@ -31,52 +31,47 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TechSupport));
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dgView = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gpAddProducts = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.materialSingleLineTextField2 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.btnSubmitNewProduct = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.lblName = new MaterialSkin.Controls.MaterialLabel();
-            this.lblType = new MaterialSkin.Controls.MaterialLabel();
-            this.cb_ProductGroup = new System.Windows.Forms.ComboBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtSearchProd_Update = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.lblSearchName_Update = new MaterialSkin.Controls.MaterialLabel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.JobsInProgress = new System.Windows.Forms.TabPage();
+            this.treeCurrentJobs = new System.Windows.Forms.TreeView();
+            this.ScheduleNew = new System.Windows.Forms.TabPage();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.lsBoxNewSupport = new System.Windows.Forms.ListBox();
+            this.txtDescription = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnNewSupport = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.cbNewSupport = new System.Windows.Forms.ComboBox();
+            this.dtNewSupport = new System.Windows.Forms.DateTimePicker();
+            this.lblJobDescription = new MaterialSkin.Controls.MaterialLabel();
+            this.lblTechnician = new MaterialSkin.Controls.MaterialLabel();
+            this.UpdateSchedule = new System.Windows.Forms.TabPage();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.lsBoxUpdateSupport = new System.Windows.Forms.ListBox();
+            this.txtUpdateSupportDescription = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnUpdateSupport = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.cbUpdateSupport = new System.Windows.Forms.ComboBox();
+            this.dtUpdateSupport = new System.Windows.Forms.DateTimePicker();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            this.DeleteSchedule = new System.Windows.Forms.TabPage();
             this.CallCentre = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_EndCall = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btn_Call = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtSearchClientName = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.lsBoxClientNames = new System.Windows.Forms.ListBox();
-            this.JobsInProgress = new System.Windows.Forms.TabPage();
-            this.treeCurrentJobs = new System.Windows.Forms.TreeView();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.txtUpdateCost = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.lsBoxDeleteSupport = new System.Windows.Forms.ListBox();
+            this.BtnDeleteSupport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.gpAddProducts.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.JobsInProgress.SuspendLayout();
+            this.ScheduleNew.SuspendLayout();
+            this.UpdateSchedule.SuspendLayout();
+            this.DeleteSchedule.SuspendLayout();
             this.CallCentre.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.JobsInProgress.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -93,12 +88,11 @@
             // 
             // materialTabControl1
             // 
-            this.materialTabControl1.Controls.Add(this.tabPage1);
-            this.materialTabControl1.Controls.Add(this.tabPage2);
-            this.materialTabControl1.Controls.Add(this.tabPage3);
-            this.materialTabControl1.Controls.Add(this.tabPage4);
-            this.materialTabControl1.Controls.Add(this.CallCentre);
             this.materialTabControl1.Controls.Add(this.JobsInProgress);
+            this.materialTabControl1.Controls.Add(this.ScheduleNew);
+            this.materialTabControl1.Controls.Add(this.UpdateSchedule);
+            this.materialTabControl1.Controls.Add(this.DeleteSchedule);
+            this.materialTabControl1.Controls.Add(this.CallCentre);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 61);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -107,240 +101,45 @@
             this.materialTabControl1.Size = new System.Drawing.Size(994, 830);
             this.materialTabControl1.TabIndex = 2;
             // 
-            // tabPage1
+            // JobsInProgress
             // 
-            this.tabPage1.Controls.Add(this.dgView);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(986, 804);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "View Schedule";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.JobsInProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.JobsInProgress.Controls.Add(this.treeCurrentJobs);
+            this.JobsInProgress.Location = new System.Drawing.Point(4, 22);
+            this.JobsInProgress.Name = "JobsInProgress";
+            this.JobsInProgress.Size = new System.Drawing.Size(986, 804);
+            this.JobsInProgress.TabIndex = 5;
+            this.JobsInProgress.Text = "Current Jobs";
             // 
-            // dgView
+            // treeCurrentJobs
             // 
-            this.dgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgView.Location = new System.Drawing.Point(3, 3);
-            this.dgView.Name = "dgView";
-            this.dgView.Size = new System.Drawing.Size(983, 801);
-            this.dgView.TabIndex = 0;
+            this.treeCurrentJobs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.treeCurrentJobs.ForeColor = System.Drawing.Color.White;
+            this.treeCurrentJobs.LineColor = System.Drawing.Color.White;
+            this.treeCurrentJobs.Location = new System.Drawing.Point(81, 98);
+            this.treeCurrentJobs.Name = "treeCurrentJobs";
+            this.treeCurrentJobs.Size = new System.Drawing.Size(796, 412);
+            this.treeCurrentJobs.TabIndex = 0;
             // 
-            // tabPage2
+            // ScheduleNew
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tabPage2.Controls.Add(this.gpAddProducts);
-            this.tabPage2.ForeColor = System.Drawing.Color.White;
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(986, 804);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Schedule New";
-            // 
-            // gpAddProducts
-            // 
-            this.gpAddProducts.Controls.Add(this.dateTimePicker1);
-            this.gpAddProducts.Controls.Add(this.materialSingleLineTextField2);
-            this.gpAddProducts.Controls.Add(this.materialLabel1);
-            this.gpAddProducts.Controls.Add(this.btnSubmitNewProduct);
-            this.gpAddProducts.Controls.Add(this.lblName);
-            this.gpAddProducts.Controls.Add(this.lblType);
-            this.gpAddProducts.Controls.Add(this.cb_ProductGroup);
-            this.gpAddProducts.Location = new System.Drawing.Point(6, 6);
-            this.gpAddProducts.Name = "gpAddProducts";
-            this.gpAddProducts.Size = new System.Drawing.Size(425, 221);
-            this.gpAddProducts.TabIndex = 8;
-            this.gpAddProducts.TabStop = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(207, 111);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
-            // materialSingleLineTextField2
-            // 
-            this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "";
-            this.materialSingleLineTextField2.Location = new System.Drawing.Point(207, 16);
-            this.materialSingleLineTextField2.MaxLength = 32767;
-            this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField2.Name = "materialSingleLineTextField2";
-            this.materialSingleLineTextField2.PasswordChar = '\0';
-            this.materialSingleLineTextField2.SelectedText = "";
-            this.materialSingleLineTextField2.SelectionLength = 0;
-            this.materialSingleLineTextField2.SelectionStart = 0;
-            this.materialSingleLineTextField2.Size = new System.Drawing.Size(200, 23);
-            this.materialSingleLineTextField2.TabIndex = 12;
-            this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.UseSystemPasswordChar = false;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(6, 66);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(105, 19);
-            this.materialLabel1.TabIndex = 4;
-            this.materialLabel1.Text = "Product Group";
-            // 
-            // btnSubmitNewProduct
-            // 
-            this.btnSubmitNewProduct.AutoSize = true;
-            this.btnSubmitNewProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSubmitNewProduct.Depth = 0;
-            this.btnSubmitNewProduct.Icon = null;
-            this.btnSubmitNewProduct.Location = new System.Drawing.Point(207, 164);
-            this.btnSubmitNewProduct.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSubmitNewProduct.Name = "btnSubmitNewProduct";
-            this.btnSubmitNewProduct.Primary = true;
-            this.btnSubmitNewProduct.Size = new System.Drawing.Size(71, 36);
-            this.btnSubmitNewProduct.TabIndex = 7;
-            this.btnSubmitNewProduct.Text = "Create";
-            this.btnSubmitNewProduct.UseVisualStyleBackColor = true;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Depth = 0;
-            this.lblName.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblName.Location = new System.Drawing.Point(6, 16);
-            this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(119, 19);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Customer Name";
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Depth = 0;
-            this.lblType.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblType.Location = new System.Drawing.Point(6, 113);
-            this.lblType.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(40, 19);
-            this.lblType.TabIndex = 2;
-            this.lblType.Text = "Date";
-            // 
-            // cb_ProductGroup
-            // 
-            this.cb_ProductGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.cb_ProductGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_ProductGroup.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_ProductGroup.FormattingEnabled = true;
-            this.cb_ProductGroup.Location = new System.Drawing.Point(207, 66);
-            this.cb_ProductGroup.Name = "cb_ProductGroup";
-            this.cb_ProductGroup.Size = new System.Drawing.Size(200, 24);
-            this.cb_ProductGroup.TabIndex = 5;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tabPage3.Controls.Add(this.materialRaisedButton3);
-            this.tabPage3.Controls.Add(this.txtSearchProd_Update);
-            this.tabPage3.Controls.Add(this.lblSearchName_Update);
-            this.tabPage3.Controls.Add(this.groupBox1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(986, 804);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Update Schedule";
-            // 
-            // materialRaisedButton3
-            // 
-            this.materialRaisedButton3.AutoSize = true;
-            this.materialRaisedButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Icon = null;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(162, 72);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(73, 36);
-            this.materialRaisedButton3.TabIndex = 12;
-            this.materialRaisedButton3.Text = "Search";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
-            // 
-            // txtSearchProd_Update
-            // 
-            this.txtSearchProd_Update.Depth = 0;
-            this.txtSearchProd_Update.Hint = "";
-            this.txtSearchProd_Update.Location = new System.Drawing.Point(162, 37);
-            this.txtSearchProd_Update.MaxLength = 32767;
-            this.txtSearchProd_Update.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtSearchProd_Update.Name = "txtSearchProd_Update";
-            this.txtSearchProd_Update.PasswordChar = '\0';
-            this.txtSearchProd_Update.SelectedText = "";
-            this.txtSearchProd_Update.SelectionLength = 0;
-            this.txtSearchProd_Update.SelectionStart = 0;
-            this.txtSearchProd_Update.Size = new System.Drawing.Size(200, 23);
-            this.txtSearchProd_Update.TabIndex = 11;
-            this.txtSearchProd_Update.TabStop = false;
-            this.txtSearchProd_Update.UseSystemPasswordChar = false;
-            // 
-            // lblSearchName_Update
-            // 
-            this.lblSearchName_Update.AutoSize = true;
-            this.lblSearchName_Update.Depth = 0;
-            this.lblSearchName_Update.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblSearchName_Update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblSearchName_Update.Location = new System.Drawing.Point(21, 37);
-            this.lblSearchName_Update.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblSearchName_Update.Name = "lblSearchName_Update";
-            this.lblSearchName_Update.Size = new System.Drawing.Size(119, 19);
-            this.lblSearchName_Update.TabIndex = 10;
-            this.lblSearchName_Update.Text = "Customer Name";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.materialLabel2);
-            this.groupBox1.Controls.Add(this.materialRaisedButton1);
-            this.groupBox1.Controls.Add(this.materialLabel3);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(25, 114);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(361, 217);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(6, 43);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(105, 19);
-            this.materialLabel2.TabIndex = 4;
-            this.materialLabel2.Text = "Product Group";
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(137, 155);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(73, 36);
-            this.materialRaisedButton1.TabIndex = 7;
-            this.materialRaisedButton1.Text = "Update";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.ScheduleNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.ScheduleNew.Controls.Add(this.materialLabel3);
+            this.ScheduleNew.Controls.Add(this.materialLabel1);
+            this.ScheduleNew.Controls.Add(this.lsBoxNewSupport);
+            this.ScheduleNew.Controls.Add(this.txtDescription);
+            this.ScheduleNew.Controls.Add(this.btnNewSupport);
+            this.ScheduleNew.Controls.Add(this.cbNewSupport);
+            this.ScheduleNew.Controls.Add(this.dtNewSupport);
+            this.ScheduleNew.Controls.Add(this.lblJobDescription);
+            this.ScheduleNew.Controls.Add(this.lblTechnician);
+            this.ScheduleNew.ForeColor = System.Drawing.Color.White;
+            this.ScheduleNew.Location = new System.Drawing.Point(4, 22);
+            this.ScheduleNew.Name = "ScheduleNew";
+            this.ScheduleNew.Padding = new System.Windows.Forms.Padding(3);
+            this.ScheduleNew.Size = new System.Drawing.Size(986, 804);
+            this.ScheduleNew.TabIndex = 1;
+            this.ScheduleNew.Text = "Schedule New";
             // 
             // materialLabel3
             // 
@@ -348,38 +147,132 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(6, 93);
+            this.materialLabel3.Location = new System.Drawing.Point(17, 199);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(40, 19);
-            this.materialLabel3.TabIndex = 0;
-            this.materialLabel3.Text = "Date";
+            this.materialLabel3.Size = new System.Drawing.Size(109, 19);
+            this.materialLabel3.TabIndex = 11;
+            this.materialLabel3.Text = "Schedule Date:";
             // 
-            // comboBox1
+            // materialLabel1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 5;
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(435, 42);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(79, 19);
+            this.materialLabel1.TabIndex = 7;
+            this.materialLabel1.Text = "Customer:";
             // 
-            // tabPage4
+            // lsBoxNewSupport
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tabPage4.Controls.Add(this.dateTimePicker3);
-            this.tabPage4.Controls.Add(this.materialLabel4);
-            this.tabPage4.Controls.Add(this.materialRaisedButton2);
-            this.tabPage4.Controls.Add(this.materialSingleLineTextField1);
-            this.tabPage4.Controls.Add(this.materialLabel5);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(986, 804);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Delete Schedule";
+            this.lsBoxNewSupport.FormattingEnabled = true;
+            this.lsBoxNewSupport.Location = new System.Drawing.Point(439, 72);
+            this.lsBoxNewSupport.Name = "lsBoxNewSupport";
+            this.lsBoxNewSupport.Size = new System.Drawing.Size(196, 238);
+            this.lsBoxNewSupport.TabIndex = 6;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Depth = 0;
+            this.txtDescription.Hint = "Enter Job Description";
+            this.txtDescription.Location = new System.Drawing.Point(21, 151);
+            this.txtDescription.MaxLength = 32767;
+            this.txtDescription.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PasswordChar = '\0';
+            this.txtDescription.SelectedText = "";
+            this.txtDescription.SelectionLength = 0;
+            this.txtDescription.SelectionStart = 0;
+            this.txtDescription.Size = new System.Drawing.Size(309, 23);
+            this.txtDescription.TabIndex = 5;
+            this.txtDescription.TabStop = false;
+            this.txtDescription.UseSystemPasswordChar = false;
+            // 
+            // btnNewSupport
+            // 
+            this.btnNewSupport.AutoSize = true;
+            this.btnNewSupport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnNewSupport.Depth = 0;
+            this.btnNewSupport.Icon = null;
+            this.btnNewSupport.Location = new System.Drawing.Point(21, 274);
+            this.btnNewSupport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnNewSupport.Name = "btnNewSupport";
+            this.btnNewSupport.Primary = true;
+            this.btnNewSupport.Size = new System.Drawing.Size(71, 36);
+            this.btnNewSupport.TabIndex = 4;
+            this.btnNewSupport.Text = "Submit";
+            this.btnNewSupport.UseVisualStyleBackColor = true;
+            this.btnNewSupport.Click += new System.EventHandler(this.btnNewSupport_Click);
+            // 
+            // cbNewSupport
+            // 
+            this.cbNewSupport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbNewSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbNewSupport.ForeColor = System.Drawing.Color.White;
+            this.cbNewSupport.FormattingEnabled = true;
+            this.cbNewSupport.Location = new System.Drawing.Point(21, 70);
+            this.cbNewSupport.Name = "cbNewSupport";
+            this.cbNewSupport.Size = new System.Drawing.Size(309, 21);
+            this.cbNewSupport.TabIndex = 3;
+            // 
+            // dtNewSupport
+            // 
+            this.dtNewSupport.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.dtNewSupport.Location = new System.Drawing.Point(21, 233);
+            this.dtNewSupport.Name = "dtNewSupport";
+            this.dtNewSupport.Size = new System.Drawing.Size(309, 20);
+            this.dtNewSupport.TabIndex = 2;
+            // 
+            // lblJobDescription
+            // 
+            this.lblJobDescription.AutoSize = true;
+            this.lblJobDescription.Depth = 0;
+            this.lblJobDescription.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblJobDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblJobDescription.Location = new System.Drawing.Point(17, 108);
+            this.lblJobDescription.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblJobDescription.Name = "lblJobDescription";
+            this.lblJobDescription.Size = new System.Drawing.Size(90, 19);
+            this.lblJobDescription.TabIndex = 1;
+            this.lblJobDescription.Text = "Description:";
+            // 
+            // lblTechnician
+            // 
+            this.lblTechnician.AutoSize = true;
+            this.lblTechnician.Depth = 0;
+            this.lblTechnician.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblTechnician.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTechnician.Location = new System.Drawing.Point(17, 42);
+            this.lblTechnician.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblTechnician.Name = "lblTechnician";
+            this.lblTechnician.Size = new System.Drawing.Size(86, 19);
+            this.lblTechnician.TabIndex = 0;
+            this.lblTechnician.Text = "Technician:";
+            // 
+            // UpdateSchedule
+            // 
+            this.UpdateSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.UpdateSchedule.Controls.Add(this.txtUpdateCost);
+            this.UpdateSchedule.Controls.Add(this.materialLabel8);
+            this.UpdateSchedule.Controls.Add(this.materialLabel4);
+            this.UpdateSchedule.Controls.Add(this.materialLabel5);
+            this.UpdateSchedule.Controls.Add(this.lsBoxUpdateSupport);
+            this.UpdateSchedule.Controls.Add(this.txtUpdateSupportDescription);
+            this.UpdateSchedule.Controls.Add(this.btnUpdateSupport);
+            this.UpdateSchedule.Controls.Add(this.cbUpdateSupport);
+            this.UpdateSchedule.Controls.Add(this.dtUpdateSupport);
+            this.UpdateSchedule.Controls.Add(this.materialLabel6);
+            this.UpdateSchedule.Controls.Add(this.materialLabel7);
+            this.UpdateSchedule.Location = new System.Drawing.Point(4, 22);
+            this.UpdateSchedule.Name = "UpdateSchedule";
+            this.UpdateSchedule.Padding = new System.Windows.Forms.Padding(3);
+            this.UpdateSchedule.Size = new System.Drawing.Size(986, 804);
+            this.UpdateSchedule.TabIndex = 2;
+            this.UpdateSchedule.Text = "Update Schedule";
             // 
             // materialLabel4
             // 
@@ -387,44 +280,12 @@
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(49, 96);
+            this.materialLabel4.Location = new System.Drawing.Point(339, 289);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(40, 19);
-            this.materialLabel4.TabIndex = 17;
-            this.materialLabel4.Text = "Date";
-            // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.AutoSize = true;
-            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(170, 179);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(69, 36);
-            this.materialRaisedButton2.TabIndex = 16;
-            this.materialRaisedButton2.Text = "Delete";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialSingleLineTextField1
-            // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(170, 42);
-            this.materialSingleLineTextField1.MaxLength = 32767;
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(200, 23);
-            this.materialSingleLineTextField1.TabIndex = 15;
-            this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.materialLabel4.Size = new System.Drawing.Size(109, 19);
+            this.materialLabel4.TabIndex = 20;
+            this.materialLabel4.Text = "Schedule Date:";
             // 
             // materialLabel5
             // 
@@ -432,12 +293,111 @@
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(49, 42);
+            this.materialLabel5.Location = new System.Drawing.Point(17, 40);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(119, 19);
-            this.materialLabel5.TabIndex = 14;
-            this.materialLabel5.Text = "Customer Name";
+            this.materialLabel5.Size = new System.Drawing.Size(134, 19);
+            this.materialLabel5.TabIndex = 19;
+            this.materialLabel5.Text = "Scheduled Support";
+            // 
+            // lsBoxUpdateSupport
+            // 
+            this.lsBoxUpdateSupport.FormattingEnabled = true;
+            this.lsBoxUpdateSupport.Location = new System.Drawing.Point(21, 70);
+            this.lsBoxUpdateSupport.Name = "lsBoxUpdateSupport";
+            this.lsBoxUpdateSupport.Size = new System.Drawing.Size(196, 238);
+            this.lsBoxUpdateSupport.TabIndex = 18;
+            // 
+            // txtUpdateSupportDescription
+            // 
+            this.txtUpdateSupportDescription.Depth = 0;
+            this.txtUpdateSupportDescription.Hint = "Enter Job Description";
+            this.txtUpdateSupportDescription.Location = new System.Drawing.Point(343, 149);
+            this.txtUpdateSupportDescription.MaxLength = 32767;
+            this.txtUpdateSupportDescription.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtUpdateSupportDescription.Name = "txtUpdateSupportDescription";
+            this.txtUpdateSupportDescription.PasswordChar = '\0';
+            this.txtUpdateSupportDescription.SelectedText = "";
+            this.txtUpdateSupportDescription.SelectionLength = 0;
+            this.txtUpdateSupportDescription.SelectionStart = 0;
+            this.txtUpdateSupportDescription.Size = new System.Drawing.Size(309, 23);
+            this.txtUpdateSupportDescription.TabIndex = 17;
+            this.txtUpdateSupportDescription.TabStop = false;
+            this.txtUpdateSupportDescription.UseSystemPasswordChar = false;
+            // 
+            // btnUpdateSupport
+            // 
+            this.btnUpdateSupport.AutoSize = true;
+            this.btnUpdateSupport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnUpdateSupport.Depth = 0;
+            this.btnUpdateSupport.Icon = null;
+            this.btnUpdateSupport.Location = new System.Drawing.Point(343, 364);
+            this.btnUpdateSupport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnUpdateSupport.Name = "btnUpdateSupport";
+            this.btnUpdateSupport.Primary = true;
+            this.btnUpdateSupport.Size = new System.Drawing.Size(73, 36);
+            this.btnUpdateSupport.TabIndex = 16;
+            this.btnUpdateSupport.Text = "Update";
+            this.btnUpdateSupport.UseVisualStyleBackColor = true;
+            this.btnUpdateSupport.Click += new System.EventHandler(this.btnUpdateSupport_Click);
+            // 
+            // cbUpdateSupport
+            // 
+            this.cbUpdateSupport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.cbUpdateSupport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbUpdateSupport.ForeColor = System.Drawing.Color.White;
+            this.cbUpdateSupport.FormattingEnabled = true;
+            this.cbUpdateSupport.Location = new System.Drawing.Point(343, 68);
+            this.cbUpdateSupport.Name = "cbUpdateSupport";
+            this.cbUpdateSupport.Size = new System.Drawing.Size(309, 21);
+            this.cbUpdateSupport.TabIndex = 15;
+            // 
+            // dtUpdateSupport
+            // 
+            this.dtUpdateSupport.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.dtUpdateSupport.Location = new System.Drawing.Point(343, 323);
+            this.dtUpdateSupport.Name = "dtUpdateSupport";
+            this.dtUpdateSupport.Size = new System.Drawing.Size(309, 20);
+            this.dtUpdateSupport.TabIndex = 14;
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel6.Location = new System.Drawing.Point(339, 106);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(90, 19);
+            this.materialLabel6.TabIndex = 13;
+            this.materialLabel6.Text = "Description:";
+            // 
+            // materialLabel7
+            // 
+            this.materialLabel7.AutoSize = true;
+            this.materialLabel7.Depth = 0;
+            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel7.Location = new System.Drawing.Point(339, 40);
+            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel7.Name = "materialLabel7";
+            this.materialLabel7.Size = new System.Drawing.Size(86, 19);
+            this.materialLabel7.TabIndex = 12;
+            this.materialLabel7.Text = "Technician:";
+            // 
+            // DeleteSchedule
+            // 
+            this.DeleteSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.DeleteSchedule.Controls.Add(this.materialLabel9);
+            this.DeleteSchedule.Controls.Add(this.lsBoxDeleteSupport);
+            this.DeleteSchedule.Controls.Add(this.BtnDeleteSupport);
+            this.DeleteSchedule.Location = new System.Drawing.Point(4, 22);
+            this.DeleteSchedule.Name = "DeleteSchedule";
+            this.DeleteSchedule.Padding = new System.Windows.Forms.Padding(3);
+            this.DeleteSchedule.Size = new System.Drawing.Size(986, 804);
+            this.DeleteSchedule.TabIndex = 3;
+            this.DeleteSchedule.Text = "Delete Schedule";
             // 
             // CallCentre
             // 
@@ -520,36 +480,72 @@
             this.lsBoxClientNames.Size = new System.Drawing.Size(328, 238);
             this.lsBoxClientNames.TabIndex = 2;
             // 
-            // JobsInProgress
+            // txtUpdateCost
             // 
-            this.JobsInProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.JobsInProgress.Controls.Add(this.treeCurrentJobs);
-            this.JobsInProgress.Location = new System.Drawing.Point(4, 22);
-            this.JobsInProgress.Name = "JobsInProgress";
-            this.JobsInProgress.Size = new System.Drawing.Size(986, 804);
-            this.JobsInProgress.TabIndex = 5;
-            this.JobsInProgress.Text = "Current Jobs";
+            this.txtUpdateCost.Depth = 0;
+            this.txtUpdateCost.Hint = "Enter Job Cost";
+            this.txtUpdateCost.Location = new System.Drawing.Point(343, 241);
+            this.txtUpdateCost.MaxLength = 32767;
+            this.txtUpdateCost.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtUpdateCost.Name = "txtUpdateCost";
+            this.txtUpdateCost.PasswordChar = '\0';
+            this.txtUpdateCost.SelectedText = "";
+            this.txtUpdateCost.SelectionLength = 0;
+            this.txtUpdateCost.SelectionStart = 0;
+            this.txtUpdateCost.Size = new System.Drawing.Size(142, 23);
+            this.txtUpdateCost.TabIndex = 22;
+            this.txtUpdateCost.TabStop = false;
+            this.txtUpdateCost.UseSystemPasswordChar = false;
             // 
-            // treeCurrentJobs
+            // materialLabel8
             // 
-            this.treeCurrentJobs.Location = new System.Drawing.Point(81, 98);
-            this.treeCurrentJobs.Name = "treeCurrentJobs";
-            this.treeCurrentJobs.Size = new System.Drawing.Size(796, 412);
-            this.treeCurrentJobs.TabIndex = 0;
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel8.Location = new System.Drawing.Point(339, 198);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(45, 19);
+            this.materialLabel8.TabIndex = 21;
+            this.materialLabel8.Text = "Cost:";
             // 
-            // dateTimePicker2
+            // materialLabel9
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(137, 91);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 14;
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel9.Location = new System.Drawing.Point(19, 19);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(134, 19);
+            this.materialLabel9.TabIndex = 22;
+            this.materialLabel9.Text = "Scheduled Support";
             // 
-            // dateTimePicker3
+            // lsBoxDeleteSupport
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(170, 94);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker3.TabIndex = 18;
+            this.lsBoxDeleteSupport.FormattingEnabled = true;
+            this.lsBoxDeleteSupport.Location = new System.Drawing.Point(23, 49);
+            this.lsBoxDeleteSupport.Name = "lsBoxDeleteSupport";
+            this.lsBoxDeleteSupport.Size = new System.Drawing.Size(196, 238);
+            this.lsBoxDeleteSupport.TabIndex = 21;
+            // 
+            // BtnDeleteSupport
+            // 
+            this.BtnDeleteSupport.AutoSize = true;
+            this.BtnDeleteSupport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BtnDeleteSupport.Depth = 0;
+            this.BtnDeleteSupport.Icon = null;
+            this.BtnDeleteSupport.Location = new System.Drawing.Point(23, 293);
+            this.BtnDeleteSupport.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BtnDeleteSupport.Name = "BtnDeleteSupport";
+            this.BtnDeleteSupport.Primary = true;
+            this.BtnDeleteSupport.Size = new System.Drawing.Size(69, 36);
+            this.BtnDeleteSupport.TabIndex = 20;
+            this.BtnDeleteSupport.Text = "Delete";
+            this.BtnDeleteSupport.UseVisualStyleBackColor = true;
+            this.BtnDeleteSupport.Click += new System.EventHandler(this.BtnDeleteSupport_Click);
             // 
             // TechSupport
             // 
@@ -561,21 +557,16 @@
             this.Name = "TechSupport";
             this.Size = new System.Drawing.Size(1000, 900);
             this.materialTabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgView)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.gpAddProducts.ResumeLayout(false);
-            this.gpAddProducts.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.JobsInProgress.ResumeLayout(false);
+            this.ScheduleNew.ResumeLayout(false);
+            this.ScheduleNew.PerformLayout();
+            this.UpdateSchedule.ResumeLayout(false);
+            this.UpdateSchedule.PerformLayout();
+            this.DeleteSchedule.ResumeLayout(false);
+            this.DeleteSchedule.PerformLayout();
             this.CallCentre.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.JobsInProgress.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -584,31 +575,9 @@
 
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dgView;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.GroupBox gpAddProducts;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSubmitNewProduct;
-        private MaterialSkin.Controls.MaterialLabel lblName;
-        private MaterialSkin.Controls.MaterialLabel lblType;
-        private System.Windows.Forms.ComboBox cb_ProductGroup;
-        private System.Windows.Forms.TabPage tabPage3;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtSearchProd_Update;
-        private MaterialSkin.Controls.MaterialLabel lblSearchName_Update;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TabPage tabPage4;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TabPage ScheduleNew;
+        private System.Windows.Forms.TabPage UpdateSchedule;
+        private System.Windows.Forms.TabPage DeleteSchedule;
         private System.Windows.Forms.TabPage CallCentre;
         private System.Windows.Forms.TabPage JobsInProgress;
         private System.Windows.Forms.TreeView treeCurrentJobs;
@@ -617,7 +586,28 @@
         private System.Windows.Forms.ListBox lsBoxClientNames;
         private MaterialSkin.Controls.MaterialRaisedButton btn_Call;
         private MaterialSkin.Controls.MaterialRaisedButton btn_EndCall;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.ComboBox cbNewSupport;
+        private System.Windows.Forms.DateTimePicker dtNewSupport;
+        private MaterialSkin.Controls.MaterialLabel lblJobDescription;
+        private MaterialSkin.Controls.MaterialLabel lblTechnician;
+        private MaterialSkin.Controls.MaterialRaisedButton btnNewSupport;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtDescription;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.ListBox lsBoxNewSupport;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private System.Windows.Forms.ListBox lsBoxUpdateSupport;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtUpdateSupportDescription;
+        private MaterialSkin.Controls.MaterialRaisedButton btnUpdateSupport;
+        private System.Windows.Forms.ComboBox cbUpdateSupport;
+        private System.Windows.Forms.DateTimePicker dtUpdateSupport;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialLabel materialLabel7;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtUpdateCost;
+        private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private System.Windows.Forms.ListBox lsBoxDeleteSupport;
+        private MaterialSkin.Controls.MaterialRaisedButton BtnDeleteSupport;
     }
 }
