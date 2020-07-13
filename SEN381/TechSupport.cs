@@ -233,13 +233,11 @@ namespace SEN381
                     }
                     break;
 
-                case DialogResult.No:
-                    break;
-
                 default:
                     RefreshAll();
                     break;
             }
+
         }
 
         private void btn_Call_Click(object sender, EventArgs e) 
